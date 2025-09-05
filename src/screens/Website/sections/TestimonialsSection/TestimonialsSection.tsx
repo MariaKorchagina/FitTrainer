@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import "./TestimonialsSection.css";
 
 const testimonialData = [
   {
@@ -10,13 +11,13 @@ const testimonialData = [
     author: "Daniele Debbians",
     images: [
       {
-        src: "https://c.animaapp.com/mf57cyx5gYVcx1/img/danilo-calic-dlgfzg0mvau-unsplash.png",
-        alt: "Client testimonial",
+        src: "/beforeafter1.jpeg",
+        alt: "Before/After 1",
         className: "rounded-[10px_0px_0px_10px]",
       },
       {
-        src: "https://c.animaapp.com/mf57cyx5gYVcx1/img/alexander-jawfox-kl2t5u6gkm0-unsplash.png",
-        alt: "Client testimonial",
+        src: "/beforeafter2.jpeg",
+        alt: "Before/After 2",
         className: "rounded-[0px_10px_10px_0px]",
       },
     ],
@@ -27,13 +28,13 @@ const testimonialData = [
     author: "Sarah Johnson",
     images: [
       {
-        src: "https://c.animaapp.com/mf57cyx5gYVcx1/img/danilo-calic-dlgfzg0mvau-unsplash.png",
-        alt: "Client testimonial",
+        src: "/beforeafter3.jpeg",
+        alt: "Before/After 3",
         className: "rounded-[10px_0px_0px_10px]",
       },
       {
-        src: "https://c.animaapp.com/mf57cyx5gYVcx1/img/alexander-jawfox-kl2t5u6gkm0-unsplash.png",
-        alt: "Client testimonial",
+        src: "/beforeafter4.jpeg",
+        alt: "Before/After 4",
         className: "rounded-[0px_10px_10px_0px]",
       },
     ],
@@ -44,13 +45,13 @@ const testimonialData = [
     author: "Mike Rodriguez",
     images: [
       {
-        src: "https://c.animaapp.com/mf57cyx5gYVcx1/img/danilo-calic-dlgfzg0mvau-unsplash.png",
-        alt: "Client testimonial",
+        src: "/beforeafter5.jpeg",
+        alt: "Before/After 5",
         className: "rounded-[10px_0px_0px_10px]",
       },
       {
-        src: "https://c.animaapp.com/mf57cyx5gYVcx1/img/alexander-jawfox-kl2t5u6gkm0-unsplash.png",
-        alt: "Client testimonial",
+        src: "/beforeafter6.jpeg",
+        alt: "Before/After 6",
         className: "rounded-[0px_10px_10px_0px]",
       },
     ],
@@ -71,28 +72,28 @@ export const TestimonialsSection = (): JSX.Element => {
   const currentData = testimonialData[currentTestimonial];
 
   return (
-    <div className="max-w-7xl mx-auto px-4">
-      <div className="relative">
+    <div className="testimonials-container">
+      <div className="testimonials-content">
         {/* Background blur effect */}
-        <div className="w-[537px] h-[537px] rounded-[268.5px] absolute top-[54px] left-[43px] bg-[#ff2332] blur-[200px] opacity-20 pointer-events-none" />
+        <div className="testimonials-background-blur" />
 
-        <div className="relative">
+        <div className="testimonials-main">
           {/* Main heading */}
-          <h1 className="[font-family:'Anton',Helvetica] font-normal text-white text-4xl md:text-6xl tracking-[-0.60px] leading-[1.2] mb-16 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:0ms]">
-            HEAR IT FROM THEM
+          <h1 className="testimonials-title">
+            Отзывы участниц
           </h1>
 
           {/* Main content container */}
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[43px] mb-16">
+          <div className="testimonials-main-content">
             {/* Testimonial card */}
-            <Card className="w-full max-w-[556px] bg-[#1f1f1f] rounded-[20px] border-0 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
-              <CardContent className="flex flex-col justify-center gap-8 p-10">
-                <blockquote className="[font-family:'Outfit',Helvetica] font-normal text-white text-2xl md:text-[28px] tracking-[0] leading-[1.3]">
+            <Card className="testimonials-card">
+              <CardContent className="testimonials-card-content">
+                <blockquote className="testimonials-quote">
                   "{currentData.quote}"
                 </blockquote>
 
-                <div className="inline-flex items-center gap-4">
-                  <cite className="[font-family:'Outfit',Helvetica] font-medium text-[#909090] text-xl tracking-[0.20px] leading-6 not-italic">
+                <div className="testimonials-author">
+                  <cite className="testimonials-author-name">
                     {currentData.author}
                   </cite>
                 </div>
@@ -100,11 +101,11 @@ export const TestimonialsSection = (): JSX.Element => {
             </Card>
 
             {/* Images container */}
-            <div className="relative w-full max-w-[312px] h-[386px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]">
+            <div className="testimonials-images-container">
               {currentData.images.map((image, index) => (
                 <img
                   key={index}
-                  className={`absolute w-[156px] h-[386px] top-0 ${index === 0 ? "left-0" : "left-[156px]"} ${image.className} backdrop-blur-[20px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(20px)_brightness(100%)] object-cover`}
+                  className="testimonials-image"
                   alt={image.alt}
                   src={image.src}
                 />
@@ -113,14 +114,14 @@ export const TestimonialsSection = (): JSX.Element => {
           </div>
 
           {/* Navigation */}
-          <div className="flex items-center justify-center gap-8">
+          <div className="testimonials-navigation">
             {/* Pagination dots */}
-            <div className="flex gap-[6px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:800ms]">
+            <div className="testimonials-pagination">
               {testimonialData.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-[11px] h-[11px] transition-colors hover:opacity-80 ${
-                    index === currentTestimonial ? "bg-[#ff2332]" : "bg-[#909090]"
+                  className={`testimonials-dot ${
+                    index === currentTestimonial ? "testimonials-dot--active" : "testimonials-dot--inactive"
                   }`}
                   onClick={() => setCurrentTestimonial(index)}
                   aria-label={`Go to testimonial ${index + 1}`}
@@ -129,25 +130,25 @@ export const TestimonialsSection = (): JSX.Element => {
             </div>
 
             {/* Navigation arrows */}
-            <div className="flex gap-4">
+            <div className="testimonials-arrows">
               <Button
                 variant="ghost"
                 size="icon"
-                className="w-12 h-12 p-0 hover:bg-[#ff2332]/20 transition-all duration-300 hover:scale-110"
+                className="testimonials-arrow-button"
                 onClick={prevTestimonial}
                 aria-label="Previous testimonial"
               >
-                <ChevronLeft className="w-6 h-6 text-white" />
+                <ChevronLeft className="testimonials-arrow-icon" />
               </Button>
 
               <Button
                 variant="ghost"
                 size="icon"
-                className="w-12 h-12 p-0 hover:bg-[#ff2332]/20 transition-all duration-300 hover:scale-110"
+                className="testimonials-arrow-button"
                 onClick={nextTestimonial}
                 aria-label="Next testimonial"
               >
-                <ChevronRight className="w-6 h-6 text-white" />
+                <ChevronRight className="testimonials-arrow-icon" />
               </Button>
             </div>
           </div>
@@ -155,7 +156,7 @@ export const TestimonialsSection = (): JSX.Element => {
 
         {/* Decorative element */}
         <img
-          className="absolute w-[77px] h-[73px] top-40 left-0 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]"
+          className="testimonials-decorative"
           alt="Decorative element"
           src="https://c.animaapp.com/mf57cyx5gYVcx1/img/group-31.png"
         />

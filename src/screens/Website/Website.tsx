@@ -1,7 +1,6 @@
 import React from "react";
 import { AboutMeSection } from "./sections/AboutMeSection/AboutMeSection";
 import { CallToActionSection } from "./sections/CallToActionSection/CallToActionSection";
-import { FAQSection } from "./sections/FAQSection/FAQSection";
 import { FooterSection } from "./sections/FooterSection/FooterSection";
 import { HeroSection } from "./sections/HeroSection/HeroSection";
 import { NavigationSection } from "./sections/NavigationSection/NavigationSection";
@@ -38,7 +37,7 @@ export const Website = (): JSX.Element => {
       </section>
 
       {/* Qualifications Section */}
-      <section className="w-full py-20 bg-[#1a1a1a]">
+      <section className="w-full bg-[#1a1a1a]">
         <QualificationsSection />
       </section>
 
@@ -52,10 +51,6 @@ export const Website = (): JSX.Element => {
         <AboutMeSection />
       </section>
 
-      {/* FAQ Section */}
-      <section className="w-full py-20 bg-[#1a1a1a]">
-        <FAQSection />
-      </section>
 
       {/* Footer Section */}
       <FooterSection />

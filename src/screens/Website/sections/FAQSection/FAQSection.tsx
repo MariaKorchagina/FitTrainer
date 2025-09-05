@@ -1,47 +1,86 @@
+import { PlusIcon, MinusIcon } from "lucide-react";
 import React from "react";
-import { Button } from "../../../../components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../../../../components/ui/accordion";
+import "./FAQSection.css";
 
 export const FAQSection = (): JSX.Element => {
+  const faqData = [
+    {
+      id: "item-1",
+      question: "Какие задачи возможно решить со мной?",
+      answer:
+        "🏃🏻‍♂️ Похудеть\n🏋🏻‍♀️ Получить рельеф и развить силу\n💪 Укрепить сердечно-сосудистую систему\n🥑 Скорректировать питание и образ жизни навсегда\n🤰 Восстановиться после родов: похудеть, приобрести легкость и гибкость в теле",
+    },
+    {
+      id: "item-2",
+      question: "Кому подойдут мои программы?",
+      answer:
+        "• Если нет времени на долгие тренировки и постоянные походы в зал\n• Если ты не можешь собраться с силами и начать заниматься\n• Если раньше начинала, но бросала из-за отсутствия мотивации\n• Если чувствуешь усталость, тревожность и стресс и не знаешь, как это изменить\n• Если хочешь заниматься, но не знаешь, с чего начать и как правильно тренироваться\n• Если нужна поддержка и простой план, который реально впишется в твою жизнь\n• Если хочешь заниматься дома или в зале, но тебе нужен гибкий и понятный подход",
+    },
+    {
+      id: "item-3",
+      question: "Как проходят тренировки?",
+      answer:
+        "Все тренировки — онлайн, но это не запись и не групповое занятие.\nЭто формат, где только ты и тренер.\n1 на 1. Без отвлечений. Только твой результат.\n\nТакого на рынке практически нет.\nЯ полностью с тобой на каждом занятии:\n✅ Я всё вижу\n✅ Я контролирую технику\n✅ Я подбираю упражнения именно под тебя\n✅ Я знаю, когда ты можешь больше — и мягко веду туда\n\nЯ много училась и прошла это сама — на своём примере знаю, как восстановить форму быстро и эффективно.\nИ главное — как полюбить спорт без напряга, без стресса, каждый день.",
+    },
+    {
+      id: "item-4",
+      question: "Какой минимальный инвентарь?",
+      answer:
+        "Все занятия можно проводить дома, без сложного инвентаря. На курсе даны список и рекомендации по покупке или бесплатные домашние аналоги.",
+    },
+  ];
+
   return (
-    <div className="max-w-7xl mx-auto px-4">
-      <div className="relative">
-        {/* Background blur effect */}
-        <div className="w-[545px] h-[545px] rounded-[272.5px] absolute top-[27px] left-[500px] bg-[#ff2332] blur-[200px] opacity-20 pointer-events-none" />
+    <div className="faq-section">
+      <div className="faq-container">
+      <div className="faq-content">
+        {/* Header */}
+        <header className="faq-header">
+          <h2 className="faq-title">
+            Часто задаваемые вопросы
+          </h2>
+        </header>
 
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-[84px] relative">
-          {/* Image Section */}
-          <div className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:0ms] flex-shrink-0">
-            <img
-              className="w-full max-w-[466px] h-auto object-cover rounded-lg"
-              alt="Couple training together"
-              src="https://c.animaapp.com/mf57cyx5gYVcx1/img/couple-training-together-gym--1--1.png"
-            />
-          </div>
-
-          {/* Content Section */}
-          <div className="flex flex-col items-start gap-[70px] flex-1 max-w-[495px]">
-            <div className="flex flex-col items-start justify-center gap-4">
-              <h2 className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms] [font-family:'Anton',Helvetica] font-normal text-white text-4xl md:text-6xl tracking-[-0.60px] leading-[1.2]">
-                YOU WANT TO TRAIN WITH ME?
-              </h2>
-
-              <p className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms] [font-family:'Outfit',Helvetica] font-normal text-[#909090] text-xl md:text-2xl tracking-[0] leading-[1.3] max-w-[456px]">
-                Feel free to contact me if you want to train with me.
-              </p>
-            </div>
-
-            <div className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]">
-              <Button className="h-[74px] px-10 py-0 bg-[#ff2332] hover:bg-[#e01e2b] rounded-2xl transition-all duration-300 hover:scale-105">
-                <span className="[font-family:'Outfit',Helvetica] font-bold text-white text-2xl tracking-[0.24px] leading-5 whitespace-nowrap">
-                  Get Started
-                </span>
-              </Button>
-            </div>
-          </div>
+        {/* FAQ Accordion */}
+        <div className="faq-accordion">
+          <Accordion type="single" collapsible className="faq-accordion-content">
+            {faqData.map((faq, index) => (
+              <AccordionItem
+                key={faq.id}
+                value={faq.id}
+                className="faq-item"
+                style={
+                  {
+                    "--animation-delay": `${400 + index * 100}ms`,
+                  } as React.CSSProperties
+                }
+              >
+                <AccordionTrigger className="faq-trigger">
+                  <div className="faq-question">
+                    <div className="faq-question-text">
+                      {faq.question}
+                    </div>
+                  </div>
+                  <PlusIcon className="faq-icon faq-icon-plus" />
+                  <MinusIcon className="faq-icon faq-icon-minus" />
+                </AccordionTrigger>
+                
+                <AccordionContent className="faq-content">
+                  <div className="faq-answer">
+                    {faq.answer}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
-
-        {/* Gradient overlay */}
-        <div className="absolute w-[471px] h-[162px] top-[440px] left-[3px] bg-[linear-gradient(180deg,rgba(28,25,25,0)_0%,rgba(30,25,26,1)_100%)] pointer-events-none" />
+      </div>
       </div>
     </div>
   );

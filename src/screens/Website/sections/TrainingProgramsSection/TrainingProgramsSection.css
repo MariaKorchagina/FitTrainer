@@ -37,7 +37,7 @@
 
 @media (min-width: 768px) {
   .training-programs-title {
-    font-size: 3.75rem;
+    font-size: 2.75rem;
   }
 }
 
@@ -53,7 +53,7 @@
 
 @media (min-width: 768px) {
   .training-programs-subtitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -67,6 +67,7 @@
   animation: fade-in 1s ease forwards;
   animation-delay: 200ms;
   opacity: 0;
+  align-items: stretch;
 }
 
 @media (min-width: 768px) {
@@ -86,8 +87,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1.875rem;
+  justify-content: space-between;
+  padding: 2.5rem 2rem;
   background-color: #1f1f1f;
   border-radius: 20px;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
@@ -99,6 +100,8 @@
   transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
+  min-height: 420px;
+  height: 100%;
 }
 
 .program-card:hover {
@@ -111,19 +114,16 @@
 }
 
 .program-card--personal {
-  height: 354px;
   gap: 2rem;
   border: 0.5px solid rgba(255, 255, 255, 0.2);
 }
 
 .program-card--personal-diet {
-  height: 410px;
   gap: 1.875rem;
   border: 1px solid #ff2332;
 }
 
 .program-card--diet {
-  height: 354px;
   gap: 2rem;
   border: 0.5px solid rgba(255, 255, 255, 0.2);
 }
@@ -132,30 +132,55 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   padding: 0;
   text-align: center;
   flex: 1;
-  justify-content: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 1.5rem;
 }
 
 .program-title {
-  font-weight: normal;
-  font-size: 1.25rem;
-  letter-spacing: 0;
-  line-height: 1.875rem;
+  font-weight: 600;
+  font-size: 1.375rem;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
   font-family: 'Outfit', Helvetica, sans-serif;
   color: white;
   margin: 0;
+  text-align: center;
 }
 
 .program-price {
   font-family: 'Anton', Helvetica, sans-serif;
   font-weight: normal;
-  font-size: 5rem;
-  letter-spacing: 0;
-  line-height: 0.1px;
-  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  margin: 0.5rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.price-main {
+  font-family: 'Anton', Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 2.5rem;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.price-discount {
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #909090;
+  opacity: 0.8;
+  letter-spacing: 0.2px;
 }
 
 .program-price--white {
@@ -168,24 +193,28 @@
 
 .program-description {
   font-family: 'Outfit', Helvetica, sans-serif;
-  font-weight: normal;
-  color: #909090;
-  font-size: 1rem;
-  letter-spacing: 0;
-  line-height: 1.3rem;
-  max-width: 15.125rem;
+  font-weight: 500;
+  color: #b0b0b0;
+  font-size: 1.125rem;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+  max-width: 16rem;
   margin: 0;
+  text-align: center;
 }
 
 .program-details {
   font-family: 'Outfit', Helvetica, sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   color: #909090;
-  font-size: 1rem;
-  letter-spacing: 0;
-  line-height: 1.3rem;
-  max-width: 15.125rem;
-  margin: 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.1px;
+  line-height: 1.5;
+  max-width: 16rem;
+  margin: 0.25rem 0 0 0;
+  text-align: center;
+  opacity: 0.8;
+  font-style: italic;
 }
 
 .program-button {
@@ -193,7 +222,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.625rem;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   background-color: #ff2332;
   border: none;
   border-radius: 0.75rem;
@@ -202,6 +231,10 @@
   cursor: pointer;
   text-decoration: none;
   margin-top: auto;
+  width: 100%;
+  max-width: 220px;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .program-button:hover {

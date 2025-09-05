@@ -1,4 +1,3 @@
-import { PlayIcon } from "lucide-react";
 import React from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import "./CallToActionSection.css";
@@ -6,41 +5,29 @@ import "./CallToActionSection.css";
 export const CallToActionSection = (): JSX.Element => {
   const statsData = [
     {
-      number: "2000+",
-      label: "Satisfied Clients",
+      number: "200+",
+      label: "Довольных клиентов",
     },
     {
       number: "10",
-      label: "Years of Experience",
+      label: "Лет опыта",
     },
     {
-      number: "15",
-      label: "Years in Sport",
+      number: "10",
+      label: "Лет в спорте",
     },
   ];
 
   return (
     <div className="cta-container">
       <div className="cta-content">
-        {/* Video Section */}
-        <div className="cta-video-section">
-          <div
-            className="cta-video-background"
-            style={{
-              backgroundImage:
-                "url(https://c.animaapp.com/mf57cyx5gYVcx1/img/woman-doing-workout-gym-with-trainer.png)",
-            }}
-          >
-            {/* Play Button Overlay */}
-            <div className="cta-play-overlay">
-              <div className="cta-play-button">
-                <div className="cta-play-button-bg" />
-                <div className="cta-play-icon-container">
-                  <PlayIcon className="cta-play-icon" />
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Image Section */}
+        <div className="cta-image-section">
+          <img
+            src="/trainer3.jpg"
+            alt="Лилия - фитнес-тренер"
+            className="cta-trainer-image"
+          />
         </div>
 
         {/* Content Section */}
@@ -48,13 +35,21 @@ export const CallToActionSection = (): JSX.Element => {
           {/* Header Content */}
           <div className="cta-header">
             <h2 className="cta-title">
-              WHO IS JOHN?
+              Привет, меня зовут Лилия!
             </h2>
 
             <p className="cta-description">
-              As a passionate personal trainer, I believe in empowering
-              individuals to achieve their fitness goals through personalized
-              coaching and support.
+              Я — сертифицированный фитнес-тренер, и я здесь, чтобы ты наконец почувствовала: "Я управляю своим телом".
+
+              <br />
+              Я провожу тренировки в направлениях Пилатес, TRX и Табата — как онлайн, так и вживую.
+              <br />
+              Работаю с женщинами, которые устали чувствовать слабость, тяжесть, нестабильность в теле и в жизни.
+
+              <br />
+              Моя цель — не просто привести тебя в форму, а помочь вернуть контроль, энергию и уверенность.
+              <br />
+              Каждая программа подбирается под твои цели, возможности и ритм жизни.
             </p>
           </div>
 

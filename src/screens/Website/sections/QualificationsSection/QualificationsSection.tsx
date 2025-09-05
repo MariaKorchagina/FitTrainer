@@ -1,56 +1,104 @@
 import React from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
+import "./QualificationsSection.css";
 
 export const QualificationsSection = (): JSX.Element => {
   const certifications = [
-    { id: 1, title: "CPT" },
-    { id: 2, title: "CFT" },
-    { id: 3, title: "CN" },
+    { id: 1, image: "/1.jpg" },
+    { id: 2, image: "/2.jpg" },
+    { id: 3, image: "/3.jpg" },
+    { id: 4, image: "/4.jpg" },
+    { id: 5, image: "/5.jpg" },
+    { id: 6, image: "/6.jpg" },
+    { id: 7, image: "/7.jpg" },
+    { id: 8, image: "/8.jpg" },
+    { id: 9, image: "/9.jpg" },
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4">
-      <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+    <div className="qualifications-section">
+      <div className="qualifications-container">
+      <div className="qualifications-content">
         {/* Content Section */}
-        <div className="flex flex-col items-start gap-[30px] flex-1 translate-y-[-1rem] animate-fade-in opacity-0">
-          <div className="flex flex-col items-start gap-1.5">
-            <h2 className="[font-family:'Anton',Helvetica] font-normal text-white text-4xl md:text-6xl tracking-[-0.60px] leading-[1.2] mb-4 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
-              QUALIFICATIONS
+        <div className="qualifications-text-section">
+          <div className="qualifications-header">
+            <h2 className="qualifications-title">
+              Сертификаты
             </h2>
 
-            <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-xl md:text-2xl tracking-[0] leading-[1.3] max-w-[477px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
-              I'm a certified fitness trainer with over 10 years of
-              experience, specializing in personal training and nutrition.
-              I'm passionate about helping individuals transform their
-              lives and aim to create a welcoming environment where everyone can
-              thrive, regardless of fitness level.
+            <p className="qualifications-description">
+              Я постоянно учусь и совершенствуюсь, чтобы давать вам только лучшие и современные методики.
             </p>
           </div>
 
           {/* Certifications */}
-          <div className="flex flex-wrap gap-4 items-start translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]">
-            {certifications.map((cert, index) => (
-              <Card
-                key={cert.id}
-                className="bg-[#1f1f1f] border-none rounded-[10px] shadow-[0px_20px_40px_#0000001a] backdrop-blur-[10px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10px)_brightness(100%)] translate-y-[-1rem] animate-fade-in opacity-0 hover:scale-105 transition-all duration-300"
-                style={
-                  {
-                    "--animation-delay": `${800 + index * 100}ms`,
-                  } as React.CSSProperties
-                }
-              >
-                <CardContent className="px-6 py-2.5 flex flex-col items-center justify-center">
-                  <div className="w-[145px] h-[52px] [font-family:'Anton',Helvetica] font-normal text-[#ff2332] text-[50px] text-center tracking-[0] leading-[0.1px] flex items-center justify-center">
-                    {cert.title}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="qualifications-certs">
+            <div className="qualifications-certs-inner">
+              {/* First set of certificates */}
+              {certifications.map((cert, index) => (
+                <Card
+                  key={`first-${cert.id}`}
+                  className="qualifications-cert-card"
+                  style={
+                    {
+                      "--animation-delay": `${800 + index * 100}ms`,
+                    } as React.CSSProperties
+                  }
+                >
+                  <CardContent className="qualifications-cert-content">
+                    <img
+                      src={cert.image}
+                      alt={`Сертификат ${cert.id}`}
+                      className="qualifications-cert-image"
+                    />
+                  </CardContent>
+                </Card>
+              ))}
+              {/* Second set for seamless loop */}
+              {certifications.map((cert, index) => (
+                <Card
+                  key={`second-${cert.id}`}
+                  className="qualifications-cert-card"
+                  style={
+                    {
+                      "--animation-delay": `${800 + index * 100}ms`,
+                    } as React.CSSProperties
+                  }
+                >
+                  <CardContent className="qualifications-cert-content">
+                    <img
+                      src={cert.image}
+                      alt={`Сертификат ${cert.id}`}
+                      className="qualifications-cert-image"
+                    />
+                  </CardContent>
+                </Card>
+              ))}
+              {/* Third set for continuous flow */}
+              {certifications.map((cert, index) => (
+                <Card
+                  key={`third-${cert.id}`}
+                  className="qualifications-cert-card"
+                  style={
+                    {
+                      "--animation-delay": `${800 + index * 100}ms`,
+                    } as React.CSSProperties
+                  }
+                >
+                  <CardContent className="qualifications-cert-content">
+                    <img
+                      src={cert.image}
+                      alt={`Сертификат ${cert.id}`}
+                      className="qualifications-cert-image"
+                    />
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Image Section */}
-        <div className="w-full max-w-[544px] h-[452px] opacity-70 bg-[url(https://c.animaapp.com/mf57cyx5gYVcx1/img/couple-training-together-gym.png)] bg-cover bg-center rounded-lg flex-shrink-0 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:1100ms] hover:opacity-90 transition-opacity duration-300" />
+      </div>
       </div>
     </div>
   );

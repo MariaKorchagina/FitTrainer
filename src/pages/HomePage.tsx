@@ -1,5 +1,4 @@
 import React from "react";
-import { AboutMeSection } from "../screens/Website/sections/AboutMeSection/AboutMeSection";
 import { CallToActionSection } from "../screens/Website/sections/CallToActionSection/CallToActionSection";
 import { FAQSection } from "../screens/Website/sections/FAQSection/FAQSection";
 import { HeroSection } from "../screens/Website/sections/HeroSection/HeroSection";
@@ -35,10 +34,7 @@ export const HomePage = (): JSX.Element => {
         <TestimonialsSection />
       </section>
 
-      {/* About Me Section */}
-      <section id="about" className="about-me-section">
-        <AboutMeSection />
-      </section>
+
 
       {/* FAQ Section */}
       <section id="faq" className="faq-section">

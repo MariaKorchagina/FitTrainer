@@ -18,6 +18,8 @@ export const HeroSection = (): JSX.Element => {
           alt="Gym background"
           src="https://c.animaapp.com/mf57cyx5gYVcx1/img/danielle-cerullo-cqfnt66ttzm-unsplash-1.png"
         />
+        {/* Dark overlay for additional dimming */}
+        <div className="hero-dark-overlay" />
       </div>
 
       {/* Decorative Light Effects */}
@@ -51,15 +53,14 @@ export const HeroSection = (): JSX.Element => {
         <div className="hero-content-container">
           <div className="hero-text-container">
             <h1 className="hero-title">
-              TRANSFORM CHALLENGES INTO TRIUMPHS!
+            ОНЛАЙН-ТРЕНИРОВКИ ДЛЯ ДОМА И ЗАЛА С ЛИЛИЕЙ ЯЦКОЙ
             </h1>
             <p className="hero-description">
-              As a passionate personal trainer, I believe in empowering
-              individuals to achieve their fitness goals through
-              personalized coaching and support.
+              Авторские фитнес-программы под разные
+              цели для любого уровня подготовке. Начни свой путь к здоровью и уверенности вместе со мной!
             </p>
             <button className="hero-button" onClick={handleGetStarted}>
-              <span>Get Started</span>
+              <span>Начни сейчас</span>
             </button>
           </div>
         </div>
