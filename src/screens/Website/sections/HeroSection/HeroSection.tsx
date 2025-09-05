@@ -70,6 +70,10 @@ export const HeroSection = (): JSX.Element => {
         className="hero-trainer-image"
         alt="Personal trainer"
         src="/trainer7.png"
+        onError={(e) => {
+          console.log('Image failed to load, trying alternative path');
+          e.currentTarget.src = './trainer7.png';
+        }}
       />
 
 
