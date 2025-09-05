@@ -1,0 +1,44 @@
+/* HomePage.css */
+.home-page {
+  background-color: #1a1a1a;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+.training-programs-section {
+  width: 100%;
+  padding: 5rem 0;
+  background-color: #1a1a1a;
+}
+
+.call-to-action-section {
+  width: 100%;
+  padding: 5rem 0;
+  background-color: #1a1a1a;
+}
+
+.qualifications-section {
+  width: 100%;
+  padding: 5rem 0;
+  background-color: #1a1a1a;
+}
+
+.testimonials-section {
+  width: 100%;
+  padding: 5rem 0;
+  background-color: #1a1a1a;
+}
+
+.about-me-section {
+  width: 100%;
+  padding: 5rem 0;
+  background-color: #1a1a1a;
+}
+
+.faq-section {
+  width: 100%;
+  padding: 5rem 0;
+  background-color: #1a1a1a;
+}

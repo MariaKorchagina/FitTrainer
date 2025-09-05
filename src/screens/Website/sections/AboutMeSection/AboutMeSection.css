@@ -1,0 +1,179 @@
+/* AboutMeSection.css */
+.about-me-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.about-me-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.25rem;
+}
+
+.about-me-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: translateY(-1rem);
+  animation: fade-in 1s ease forwards;
+  opacity: 0;
+}
+
+.about-me-title {
+  font-family: 'Anton', Helvetica, sans-serif;
+  font-weight: normal;
+  color: white;
+  font-size: 2.5rem;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  max-width: 55.5625rem;
+}
+
+@media (min-width: 768px) {
+  .about-me-title {
+    font-size: 3.75rem;
+  }
+}
+
+.about-me-subtitle {
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: normal;
+  color: #909090;
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  line-height: 1.5;
+  max-width: 44.375rem;
+}
+
+@media (min-width: 768px) {
+  .about-me-subtitle {
+    font-size: 2rem;
+  }
+}
+
+.faq-accordion {
+  width: 100%;
+  max-width: 59.9375rem;
+  transform: translateY(-1rem);
+  animation: fade-in 1s ease forwards;
+  animation-delay: 200ms;
+  opacity: 0;
+}
+
+.faq-accordion-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(31, 31, 31, 0.5);
+  border-radius: 0.5rem;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px) brightness(100%);
+  -webkit-backdrop-filter: blur(10px) brightness(100%);
+  transform: translateY(-1rem);
+  animation: fade-in 1s ease forwards;
+  opacity: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.faq-item:hover {
+  background-color: rgba(31, 31, 31, 0.7);
+}
+
+.faq-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.875rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.faq-trigger:hover {
+  text-decoration: none;
+}
+
+.faq-trigger[data-state="open"] > svg {
+  transform: rotate(45deg);
+}
+
+.faq-trigger-group {
+  transition: transform 0.3s ease;
+}
+
+.faq-question {
+  text-align: left;
+}
+
+.faq-question-text {
+  font-family: 'Anton', Helvetica, sans-serif;
+  font-weight: normal;
+  color: white;
+  font-size: 1.25rem;
+  letter-spacing: 0.24px;
+  line-height: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .faq-question-text {
+    font-size: 1.5rem;
+  }
+}
+
+.faq-trigger-group:hover .faq-question-text {
+  color: #ff2332;
+}
+
+.faq-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.faq-trigger-group:hover .faq-icon {
+  color: #ff2332;
+}
+
+.faq-content {
+  padding: 0 1.875rem 1.875rem 1.875rem;
+}
+
+.faq-answer {
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: 500;
+  color: #909090;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.3rem;
+}
+
+/* Animation delays for FAQ items */
+.faq-item:nth-child(1) {
+  animation-delay: 400ms;
+}
+
+.faq-item:nth-child(2) {
+  animation-delay: 500ms;
+}
+
+.faq-item:nth-child(3) {
+  animation-delay: 600ms;
+}
+
+.faq-item:nth-child(4) {
+  animation-delay: 700ms;
+}

@@ -1,0 +1,233 @@
+/* TrainingProgramsSection.css */
+.training-programs-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.training-programs-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.75rem;
+}
+
+.training-programs-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: translateY(-1rem);
+  animation: fade-in 1s ease forwards;
+  animation-delay: 0ms;
+  opacity: 0;
+}
+
+.training-programs-title {
+  font-family: 'Anton', Helvetica, sans-serif;
+  font-weight: normal;
+  color: white;
+  font-size: 2.5rem;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .training-programs-title {
+    font-size: 3.75rem;
+  }
+}
+
+.training-programs-subtitle {
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: normal;
+  color: #909090;
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  line-height: 1.4;
+  max-width: 44.375rem;
+}
+
+@media (min-width: 768px) {
+  .training-programs-subtitle {
+    font-size: 2rem;
+  }
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 75rem;
+  transform: translateY(-1rem);
+  animation: fade-in 1s ease forwards;
+  animation-delay: 200ms;
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .programs-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.9375rem;
+  }
+}
+
+.program-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.875rem;
+  background-color: #1f1f1f;
+  border-radius: 20px;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px) brightness(100%);
+  -webkit-backdrop-filter: blur(10px) brightness(100%);
+  transform: translateY(-1rem);
+  animation: fade-in 1s ease forwards;
+  opacity: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.program-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.17);
+}
+
+.program-card--featured {
+  transform: scale(1.05);
+}
+
+.program-card--personal {
+  height: 354px;
+  gap: 2rem;
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+}
+
+.program-card--personal-diet {
+  height: 410px;
+  gap: 1.875rem;
+  border: 1px solid #ff2332;
+}
+
+.program-card--diet {
+  height: 354px;
+  gap: 2rem;
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+}
+
+.program-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+  text-align: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.program-title {
+  font-weight: normal;
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  line-height: 1.875rem;
+  font-family: 'Outfit', Helvetica, sans-serif;
+  color: white;
+  margin: 0;
+}
+
+.program-price {
+  font-family: 'Anton', Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 5rem;
+  letter-spacing: 0;
+  line-height: 0.1px;
+  margin: 0;
+}
+
+.program-price--white {
+  color: white;
+}
+
+.program-price--red {
+  color: #ff2332;
+}
+
+.program-description {
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: normal;
+  color: #909090;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.3rem;
+  max-width: 15.125rem;
+  margin: 0;
+}
+
+.program-details {
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: normal;
+  color: #909090;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.3rem;
+  max-width: 15.125rem;
+  margin: 0;
+}
+
+.program-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #ff2332;
+  border: none;
+  border-radius: 0.75rem;
+  height: auto;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.program-button:hover {
+  background-color: rgba(255, 35, 50, 0.9);
+  transform: scale(1.05);
+}
+
+.program-button span {
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 0.16px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* Animation delays for program cards */
+.program-card:nth-child(1) {
+  animation-delay: 400ms;
+}
+
+.program-card:nth-child(2) {
+  animation-delay: 600ms;
+}
+
+.program-card:nth-child(3) {
+  animation-delay: 800ms;
+}
