@@ -1,0 +1,94 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "programs": "Programas",
+    "about": "Acerca de",
+    "contact": "Comenzar",
+    "certificates": "Certificados",
+    "testimonials": "Testimonios",
+    "faq": "Preguntas"
+  },
+  "hero": {
+    "title": "Entrenador Personal",
+    "subtitle": "Logra tus objetivos con un entrenador personal",
+    "description": "Entrenamiento individual, nutrición adecuada y apoyo constante para alcanzar tus objetivos de fitness."
+  },
+  "programs": {
+    "title": "Elige cualquier programa de fitness para tu objetivo",
+    "subtitle": "Cada programa es un plan paso a paso que te ayudará a lograr tu objetivo con el apoyo del entrenador.",
+    "viewAll": "Ver todos los programas",
+    "startNow": "Comenzar",
+    "sushkaPro": {
+      "title": "Corte PRO",
+      "price": "580₪ → 405₪",
+      "discount": "(30% descuento)",
+      "description": "Resultados rápidos - la grasa se va, el cuerpo en tono",
+      "details": "Perfecto para quienes necesitan quemar máximo en poco tiempo",
+      "features": [
+        "8 entrenamientos Tabata poderosos (20/10, 40/20)",
+        "Plan de nutrición que activa la quema de grasa",
+        "Actividad en casa + recomendaciones de recuperación",
+        "Apoyo constante: motivación, recordatorios, respuestas a \"¿puedo comer un plátano?\""
+      ]
+    },
+    "strengthTone": {
+      "title": "Fuerza y Tono",
+      "price": "600₪ → 420₪",
+      "discount": "(30% descuento)",
+      "description": "Figura firme sin sobrecarga - a través del pilates",
+      "details": "Fuerza femenina, flexibilidad y ligereza en el cuerpo",
+      "features": [
+        "8 entrenamientos para estabilizadores, respiración, estiramiento",
+        "Fortalecimiento de músculos pélvicos y abdominales sin sobrecarga",
+        "Plan de nutrición para ligereza, tono y anti-estrés",
+        "Apoyo suave pero constante"
+      ]
+    },
+    "steelAbs": {
+      "title": "Abdominales de Acero",
+      "price": "550₪ → 385₪",
+      "discount": "(30% descuento)",
+      "description": "Músculos profundos + técnica perfecta = definición",
+      "details": "Para quienes quieren no solo \"cubos\", sino control y confianza",
+      "features": [
+        "8 entrenamientos para músculos abdominales profundos",
+        "Técnica correcta para cada ejercicio",
+        "Plan de nutrición para definición y vientre plano",
+        "Apoyo constante y control de técnica"
+      ]
+    }
+  },
+  "contact": {
+    "title": "CONTACTO",
+    "subtitle": "¿Listo para comenzar tu viaje de fitness? Hablemos de tus objetivos y creemos un plan personal solo para ti.",
+    "form": {
+      "title": "ENVIAR MENSAJE",
+      "fullName": "Nombre Completo",
+      "email": "Dirección de Email",
+      "phone": "Número de Teléfono",
+      "service": "Interés en Servicio",
+      "selectService": "Selecciona un servicio",
+      "message": "Mensaje",
+      "sendMessage": "Enviar Mensaje",
+      "placeholders": {
+        "fullName": "Ingresa tu nombre completo",
+        "email": "Ingresa tu email",
+        "phone": "Ingresa tu número de teléfono",
+        "message": "Cuéntanos sobre tus objetivos de fitness y qué te gustaría lograr..."
+      }
+    },
+    "info": {
+      "title": "INFORMACIÓN DE CONTACTO",
+      "follow": "Sígueme",
+      "guarantee": "Garantía de Respuesta Rápida",
+      "guaranteeText": "Normalmente respondo a todas las consultas dentro de 24 horas. Para asuntos urgentes, llama directamente para asistencia inmediata."
+    }
+  },
+  "footer": {
+    "title": "¿No sabes por dónde empezar?",
+    "description": "Escríbeme en WhatsApp — te ayudo a elegir un programa y respondo todas tus preguntas.",
+    "whatsapp": "Escribir a WhatsApp",
+    "menu": "Menú",
+    "contact": "Comenzar"
+  }
+}

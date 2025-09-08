@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./HeroSection.css";
 
 export const HeroSection = (): JSX.Element => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleGetStarted = () => {
     navigate('/contact');
@@ -51,14 +53,13 @@ export const HeroSection = (): JSX.Element => {
         <div className="hero-content-container">
           <div className="hero-text-container">
             <h1 className="hero-title">
-            ОНЛАЙН-ТРЕНИРОВКИ ДЛЯ ДОМА И ЗАЛА С ЛИЛИЕЙ ЯЦКОЙ
+            {t("hero.title")}
             </h1>
             <p className="hero-description">
-              Авторские фитнес-программы под разные
-              цели для любого уровня подготовке. Начни свой путь к здоровью и уверенности вместе со мной!
+              {t("hero.description")}
             </p>
             <button className="hero-button" onClick={handleGetStarted}>
-              <span>Начни сейчас</span>
+              <span>{t("navigation.contact")}</span>
             </button>
           </div>
         </div>

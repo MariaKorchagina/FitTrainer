@@ -1,7 +1,10 @@
 import { Button } from "../../../../components/ui/button";
+import { useTranslation } from "react-i18next";
 import "./FooterSection.css";
 
 export const FooterSection = (): JSX.Element => {
+  const { t } = useTranslation();
+  
   const handleGetStarted = () => {
     window.open('https://wa.me/972549961795', '_blank');
   };
@@ -25,16 +28,16 @@ export const FooterSection = (): JSX.Element => {
             {/* Content Section restored */}
             <div className="footer-text">
               <div className="footer-text-inner">
-                <h2 className="footer-title">Не знаете с чего начать?</h2>
+                <h2 className="footer-title">{t("footer.title")}</h2>
 
                 <p className="footer-description">
-                  Напишите мне в WhatsApp — помогу выбрать программу и ответить на все ваши вопросы.
+                  {t("footer.description")}
                 </p>
               </div>
 
               <div className="footer-button-wrap">
                 <Button className="footer-button" onClick={handleGetStarted}>
-                  <span>Написать в WhatsApp</span>
+                  <span>{t("footer.whatsapp")}</span>
                 </Button>
               </div>
             </div>
@@ -59,12 +62,12 @@ export const FooterSection = (): JSX.Element => {
 
           {/* Column 2 (Menu) - middle */}
           <div className="footer-col footer-col--menu">
-            <h3 className="footer-col-title">Меню</h3>
+            <h3 className="footer-col-title">{t("footer.menu")}</h3>
             <nav className="footer-menu">
-              <a className="footer-menu-link" href="/">Главная</a>
-              <a className="footer-menu-link" href="/services">Программы</a>
-              <a className="footer-menu-link" href="/about">Обо мне</a>
-              <a className="footer-menu-link" href="/contact">Начни сейчас</a>
+              <a className="footer-menu-link" href="/">{t("navigation.home")}</a>
+              <a className="footer-menu-link" href="/services">{t("navigation.programs")}</a>
+              <a className="footer-menu-link" href="/about">{t("navigation.about")}</a>
+              <a className="footer-menu-link" href="/contact">{t("footer.contact")}</a>
             </nav>
           </div>
 

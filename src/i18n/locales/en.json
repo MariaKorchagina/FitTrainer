@@ -1,0 +1,94 @@
+{
+  "navigation": {
+    "home": "Home",
+    "programs": "Programs",
+    "about": "About",
+    "contact": "Get Started",
+    "certificates": "Certificates",
+    "testimonials": "Testimonials",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "title": "Personal Trainer",
+    "subtitle": "Achieve your goals with a personal trainer",
+    "description": "Individual training, proper nutrition and constant support to achieve your fitness goals."
+  },
+  "programs": {
+    "title": "Choose any fitness program for your goal",
+    "subtitle": "Each program is a step-by-step plan that will help you achieve your goal with trainer support.",
+    "viewAll": "View all programs",
+    "startNow": "Get Started",
+    "sushkaPro": {
+      "title": "Cut PRO",
+      "price": "580₪ → 405₪",
+      "discount": "(30% off)",
+      "description": "Quick results - fat goes away, body in tone",
+      "details": "Perfect for those who need to burn maximum in a short time",
+      "features": [
+        "8 powerful Tabata workouts (20/10, 40/20)",
+        "Nutrition plan that triggers fat burning",
+        "Home activity + recovery recommendations",
+        "Constant support: motivation, reminders, answers to \"can I have a banana?\""
+      ]
+    },
+    "strengthTone": {
+      "title": "Strength & Tone",
+      "price": "600₪ → 420₪",
+      "discount": "(30% off)",
+      "description": "Firm figure without overload - through pilates",
+      "details": "Feminine strength, flexibility and lightness in the body",
+      "features": [
+        "8 workouts for stabilizers, breathing, stretching",
+        "Strengthening pelvic and abdominal muscles without overload",
+        "Nutrition plan for lightness, tone and anti-stress",
+        "Soft but constant support"
+      ]
+    },
+    "steelAbs": {
+      "title": "Steel Abs",
+      "price": "550₪ → 385₪",
+      "discount": "(30% off)",
+      "description": "Deep muscles + perfect technique = relief",
+      "details": "For those who want not just \"cubes\", but control and confidence",
+      "features": [
+        "8 workouts for deep abdominal muscles",
+        "Correct technique for each exercise",
+        "Nutrition plan for relief and flat stomach",
+        "Constant support and technique control"
+      ]
+    }
+  },
+  "contact": {
+    "title": "CONTACT",
+    "subtitle": "Ready to start your fitness journey? Let's discuss your goals and create a personal plan just for you.",
+    "form": {
+      "title": "SEND A MESSAGE",
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "service": "Service Interest",
+      "selectService": "Select a service",
+      "message": "Message",
+      "sendMessage": "Send Message",
+      "placeholders": {
+        "fullName": "Enter your full name",
+        "email": "Enter your email",
+        "phone": "Enter your phone number",
+        "message": "Tell us about your fitness goals and what you'd like to achieve..."
+      }
+    },
+    "info": {
+      "title": "CONTACT INFORMATION",
+      "follow": "Follow Me",
+      "guarantee": "Quick Response Guarantee",
+      "guaranteeText": "I typically respond to all inquiries within 24 hours. For urgent matters, please call directly for immediate assistance."
+    }
+  },
+  "footer": {
+    "title": "Don't know where to start?",
+    "description": "Write to me on WhatsApp — I'll help you choose a program and answer all your questions.",
+    "whatsapp": "Write to WhatsApp",
+    "menu": "Menu",
+    "contact": "Get Started"
+  }
+}

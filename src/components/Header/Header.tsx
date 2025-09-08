@@ -1,19 +1,22 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
 import "./Header.css";
 
 export const Header = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   const navigationItems = [
-    { label: "Главная", path: "/", active: location.pathname === "/" },
-    { label: "Обо мне", path: "/about", active: location.pathname === "/about" },
-    { label: "Сертификаты", path: "/qualifications", active: location.pathname === "/qualifications" },
-    { label: "Программы", path: "/services", active: location.pathname === "/services" },
-    { label: "Отзывы", path: "/testimonials", active: location.pathname === "/testimonials" },
-    { label: "Вопросы", path: "/faq", active: location.pathname === "/faq" },
+    { label: t("navigation.home"), path: "/", active: location.pathname === "/" },
+    { label: t("navigation.about"), path: "/about", active: location.pathname === "/about" },
+    { label: t("navigation.certificates"), path: "/qualifications", active: location.pathname === "/qualifications" },
+    { label: t("navigation.programs"), path: "/services", active: location.pathname === "/services" },
+    { label: t("navigation.testimonials"), path: "/testimonials", active: location.pathname === "/testimonials" },
+    { label: t("navigation.faq"), path: "/faq", active: location.pathname === "/faq" },
   ];
 
   return (
@@ -22,7 +25,7 @@ export const Header = (): JSX.Element => {
         <div className="header-content">
           {/* Logo */}
           <span className="logo" aria-hidden>
-            Личный тренер
+            {t("hero.title")}
           </span>
           
           {/* Desktop Navigation */}
@@ -41,8 +44,9 @@ export const Header = (): JSX.Element => {
               to="/contact"
               className="nav-button"
             >
-              <span>Начни сейчас</span>
+              <span>{t("navigation.contact")}</span>
             </Link>
+            <LanguageSwitcher />
           </nav>
 
           {/* Mobile Menu Button */}
@@ -70,7 +74,7 @@ export const Header = (): JSX.Element => {
                 </Link>
               ))}
               <Link to="/contact" className="mobile-nav-button">
-                <span>Начни сейчас</span>
+                <span>{t("navigation.contact")}</span>
               </Link>
             </nav>
           </div>

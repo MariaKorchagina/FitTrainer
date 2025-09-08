@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { MapPin, Phone, Mail, Clock, Instagram } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export const ContactPage = (): JSX.Element => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -88,10 +90,10 @@ ${formData.message}
         {/* Hero Section */}
         <div className="text-center mb-20">
           <h1 className="[font-family:'Anton',Helvetica] font-normal text-white text-4xl md:text-6xl tracking-[-0.60px] leading-[1.2] mb-8 translate-y-[-1rem] animate-fade-in opacity-0">
-            СВЯЗАТЬСЯ
+            {t("contact.title")}
           </h1>
           <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-xl md:text-2xl tracking-[0] leading-[1.3] max-w-4xl mx-auto translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
-            Готовы начать путь к форме? Давайте обсудим ваши цели и подберём персональный план именно для вас.
+            {t("contact.subtitle")}
           </p>
         </div>
 

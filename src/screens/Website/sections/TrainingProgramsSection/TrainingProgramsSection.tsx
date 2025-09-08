@@ -3,58 +3,45 @@ import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { CheckCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./TrainingProgramsSection.css";
-
-const trainingPrograms = [
-  {
-    title: "Сушка PRO",
-    price: "580₪ → 405₪\n(скидка 30%)",
-    priceColor: "white",
-    description: "Быстрый результат - жир уходит, тело в тонусе",
-    details: "Идеально для тех, кому нужно сжечь максимум за короткий срок",
-    features: [
-      "8 мощных тренировок Табата (20/10, 40/20)",
-      "План питания, запускающий сжигание жира",
-      "Домашняя активность + рекомендации по восстановлению",
-      "Постоянная поддержка: мотивация, напоминания, ответы на \"можно ли банан?\""
-    ],
-    featured: false,
-    type: "personal",
-  },
-  {
-    title: "Сила и Тонус",
-    price: "600₪ → 420₪\n(скидка 30%)",
-    priceColor: "red",
-    description: "Упругая фигура без перегрузки - через пилатес",
-    details: "Женственная сила, гибкость и легкость в теле",
-    features: [
-      "8 тренировок на стабилизаторы, дыхание, растяжку",
-      "Укрепление мышц таза и живота без перегруза",
-      "План питания на лёгкость, тонус и антистресс",
-      "Мягкая, но постоянная поддержка"
-    ],
-    featured: true,
-    type: "personal-diet",
-  },
-  {
-    title: "Стальной пресс",
-    price: "550₪ → 385₪\n(скидка 30%)",
-    priceColor: "white",
-    description: "Глубокие мышцы + идеальная техника = рельеф",
-    details: "Для тех, кто хочет не просто \"кубики\", а контроль и уверенность",
-    features: [
-      "8 тренировок на глубокие мышцы живота",
-      "Правильная техника каждого упражнения",
-      "План питания для рельефа и плоского живота",
-      "Постоянная поддержка и контроль техники"
-    ],
-    featured: false,
-    type: "diet",
-  },
-];
 
 export const TrainingProgramsSection = (): JSX.Element => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
+  const trainingPrograms = [
+    {
+      title: t("programs.sushkaPro.title"),
+      price: `${t("programs.sushkaPro.price")}\n${t("programs.sushkaPro.discount")}`,
+      priceColor: "white",
+      description: t("programs.sushkaPro.description"),
+      details: t("programs.sushkaPro.details"),
+      features: t("programs.sushkaPro.features", { returnObjects: true }) as string[],
+      featured: false,
+      type: "personal",
+    },
+    {
+      title: t("programs.strengthTone.title"),
+      price: `${t("programs.strengthTone.price")}\n${t("programs.strengthTone.discount")}`,
+      priceColor: "red",
+      description: t("programs.strengthTone.description"),
+      details: t("programs.strengthTone.details"),
+      features: t("programs.strengthTone.features", { returnObjects: true }) as string[],
+      featured: true,
+      type: "personal-diet",
+    },
+    {
+      title: t("programs.steelAbs.title"),
+      price: `${t("programs.steelAbs.price")}\n${t("programs.steelAbs.discount")}`,
+      priceColor: "white",
+      description: t("programs.steelAbs.description"),
+      details: t("programs.steelAbs.details"),
+      features: t("programs.steelAbs.features", { returnObjects: true }) as string[],
+      featured: false,
+      type: "diet",
+    },
+  ];
 
   const handleGetStarted = () => {
     navigate('/contact');
@@ -70,10 +57,10 @@ export const TrainingProgramsSection = (): JSX.Element => {
         {/* Header */}
         <header className="training-programs-header">
           <h2 className="training-programs-title">
-            Выберите любую фитнес-программу под свою цель
+            {t("programs.title")}
           </h2>
           <p className="training-programs-subtitle">
-            Каждая программа — это пошаговый план, который поможет вам достичь своей цели с поддержкой тренера.
+            {t("programs.subtitle")}
           </p>
         </header>
 
@@ -111,11 +98,11 @@ export const TrainingProgramsSection = (): JSX.Element => {
 
                 {/* Features List */}
                 {program.features && (
-                  <div className="program-features">
+                  <div className="program-features text-left">
                     {program.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center gap-3 mb-2">
-                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0" />
-                        <span className="text-[#909090] text-sm">{feature}</span>
+                      <div key={featureIndex} className="flex items-start gap-3 mb-2 text-left">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="text-[#909090] text-sm text-left">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -123,7 +110,7 @@ export const TrainingProgramsSection = (): JSX.Element => {
               </CardContent>
 
               <Button className="program-button" onClick={handleGetStarted}>
-                <span>Начни сейчас</span>
+                <span>{t("programs.startNow")}</span>
               </Button>
 
               <p className="program-details">
@@ -139,7 +126,7 @@ export const TrainingProgramsSection = (): JSX.Element => {
             className="bg-[#ff2332] hover:bg-[#e01e2b] text-white px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105"
             onClick={handleViewAllPrograms}
           >
-            <span className="font-bold text-lg">Посмотреть все программы</span>
+            <span className="font-bold text-lg">{t("programs.viewAll")}</span>
           </Button>
         </div>
       </div>
