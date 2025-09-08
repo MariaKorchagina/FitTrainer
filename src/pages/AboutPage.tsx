@@ -1,9 +1,16 @@
 import React from "react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
+import { useNavigate } from "react-router-dom";
 import "./AboutPage.css";
 
 export const AboutPage = (): JSX.Element => {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate('/contact');
+  };
+
   const achievements = [
     { number: "200+", label: "Довольных клиентов" },
     { number: "10", label: "Лет опыта" },
@@ -53,7 +60,7 @@ export const AboutPage = (): JSX.Element => {
               </p>
             </div>
 
-            <button className="about-button">
+            <button className="about-button" onClick={handleGetStarted}>
               <span>Начни сейчас</span>
             </button>
           </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
+import { CheckCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import "./TrainingProgramsSection.css";
 
@@ -11,6 +12,12 @@ const trainingPrograms = [
     priceColor: "white",
     description: "Быстрый результат - жир уходит, тело в тонусе",
     details: "Идеально для тех, кому нужно сжечь максимум за короткий срок",
+    features: [
+      "8 мощных тренировок Табата (20/10, 40/20)",
+      "План питания, запускающий сжигание жира",
+      "Домашняя активность + рекомендации по восстановлению",
+      "Постоянная поддержка: мотивация, напоминания, ответы на \"можно ли банан?\""
+    ],
     featured: false,
     type: "personal",
   },
@@ -20,6 +27,12 @@ const trainingPrograms = [
     priceColor: "red",
     description: "Упругая фигура без перегрузки - через пилатес",
     details: "Женственная сила, гибкость и легкость в теле",
+    features: [
+      "8 тренировок на стабилизаторы, дыхание, растяжку",
+      "Укрепление мышц таза и живота без перегруза",
+      "План питания на лёгкость, тонус и антистресс",
+      "Мягкая, но постоянная поддержка"
+    ],
     featured: true,
     type: "personal-diet",
   },
@@ -29,6 +42,12 @@ const trainingPrograms = [
     priceColor: "white",
     description: "Глубокие мышцы + идеальная техника = рельеф",
     details: "Для тех, кто хочет не просто \"кубики\", а контроль и уверенность",
+    features: [
+      "8 тренировок на глубокие мышцы живота",
+      "Правильная техника каждого упражнения",
+      "План питания для рельефа и плоского живота",
+      "Постоянная поддержка и контроль техники"
+    ],
     featured: false,
     type: "diet",
   },
@@ -39,6 +58,10 @@ export const TrainingProgramsSection = (): JSX.Element => {
 
   const handleGetStarted = () => {
     navigate('/contact');
+  };
+
+  const handleViewAllPrograms = () => {
+    navigate('/services');
   };
 
   return (
@@ -85,6 +108,18 @@ export const TrainingProgramsSection = (): JSX.Element => {
                 <p className="program-description">
                   {program.description}
                 </p>
+
+                {/* Features List */}
+                {program.features && (
+                  <div className="program-features">
+                    {program.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0" />
+                        <span className="text-[#909090] text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </CardContent>
 
               <Button className="program-button" onClick={handleGetStarted}>
@@ -96,6 +131,16 @@ export const TrainingProgramsSection = (): JSX.Element => {
               </p>
             </Card>
           ))}
+        </div>
+
+        {/* View All Programs Button */}
+        <div className="text-center mt-12">
+          <Button 
+            className="bg-[#ff2332] hover:bg-[#e01e2b] text-white px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105"
+            onClick={handleViewAllPrograms}
+          >
+            <span className="font-bold text-lg">Посмотреть все программы</span>
+          </Button>
         </div>
       </div>
     </div>

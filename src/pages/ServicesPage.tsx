@@ -2,8 +2,14 @@ import React from "react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { CheckCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const ServicesPage = (): JSX.Element => {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate('/contact');
+  };
   const services = [
     {
       title: "Сушка PRO",
@@ -185,7 +191,7 @@ export const ServicesPage = (): JSX.Element => {
                 </div>
               </CardContent>
 
-              <Button className="w-full bg-[#ff2332] hover:bg-[#ff2332]/90 rounded-xl h-12 transition-all duration-300 hover:scale-105">
+              <Button className="w-full bg-[#ff2332] hover:bg-[#ff2332]/90 rounded-xl h-12 transition-all duration-300 hover:scale-105" onClick={handleGetStarted}>
                 <span className="[font-family:'Outfit',Helvetica] font-bold text-white text-base">
                   Начни сейчас
                 </span>

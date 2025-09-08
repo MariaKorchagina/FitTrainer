@@ -42,7 +42,7 @@ export const Header = (): JSX.Element => {
               to="/contact"
               className="nav-button"
             >
-              <span>Связаться</span>
+              <span>Начни сейчас</span>
             </Link>
           </nav>
 
@@ -71,7 +71,7 @@ export const Header = (): JSX.Element => {
                 </Link>
               ))}
               <Link to="/contact" className="mobile-nav-button">
-                <span>Связаться</span>
+                <span>Начни сейчас</span>
               </Link>
             </nav>
           </div>

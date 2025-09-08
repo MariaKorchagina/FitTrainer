@@ -65,13 +65,13 @@ export const FooterSection = (): JSX.Element => {
               <a className="footer-menu-link" href="/">Главная</a>
               <a className="footer-menu-link" href="/services">Программы</a>
               <a className="footer-menu-link" href="/about">Обо мне</a>
-              <a className="footer-menu-link" href="/contact">Связаться</a>
+              <a className="footer-menu-link" href="/contact">Начни сейчас</a>
             </nav>
           </div>
 
           {/* Column 3 (Contact) - right */}
           <div className="footer-col footer-col--contact">
-            <h3 className="footer-col-title">Связаться</h3>
+            <h3 className="footer-col-title">Начни сейчас</h3>
             <p className="footer-col-text footer-col-text--contact">+972 54 996 1795</p>
             <div className="footer-socials">
               <a className="footer-social" href="https://wa.me/972549961795" target="_blank" rel="noreferrer" aria-label="WhatsApp">
