@@ -24,7 +24,7 @@ export const CallToActionSection = (): JSX.Element => {
         {/* Image Section */}
         <div className="cta-image-section">
           <img
-            src="/trainer3.jpg"
+            src="/trainer9.png"
             alt="Лилия - фитнес-тренер"
             className="cta-trainer-image"
           />

@@ -7,8 +7,8 @@ import "./TestimonialsSection.css";
 const testimonialData = [
   {
     quote:
-      "I've never felt stronger! John pushed me to my limits while providing the support I needed to succeed. Highly recommended!",
-    author: "Daniele Debbians",
+      "«Я никогда не чувствовала себя такой сильной! Лилия бережно, но требовательно вела меня, объясняла технику и поддерживала на каждом шаге. Минус 7 кг и совершенно иное ощущение тела — рекомендую!»",
+    author: "",
     images: [
       {
         src: "/beforeafter1.jpeg",
@@ -24,8 +24,8 @@ const testimonialData = [
   },
   {
     quote:
-      "John's personalized approach helped me achieve my fitness goals faster than I ever imagined. The results speak for themselves!",
-    author: "Sarah Johnson",
+      "«Занятия 1 на 1 с Лилией — это то, чего мне не хватало. Никаких сомнений и хаоса: чёткий план, внимание к технике и поддержка на каждом шаге. Минус 6 кг за месяц и ощущение силы и контроля над телом — я в восторге!»",
+    author: "",
     images: [
       {
         src: "/beforeafter3.jpeg",
@@ -41,8 +41,8 @@ const testimonialData = [
   },
   {
     quote:
-      "Professional, knowledgeable, and motivating. John transformed not just my body, but my entire mindset towards fitness.",
-    author: "Mike Rodriguez",
+      "«Через месяц занятий с Лилией ушла тяжесть в теле, появился тонус и энергия. Упражнения понятные, техника под контролем — минус 5 см в талии и уверенность каждый день!»",
+    author: "",
     images: [
       {
         src: "/beforeafter5.jpeg",
@@ -92,24 +92,23 @@ export const TestimonialsSection = (): JSX.Element => {
                   "{currentData.quote}"
                 </blockquote>
 
-                <div className="testimonials-author">
-                  <cite className="testimonials-author-name">
-                    {currentData.author}
-                  </cite>
-                </div>
+                {currentData.author && (
+                  <div className="testimonials-author">
+                    <cite className="testimonials-author-name">
+                      {currentData.author}
+                    </cite>
+                  </div>
+                )}
               </CardContent>
             </Card>
 
             {/* Images container */}
             <div className="testimonials-images-container">
-              {currentData.images.map((image, index) => (
-                <img
-                  key={index}
-                  className="testimonials-image"
-                  alt={image.alt}
-                  src={image.src}
-                />
-              ))}
+              <img
+                className={`testimonials-image ${["/beforeafter3.jpeg", "/beforeafter5.jpeg"].includes(currentData.images?.[0]?.src || "") ? "testimonials-image--contain" : ""}`}
+                alt={currentData.images?.[0]?.alt || "Client testimonial"}
+                src={currentData.images?.[0]?.src || "/beforeafter1.jpeg"}
+              />
             </div>
           </div>
 

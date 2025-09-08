@@ -9,12 +9,12 @@ export const Header = (): JSX.Element => {
   const location = useLocation();
 
   const navigationItems = [
-    { label: "Home", path: "/", active: location.pathname === "/" },
-    { label: "About", path: "/about", active: location.pathname === "/about" },
-    { label: "Qualifications", path: "/qualifications", active: location.pathname === "/qualifications" },
-    { label: "Services", path: "/services", active: location.pathname === "/services" },
-    { label: "Testimonials", path: "/testimonials", active: location.pathname === "/testimonials" },
-    { label: "FAQ", path: "/faq", active: location.pathname === "/faq" },
+    { label: "Главная", path: "/", active: location.pathname === "/" },
+    { label: "Обо мне", path: "/about", active: location.pathname === "/about" },
+    { label: "Сертификаты", path: "/qualifications", active: location.pathname === "/qualifications" },
+    { label: "Услуги", path: "/services", active: location.pathname === "/services" },
+    { label: "Отзывы", path: "/testimonials", active: location.pathname === "/testimonials" },
+    { label: "Вопросы", path: "/faq", active: location.pathname === "/faq" },
   ];
 
   return (
@@ -26,7 +26,7 @@ export const Header = (): JSX.Element => {
             to="/"
             className="logo"
           >
-            Personal Trainer
+            Лилия Яцкая
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,7 +45,7 @@ export const Header = (): JSX.Element => {
               to="/contact"
               className="nav-button"
             >
-              <span>Get Started</span>
+              <span>Связаться</span>
             </Link>
           </nav>
 
@@ -74,7 +74,7 @@ export const Header = (): JSX.Element => {
                 </Link>
               ))}
               <Link to="/contact" className="mobile-nav-button">
-                <span>Get Started</span>
+                <span>Связаться</span>
               </Link>
             </nav>
           </div>
