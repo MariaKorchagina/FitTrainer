@@ -44,7 +44,7 @@ export const AboutPage = (): JSX.Element => {
           {/* Content */}
           <div className="about-text">
             <h2>{t("about.storyTitle")}</h2>
-            <div className="space-y-6">
+            <div className="about-text-justify">
               <p>
                 {t("about.story1")}
               </p>

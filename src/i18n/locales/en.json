@@ -20,7 +20,7 @@
     "startNow": "Get Started",
     "sushkaPro": {
       "title": "Cut PRO",
-      "price": "580₪ → 405₪",
+      "price": "$580 → $405",
       "discount": "(30% off)",
       "description": "Quick results - fat goes away, body in tone",
       "details": "Perfect for those who need to burn maximum in a short time",
@@ -33,7 +33,7 @@
     },
     "strengthTone": {
       "title": "Strength & Tone",
-      "price": "600₪ → 420₪",
+      "price": "$600 → $420",
       "discount": "(30% off)",
       "description": "Firm figure without overload - through pilates",
       "details": "Feminine strength, flexibility and lightness in the body",
@@ -46,7 +46,7 @@
     },
     "steelAbs": {
       "title": "Steel Abs",
-      "price": "550₪ → 385₪",
+      "price": "$550 → $385",
       "discount": "(30% off)",
       "description": "Deep muscles + perfect technique = relief",
       "details": "For those who want not just \"cubes\", but control and confidence",
@@ -205,7 +205,7 @@
     "ctaButton": "Book Free Consultation",
     "sushkaPro": {
       "title": "Cut PRO",
-      "price": "580₪ → 405₪",
+      "price": "$580 → $405",
       "discount": "(30% off)",
       "features": [
         "8 powerful Tabata workouts (20/10, 40/20)",
@@ -216,7 +216,7 @@
     },
     "strengthTone": {
       "title": "Strength & Tone",
-      "price": "600₪ → 420₪",
+      "price": "$600 → $420",
       "discount": "(30% off)",
       "features": [
         "8 workouts for stabilizers, breathing, stretching",
@@ -227,7 +227,7 @@
     },
     "steelAbs": {
       "title": "Steel Abs",
-      "price": "550₪ → 385₪",
+      "price": "$550 → $385",
       "discount": "(30% off)",
       "features": [
         "8 workouts for deep abdominal muscles",
@@ -238,7 +238,7 @@
     },
     "trxBalance": {
       "title": "TRX Balance",
-      "price": "800₪ → 560₪",
+      "price": "$800 → $560",
       "discount": "(30% off)",
       "features": [
         "8 personal TRX workouts",

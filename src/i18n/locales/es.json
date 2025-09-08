@@ -20,7 +20,7 @@
     "startNow": "Comenzar",
     "sushkaPro": {
       "title": "Corte PRO",
-      "price": "580₪ → 405₪",
+      "price": "580€ → 405€",
       "discount": "(30% descuento)",
       "description": "Resultados rápidos - la grasa se va, el cuerpo en tono",
       "details": "Perfecto para quienes necesitan quemar máximo en poco tiempo",
@@ -33,7 +33,7 @@
     },
     "strengthTone": {
       "title": "Fuerza y Tono",
-      "price": "600₪ → 420₪",
+      "price": "600€ → 420€",
       "discount": "(30% descuento)",
       "description": "Figura firme sin sobrecarga - a través del pilates",
       "details": "Fuerza femenina, flexibilidad y ligereza en el cuerpo",
@@ -46,7 +46,7 @@
     },
     "steelAbs": {
       "title": "Abdominales de Acero",
-      "price": "550₪ → 385₪",
+      "price": "550€ → 385€",
       "discount": "(30% descuento)",
       "description": "Músculos profundos + técnica perfecta = definición",
       "details": "Para quienes quieren no solo \"cubos\", sino control y confianza",
@@ -205,7 +205,7 @@
     "ctaButton": "Reservar Consulta Gratuita",
     "sushkaPro": {
       "title": "Corte PRO",
-      "price": "580₪ → 405₪",
+      "price": "580€ → 405€",
       "discount": "(30% descuento)",
       "features": [
         "8 entrenamientos Tabata poderosos (20/10, 40/20)",
@@ -216,7 +216,7 @@
     },
     "strengthTone": {
       "title": "Fuerza y Tono",
-      "price": "600₪ → 420₪",
+      "price": "600€ → 420€",
       "discount": "(30% descuento)",
       "features": [
         "8 entrenamientos para estabilizadores, respiración, estiramiento",
@@ -227,7 +227,7 @@
     },
     "steelAbs": {
       "title": "Abdominales de Acero",
-      "price": "550₪ → 385₪",
+      "price": "550€ → 385€",
       "discount": "(30% descuento)",
       "features": [
         "8 entrenamientos para músculos abdominales profundos",
@@ -238,7 +238,7 @@
     },
     "trxBalance": {
       "title": "Balance TRX",
-      "price": "800₪ → 560₪",
+      "price": "800€ → 560€",
       "discount": "(30% descuento)",
       "features": [
         "8 entrenamientos personales en TRX",

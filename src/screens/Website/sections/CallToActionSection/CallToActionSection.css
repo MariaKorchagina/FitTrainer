@@ -23,7 +23,7 @@
   position: relative;
   width: 100%;
   max-width: 545px;
-  height: 452px;
+  height: 652px;
   opacity: 1;
   transform: translateY(0);
   transition: all 0.3s ease;
@@ -38,6 +38,13 @@
   object-position: center 30%;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
 }
+
+/* Ensure trainer10.png fits completely in the block */
+.cta-trainer-image--contain {
+  object-fit: contain;
+  object-position: center -40%;
+}
+
 
 /* Mobile adjustments: keep full image visible and pull section closer */
 @media (max-width: 768px) {

@@ -168,7 +168,7 @@ export const TestimonialsSection = (): JSX.Element => {
             {/* Images container */}
             <div className="testimonials-images-container">
               <img
-                className={`testimonials-image ${["/beforeafter3.jpeg", "/beforeafter4.jpeg", "/beforeafter5.jpeg", "/beforeafter8.jpeg", "/beforeafter10.jpeg"].includes(currentData.images?.[0]?.src || "") ? "testimonials-image--contain" : ""}`}
+                className={`testimonials-image ${["/beforeafter3.jpeg", "/beforeafter4.jpeg", "/beforeafter5.jpeg", "/beforeafter8.jpeg", "/beforeafter9.jpeg", "/beforeafter10.jpeg"].includes(currentData.images?.[0]?.src || "") ? "testimonials-image--contain" : ""}`}
                 alt={currentData.images?.[0]?.alt || t("testimonials.defaultImageAlt")}
                 src={currentData.images?.[0]?.src || "/beforeafter1.jpeg"}
               />

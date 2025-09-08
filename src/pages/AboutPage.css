@@ -129,6 +129,10 @@
   margin-bottom: 0;
 }
 
+.about-text-justify {
+  text-align: justify;
+}
+
 .about-button {
   margin-top: 2rem;
   height: 60px;
