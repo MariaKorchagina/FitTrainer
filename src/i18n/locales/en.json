@@ -90,5 +90,15 @@
     "whatsapp": "Write to WhatsApp",
     "menu": "Menu",
     "contact": "Get Started"
+  },
+  "cta": {
+    "title": "Hello, my name is Lilia!",
+    "description": "I am a certified fitness trainer, and I'm here so you can finally feel: \"I control my body\".\n\nI conduct training in Pilates, TRX and Tabata directions — both online and in person.\nI work with women who are tired of feeling weakness, heaviness, instability in their body and in life.\n\nMy goal is not just to get you in shape, but to help you regain control, energy and confidence.\nEach program is tailored to your goals, capabilities and lifestyle.",
+    "imageAlt": "Lilia - fitness trainer",
+    "stats": {
+      "clients": "Satisfied clients",
+      "experience": "Years of experience",
+      "sports": "Years in sports"
+    }
   }
 }

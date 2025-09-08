@@ -1,19 +1,22 @@
 import { Card, CardContent } from "../../../../components/ui/card";
+import { useTranslation } from "react-i18next";
 import "./CallToActionSection.css";
 
 export const CallToActionSection = (): JSX.Element => {
+  const { t } = useTranslation();
+  
   const statsData = [
     {
       number: "200+",
-      label: "Довольных клиентов",
+      label: t("cta.stats.clients"),
     },
     {
       number: "10",
-      label: "Лет опыта",
+      label: t("cta.stats.experience"),
     },
     {
       number: "10",
-      label: "Лет в спорте",
+      label: t("cta.stats.sports"),
     },
   ];
 
@@ -24,7 +27,7 @@ export const CallToActionSection = (): JSX.Element => {
         <div className="cta-image-section">
           <img
             src="/trainer9.png"
-            alt="Лилия - фитнес-тренер"
+            alt={t("cta.imageAlt")}
             className="cta-trainer-image"
           />
         </div>
@@ -34,21 +37,11 @@ export const CallToActionSection = (): JSX.Element => {
           {/* Header Content */}
           <div className="cta-header">
             <h2 className="cta-title">
-              Привет, меня зовут Лилия!
+              {t("cta.title")}
             </h2>
 
             <p className="cta-description">
-              Я — сертифицированный фитнес-тренер, и я здесь, чтобы ты наконец почувствовала: "Я управляю своим телом".
-
-              <br />
-              Я провожу тренировки в направлениях Пилатес, TRX и Табата — как онлайн, так и вживую.
-              <br />
-              Работаю с женщинами, которые устали чувствовать слабость, тяжесть, нестабильность в теле и в жизни.
-
-              <br />
-              Моя цель — не просто привести тебя в форму, а помочь вернуть контроль, энергию и уверенность.
-              <br />
-              Каждая программа подбирается под твои цели, возможности и ритм жизни.
+              {t("cta.description")}
             </p>
           </div>
 
