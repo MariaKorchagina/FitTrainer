@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Button } from "../ui/button";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
@@ -28,7 +27,7 @@ export const Header = (): JSX.Element => {
           
           {/* Desktop Navigation */}
           <nav className="desktop-nav">
-            {navigationItems.map((item, index) => (
+            {navigationItems.map((item) => (
               <Link
                 key={item.label}
                 to={item.path}

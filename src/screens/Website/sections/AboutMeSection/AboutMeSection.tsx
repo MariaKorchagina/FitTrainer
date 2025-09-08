@@ -1,4 +1,3 @@
-import React from "react";
 import "./AboutMeSection.css";
 
 export const AboutMeSection = (): JSX.Element => {

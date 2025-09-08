@@ -94,8 +94,6 @@ export const ServicesPage = (): JSX.Element => {
     }
   ];
 
-  // Reuse styles similar to main programs section
-  const priceStyles = `price-main`;
 
   const additionalServices = [
     {

@@ -1,4 +1,3 @@
-import React from "react";
 import { CallToActionSection } from "../screens/Website/sections/CallToActionSection/CallToActionSection";
 import { FAQSection } from "../screens/Website/sections/FAQSection/FAQSection";
 import { HeroSection } from "../screens/Website/sections/HeroSection/HeroSection";

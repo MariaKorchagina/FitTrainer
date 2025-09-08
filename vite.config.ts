@@ -3,7 +3,7 @@ import tailwind from "tailwindcss";
 import { defineConfig } from "vite";
 
 // https://vite.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig(() => ({
   plugins: [react()],
   publicDir: "./public",
   base: "./",

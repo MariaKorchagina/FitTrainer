@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -131,8 +131,6 @@ export const TestimonialsSection = (): JSX.Element => {
             {/* Navigation arrows */}
             <div className="testimonials-arrows">
               <Button
-                variant="ghost"
-                size="icon"
                 className="testimonials-arrow-button"
                 onClick={prevTestimonial}
                 aria-label="Previous testimonial"
@@ -141,8 +139,6 @@ export const TestimonialsSection = (): JSX.Element => {
               </Button>
 
               <Button
-                variant="ghost"
-                size="icon"
                 className="testimonials-arrow-button"
                 onClick={nextTestimonial}
                 aria-label="Next testimonial"
