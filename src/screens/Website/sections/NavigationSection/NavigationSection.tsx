@@ -44,7 +44,7 @@ export const NavigationSection = (): JSX.Element => {
 
             <Button className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:800ms] inline-flex items-center justify-center gap-2.5 px-6 py-3 bg-[#ff2332] hover:bg-[#ff2332]/90 rounded-xl h-auto transition-all duration-300 hover:scale-105">
               <span className="[font-family:'Outfit',Helvetica] font-bold text-white text-base tracking-[0.16px] leading-6 whitespace-nowrap">
-                Get Started
+                Начни сейчас
               </span>
             </Button>
           </div>
@@ -79,7 +79,7 @@ export const NavigationSection = (): JSX.Element => {
               ))}
               <Button className="mt-4 w-full bg-[#ff2332] hover:bg-[#ff2332]/90 rounded-xl">
                 <span className="[font-family:'Outfit',Helvetica] font-bold text-white text-base">
-                  Get Started
+                  Начни сейчас
                 </span>
               </Button>
             </div>

@@ -12,7 +12,7 @@ export const Header = (): JSX.Element => {
     { label: "Главная", path: "/", active: location.pathname === "/" },
     { label: "Обо мне", path: "/about", active: location.pathname === "/about" },
     { label: "Сертификаты", path: "/qualifications", active: location.pathname === "/qualifications" },
-    { label: "Услуги", path: "/services", active: location.pathname === "/services" },
+    { label: "Программы", path: "/services", active: location.pathname === "/services" },
     { label: "Отзывы", path: "/testimonials", active: location.pathname === "/testimonials" },
     { label: "Вопросы", path: "/faq", active: location.pathname === "/faq" },
   ];
@@ -22,13 +22,10 @@ export const Header = (): JSX.Element => {
       <div className="header-container">
         <div className="header-content">
           {/* Logo */}
-          <Link 
-            to="/"
-            className="logo"
-          >
-            Лилия Яцкая
-          </Link>
-
+          <span className="logo" aria-hidden>
+            Личный тренер
+          </span>
+          
           {/* Desktop Navigation */}
           <nav className="desktop-nav">
             {navigationItems.map((item, index) => (

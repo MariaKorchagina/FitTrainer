@@ -12,15 +12,15 @@
 }
 
 .header-container {
-  max-width: 80rem;
+  max-width: 100%;
   margin: 0 auto;
   padding: 1.5rem 1rem;
 }
 
 @media (min-width: 1024px) {
   .header-container {
-    padding-left: 11.25rem;
-    padding-right: 11.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -47,7 +47,7 @@
 }
 
 .logo:hover {
-  color: #ff2332;
+  color: white; /* no hover effect */
 }
 
 .desktop-nav {

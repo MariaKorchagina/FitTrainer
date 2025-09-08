@@ -8,7 +8,7 @@ import { ServicesPage } from "./pages/ServicesPage";
 import { ContactPage } from "./pages/ContactPage";
 import { QualificationsSection } from "./screens/Website/sections/QualificationsSection/QualificationsSection";
 import { TestimonialsSection } from "./screens/Website/sections/TestimonialsSection/TestimonialsSection";
-import { AboutMeSection } from "./screens/Website/sections/AboutMeSection/AboutMeSection";
+import { FAQSection } from "./screens/Website/sections/FAQSection/FAQSection";
 
 export const App = (): JSX.Element => {
   return (
@@ -47,7 +47,7 @@ export const App = (): JSX.Element => {
               element={
                 <div className="bg-[#1a1a1a] w-full min-h-screen pt-24">
                   <section className="w-full py-20">
-                    <AboutMeSection />
+                    <FAQSection />
                   </section>
                 </div>
               } 

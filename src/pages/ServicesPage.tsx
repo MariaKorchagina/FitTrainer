@@ -6,49 +6,90 @@ import { CheckCircle } from "lucide-react";
 export const ServicesPage = (): JSX.Element => {
   const services = [
     {
-      title: "Personal Training",
-      price: "200$",
-      period: "Monthly",
-      description: "One-on-one personalized training sessions",
+      title: "Сушка PRO",
+      price: "580₪ → 405₪\n(скидка 30%)",
+      period: "",
+      description: "",
       features: [
-        "Customized workout plans",
-        "Form correction and technique",
-        "Progress tracking",
-        "Flexible scheduling",
-        "Equipment guidance"
+        "8 мощных тренировок Табата (20/10, 40/20)",
+        "План питания, запускающий сжигание жира",
+        "Домашняя активность + рекомендации по восстановлению",
+        "Постоянная поддержка: мотивация, напоминания, ответы на \"можно ли банан?\""
       ],
       popular: false
     },
     {
-      title: "Personal Training + Nutrition",
-      price: "300$",
-      period: "Monthly",
-      description: "Complete fitness and nutrition package",
+      title: "Сила и Тонус",
+      price: "600₪ → 420₪\n(скидка 30%)",
+      period: "",
+      description: "",
       features: [
-        "Everything in Personal Training",
-        "Custom meal plans",
-        "Nutritional guidance",
-        "Supplement recommendations",
-        "Weekly check-ins",
-        "Recipe suggestions"
+        "8 тренировок на стабилизаторы, дыхание, растяжку",
+        "Укрепление мышц таза и живота без перегруза",
+        "План питания на лёгкость, тонус и антистресс",
+        "Мягкая, но постоянная поддержка"
       ],
       popular: true
     },
     {
-      title: "Nutrition Coaching",
-      price: "150$",
-      period: "Monthly",
-      description: "Dedicated nutrition and diet planning",
+      title: "Стальной пресс",
+      price: "550₪ → 385₪\n(скидка 30%)",
+      period: "",
+      description: "",
       features: [
-        "Personalized meal plans",
-        "Macro calculations",
-        "Food tracking support",
-        "Healthy recipe ideas",
-        "Lifestyle integration"
+        "8 тренировок на глубокие мышцы живота",
+        "Правильная техника каждого упражнения",
+        "План питания для рельефа и плоского живота",
+        "Постоянная поддержка и контроль техники"
+      ],
+      popular: false
+    },
+    {
+      title: "TRX Баланс",
+      price: "800₪ → 560₪\n(скидка 30%)",
+      period: "",
+      description: "",
+      features: [
+        "8 персональных тренировок на TRX",
+        "Упор на глубокие мышцы и баланс",
+        "Растяжка, мобилизация, работа с дыханием",
+        "Поддержка и корректировка техники",
+        "Питание + восстановление"
+      ],
+      popular: false
+    },
+    {
+      title: "Восстановление после родов",
+      price: "350₪ / 85€\nв месяц",
+      period: "",
+      description: "",
+      features: [
+        "Индивидуальные онлайн-тренировки",
+        "• 8 занятий в месяц (2 в неделю)",
+        "• Гибкий график, полная поддержка",
+        "• Без чужих взглядов — только ты и тренер"
+      ],
+      popular: false
+    },
+    {
+      title: "Питание под ключ",
+      price: "40₪ / 107€\nконсультация",
+      period: "",
+      description: "",
+      features: [
+        "Разбор твоего реального питания за 3 или 7 дней",
+        "Анализ КБЖУ (калорий, белков, жиров, углеводов)",
+        "Где ты переедаешь, даже \"на диете\"",
+        "Что на самом деле мешает — не бутерброд, а дефицит белка или сна",
+        "Советы, что и как поменять — без жестких ограничений",
+        "Вода, кофе, стрессы, срывы — всё учтём"
       ],
       popular: false
     }
   ];
+
+  // Reuse styles similar to main programs section
+  const priceStyles = `price-main`;
 
   const additionalServices = [
     {
@@ -74,10 +115,10 @@ export const ServicesPage = (): JSX.Element => {
         {/* Hero Section */}
         <div className="text-center mb-20">
           <h1 className="[font-family:'Anton',Helvetica] font-normal text-white text-4xl md:text-6xl tracking-[-0.60px] leading-[1.2] mb-8 translate-y-[-1rem] animate-fade-in opacity-0">
-            TRAINING SERVICES
+            ПРОГРАММЫ ТРЕНИРОВОК
           </h1>
           <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-xl md:text-2xl tracking-[0] leading-[1.3] max-w-4xl mx-auto translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
-            Choose the perfect program to achieve your fitness goals with personalized coaching and support.
+            Выберите идеальную программу, чтобы достичь своих целей с персональным сопровождением и поддержкой.
           </p>
         </div>
 
@@ -108,17 +149,28 @@ export const ServicesPage = (): JSX.Element => {
                   <h3 className="[font-family:'Outfit',Helvetica] font-bold text-white text-xl mb-2">
                     {service.title}
                   </h3>
-                  <div className={`[font-family:'Anton',Helvetica] font-normal text-6xl tracking-[0] leading-[0.1px] mb-2 ${
-                    service.popular ? 'text-[#ff2332]' : 'text-white'
-                  }`}>
-                    {service.price}
+                  <div className="mb-2">
+                    {service.price.includes("\n") ? (
+                      <div className={`program-price ${service.popular ? 'text-[#ff2332]' : 'text-white'}`}>
+                        <div className="price-main">{service.price.split("\n")[0]}</div>
+                        <div className="price-discount">{service.price.split("\n")[1]}</div>
+                      </div>
+                    ) : (
+                      <div className={`[font-family:'Anton',Helvetica] font-normal text-6xl tracking-[0] leading-[1] ${
+                        service.popular ? 'text-[#ff2332]' : 'text-white'
+                      }`}>{service.price}</div>
+                    )}
                   </div>
-                  <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-base">
-                    {service.period}
-                  </p>
-                  <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mt-2">
-                    {service.description}
-                  </p>
+                  {service.period && (
+                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-base">
+                      {service.period}
+                    </p>
+                  )}
+                  {service.description && (
+                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mt-2">
+                      {service.description}
+                    </p>
+                  )}
                 </div>
 
                 <div className="space-y-3 mb-8">
@@ -135,7 +187,7 @@ export const ServicesPage = (): JSX.Element => {
 
               <Button className="w-full bg-[#ff2332] hover:bg-[#ff2332]/90 rounded-xl h-12 transition-all duration-300 hover:scale-105">
                 <span className="[font-family:'Outfit',Helvetica] font-bold text-white text-base">
-                  Get Started
+                  Начни сейчас
                 </span>
               </Button>
             </Card>

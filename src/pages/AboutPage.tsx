@@ -5,10 +5,10 @@ import "./AboutPage.css";
 
 export const AboutPage = (): JSX.Element => {
   const achievements = [
-    { number: "2000+", label: "Satisfied Clients" },
-    { number: "10", label: "Years of Experience" },
-    { number: "15", label: "Years in Sport" },
-    { number: "50+", label: "Certifications" },
+    { number: "200+", label: "Довольных клиентов" },
+    { number: "10", label: "Лет опыта" },
+    { number: "10", label: "Лет в спорте" },
+    { number: "50+", label: "Сертификатов" },
   ];
 
   return (
@@ -17,10 +17,11 @@ export const AboutPage = (): JSX.Element => {
         {/* Hero Section */}
         <div className="about-hero">
           <h1 className="about-title">
-            ABOUT JOHN DOE
+            ОБО МНЕ
           </h1>
           <p className="about-subtitle">
-            Passionate fitness professional dedicated to transforming lives through personalized training and nutrition guidance.
+            Я — сертифицированный фитнес‑тренер. Помогаю женщинам вернуть силу, лёгкость и уверенность
+            через персональные тренировки и понятные программы, которые вписываются в реальную жизнь.
           </p>
         </div>
 
@@ -29,28 +30,31 @@ export const AboutPage = (): JSX.Element => {
           {/* Image */}
           <div className="about-image">
             <img
-              alt="John Doe - Personal Trainer"
-              src="https://c.animaapp.com/mf57cyx5gYVcx1/img/handsome-strong-man-exercising-gym-1.png"
+              alt="Personal Trainer"
+              src="/trainer7.png"
             />
           </div>
 
           {/* Content */}
           <div className="about-text">
-            <h2>MY STORY</h2>
+            <h2>МОЯ ИСТОРИЯ</h2>
             <div className="space-y-6">
               <p>
-                My fitness journey began over 15 years ago when I discovered the transformative power of exercise and proper nutrition. What started as a personal quest for health became a lifelong passion for helping others achieve their goals.
+                Мой путь в фитнесе начался более 10 лет назад. Я прошла через собственные трансформации и убедилась,
+                как регулярные тренировки и адекватное питание меняют тело, самочувствие и настроение.
               </p>
               <p>
-                With over 10 years of professional experience, I've had the privilege of working with clients from all walks of life - from beginners taking their first steps into fitness to athletes pushing their limits.
+                Сегодня я работаю с женщинами разного уровня подготовки: от новичков до тех, кто возвращается к спорту
+                после паузы. Я бережно веду, объясняю технику и даю только то, что действительно работает.
               </p>
               <p>
-                My approach combines evidence-based training methods with personalized nutrition strategies, ensuring each client receives a program tailored to their unique needs, goals, and lifestyle.
+                В основе моих программ — персональный подход, грамотная прогрессия нагрузок и внимание к деталям.
+                Каждая тренировка адаптируется под ваши цели, ресурсы и ритм жизни.
               </p>
             </div>
 
             <button className="about-button">
-              <span>Start Your Journey</span>
+              <span>Начни сейчас</span>
             </button>
           </div>
         </div>
@@ -76,11 +80,11 @@ export const AboutPage = (): JSX.Element => {
 
         {/* Philosophy */}
         <div className="philosophy">
-          <h2>MY PHILOSOPHY</h2>
+          <h2>МОЯ ФИЛОСОФИЯ</h2>
           <p>
-            "Fitness is not about being better than someone else. It's about being better than you used to be. 
-            Every small step forward is a victory worth celebrating, and I'm here to guide you through every rep, 
-            every meal, and every milestone on your journey to becoming the best version of yourself."
+            «Фитнес — это не про сравнение с другими. Это про ежедневные маленькие шаги к себе сильной и здоровой.
+            Моя задача — быть рядом: следить за техникой, давать понятные задания и поддерживать на каждом этапе,
+            чтобы результат был не случайным, а устойчивым».
           </p>
         </div>
       </div>

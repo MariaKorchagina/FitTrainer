@@ -42,12 +42,13 @@
 /* Mobile adjustments: keep full image visible and pull section closer */
 @media (max-width: 768px) {
   .cta-trainer-image {
-    object-fit: contain;
-    object-position: center;
+    object-fit: contain; /* prevent side cropping */
+    object-position: center; /* keep centered horizontally */
+    transform: translateY(-8%); /* nudge upward without cropping sides */
   }
 
   .cta-container {
-    margin-top: -1rem;
+    margin-top: -4.5rem;
   }
 }
 
