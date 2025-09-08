@@ -94,8 +94,10 @@
   font-weight: normal;
   color: #909090;
   font-size: 1.25rem;
-  letter-spacing: 0;
+  letter-spacing: 1px;
   line-height: 1.3;
+  text-align: justify;
+  white-space: pre-line;
 }
 
 @media (min-width: 768px) {

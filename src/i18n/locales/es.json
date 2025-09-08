@@ -70,6 +70,30 @@
       "selectService": "Selecciona un servicio",
       "message": "Mensaje",
       "sendMessage": "Enviar Mensaje",
+      "fullNamePlaceholder": "Ingresa tu nombre completo",
+      "emailAddress": "Dirección de Email",
+      "emailPlaceholder": "Ingresa tu email",
+      "phoneNumber": "Número de Teléfono",
+      "phonePlaceholder": "Ingresa tu número de teléfono",
+      "interestedService": "Interés en Servicio",
+      "messagePlaceholder": "Cuéntanos sobre tus objetivos de fitness y qué te gustaría lograr...",
+      "submitButton": "Enviar Mensaje",
+      "subject": "Nuevo mensaje de {{name}}",
+      "name": "Nombre",
+      "email": "Email",
+      "phone": "Teléfono",
+      "service": "Servicio",
+      "notProvided": "No proporcionado",
+      "notSelected": "No seleccionado",
+      "successMessage": "¡Gracias por tu mensaje! Se abrirá tu cliente de correo para enviar.",
+      "errorMessage": "Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+      "services": {
+        "personalTraining": "Entrenamiento Personal",
+        "trainingNutrition": "Entrenamiento + Nutrición",
+        "nutritionOnly": "Consulta de Nutrición",
+        "groupTraining": "Entrenamiento Grupal",
+        "onlineCoaching": "Coaching Online"
+      },
       "placeholders": {
         "fullName": "Ingresa tu nombre completo",
         "email": "Ingresa tu email",
@@ -79,9 +103,32 @@
     },
     "info": {
       "title": "INFORMACIÓN DE CONTACTO",
+      "location": {
+        "title": "Ubicación",
+        "details": ["Israel", "Entrenamiento Online"]
+      },
+      "phone": {
+        "title": "Teléfono",
+        "details": ["+972 54 996 1795"]
+      },
+      "email": {
+        "title": "Email",
+        "details": ["kobysheva_maria@mail.ru"]
+      },
+      "hours": {
+        "title": "Horarios",
+        "details": ["Lun-Vie: 6:00 - 22:00", "Sáb-Dom: 8:00 - 20:00"]
+      },
       "follow": "Sígueme",
       "guarantee": "Garantía de Respuesta Rápida",
       "guaranteeText": "Normalmente respondo a todas las consultas dentro de 24 horas. Para asuntos urgentes, llama directamente para asistencia inmediata."
+    },
+    "social": {
+      "title": "Sígueme"
+    },
+    "quickResponse": {
+      "title": "Garantía de Respuesta Rápida",
+      "description": "Normalmente respondo a todas las consultas dentro de 24 horas. Para asuntos urgentes, llama directamente para asistencia inmediata."
     }
   },
   "footer": {
@@ -89,16 +136,175 @@
     "description": "Escríbeme en WhatsApp — te ayudo a elegir un programa y respondo todas tus preguntas.",
     "whatsapp": "Escribir a WhatsApp",
     "menu": "Menú",
-    "contact": "Comenzar"
+    "contact": "Comenzar",
+    "brandTitle": "Entrenadora Personal Lilia Yatskaya",
+    "brandDescription": "Ayudo a las mujeres a recuperar la sensación de fuerza y ligereza en su cuerpo a través de entrenamientos personales y programas reflexivos: sin estrés innecesario, con atención a la técnica y los resultados."
   },
   "cta": {
     "title": "¡Hola, mi nombre es Lilia!",
-    "description": "Soy entrenadora de fitness certificada, y estoy aquí para que finalmente sientas: \"Controlo mi cuerpo\".\n\nRealizo entrenamientos en direcciones de Pilates, TRX y Tabata — tanto en línea como en persona.\nTrabajo con mujeres que están cansadas de sentir debilidad, pesadez, inestabilidad en su cuerpo y en la vida.\n\nMi objetivo no es solo ponerte en forma, sino ayudarte a recuperar el control, la energía y la confianza.\nCada programa está adaptado a tus objetivos, capacidades y estilo de vida.",
+    "description": "Soy entrenadora de fitness certificada, y estoy aquí para que finalmente sientas: \"Controlo mi cuerpo\".\n\nRealizo entrenamientos en direcciones de Pilates, TRX y Tabata — tanto en línea como en persona. Trabajo con mujeres que están cansadas de sentir debilidad, pesadez, inestabilidad en su cuerpo y en la vida. Mi objetivo no es solo ponerte en forma, sino ayudarte a recuperar el control, la energía y la confianza. Cada programa está adaptado a tus objetivos, capacidades y estilo de vida.",
     "imageAlt": "Lilia - entrenadora de fitness",
     "stats": {
       "clients": "Clientes satisfechos",
       "experience": "Años de experiencia",
       "sports": "Años en deportes"
+    }
+  },
+  "qualifications": {
+    "title": "Certificados",
+    "description": "Constantemente aprendo y me perfecciono para darte solo los mejores y más modernos métodos.",
+    "certificateAlt": "Certificado {{id}}"
+  },
+  "testimonials": {
+    "title": "Testimonios de Clientes",
+    "quote1": "\"¡Nunca me sentí tan fuerte! Lilia me guió con cuidado pero exigencia, explicó la técnica y me apoyó en cada paso. Menos 7 kg y una sensación completamente diferente del cuerpo — ¡lo recomiendo!\"",
+    "quote2": "\"Las sesiones uno a uno con Lilia eran exactamente lo que me faltaba. Sin dudas ni caos: plan claro, atención a la técnica y apoyo en cada paso. Menos 6 kg en un mes y sensación de fuerza y control sobre mi cuerpo — ¡estoy encantada!\"",
+    "quote3": "\"Después de un mes de entrenamiento con Lilia, se fue la pesadez en mi cuerpo, aparecieron el tono y la energía. Los ejercicios son claros, la técnica está bajo control — menos 5 cm en la cintura y confianza todos los días!\"",
+    "quote4": "\"En 2 meses con Lilia no solo perdí 8 kg, sino que cambié completamente mi actitud hacia el deporte. Ahora el entrenamiento no es tortura, sino placer. Mi cuerpo se volvió tonificado y mi estado de ánimo — ¡excelente!\"",
+    "quote5": "\"Lilia me ayudó a recuperarme después del parto. En 3 meses volví a mi forma anterior e incluso me puse mejor. Los ejercicios están adaptados a mi condición, el apoyo es constante. ¡Lo recomiendo mucho!\"",
+    "quote6": "\"¡El resultado superó todas las expectativas! En un mes con Lilia perdí 5 kg y gané una confianza increíble en mí misma. ¡Cada entrenamiento es un paso hacia una mejor versión de mí!\"",
+    "quote7": "\"¡Lilia es una verdadera profesional! Me ayudó no solo a perder peso, sino también a enamorarme del deporte. ¡Ahora me siento energética y feliz todos los días!\"",
+    "quote8": "\"Gracias a Lilia, me di cuenta de que el deporte puede ser agradable. En 2 meses cambié no solo externamente, sino también internamente. ¡Muchas gracias por tu apoyo!\"",
+    "quote9": "\"¡Lilia me ayudó a creer en mí misma! Resultado en un mes — menos 6 kg y una actitud completamente nueva hacia mi cuerpo. ¡Lo recomiendo a todos los que quieren cambiar su vida!\"",
+    "quote10": "\"En 3 meses con Lilia me convertí en una persona diferente. No solo perdí 7 kg, sino que también gané fuerza interior y confianza. ¡Esta es la mejor inversión en mí misma!\"",
+    "imageAlt1": "Antes/Después 1",
+    "imageAlt2": "Antes/Después 2",
+    "imageAlt3": "Antes/Después 3",
+    "imageAlt4": "Antes/Después 4",
+    "imageAlt5": "Antes/Después 5",
+    "imageAlt6": "Antes/Después 6",
+    "imageAlt7": "Antes/Después 7",
+    "imageAlt8": "Antes/Después 8",
+    "imageAlt9": "Antes/Después 9",
+    "imageAlt10": "Antes/Después 10",
+    "defaultImageAlt": "Testimonio de cliente",
+    "goToTestimonial": "Ir al testimonio {{number}}",
+    "previousTestimonial": "Testimonio anterior",
+    "nextTestimonial": "Siguiente testimonio",
+    "decorativeAlt": "Elemento decorativo"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "question1": "¿Qué tareas se pueden resolver conmigo?",
+    "answer1": "Perder peso\nObtener definición y desarrollar fuerza\nFortalecer el sistema cardiovascular\nAjustar la nutrición y el estilo de vida para siempre\nRecuperarse después del parto: perder peso, adquirir ligereza y flexibilidad en el cuerpo",
+    "question2": "¿Para quién son adecuados mis programas?",
+    "answer2": "Si no tienes tiempo para entrenamientos largos y viajes constantes al gimnasio\nSi no puedes reunir fuerzas y empezar a ejercitarte\nSi antes empezaste pero abandonaste por falta de motivación\nSi sientes fatiga, ansiedad y estrés y no sabes cómo cambiarlo\nSi quieres ejercitarte pero no sabes por dónde empezar y cómo entrenar correctamente\nSi necesitas apoyo y un plan simple que realmente se ajuste a tu vida\nSi quieres ejercitarte en casa o en el gimnasio, pero necesitas un enfoque flexible y comprensible",
+    "question3": "¿Cómo van los entrenamientos?",
+    "answer3": "Todos los entrenamientos son en línea, pero esto no es una grabación o sesión grupal.\nEste es un formato donde solo tú y el entrenador.\n1 a 1. Sin distracciones. Solo tu resultado.\n\nEsto prácticamente no existe en el mercado.\nEstoy completamente contigo en cada sesión:\n✅ Veo todo\n✅ Controlo la técnica\n✅ Selecciono ejercicios específicamente para ti\n✅ Sé cuándo puedes hacer más — y te guío suavemente hacia allí\n\nEstudié mucho y lo pasé yo misma — sé por mi propio ejemplo cómo restaurar la forma rápidamente y efectivamente.\nY lo más importante — cómo amar el deporte sin estrés, sin tensión, todos los días.",
+    "question4": "¿Cuál es el equipo mínimo?",
+    "answer4": "Todas las clases se pueden realizar en casa, sin equipo complejo. El curso proporciona una lista y recomendaciones para compra o alternativas caseras gratuitas."
+  },
+  "services": {
+    "title": "PROGRAMAS DE ENTRENAMIENTO",
+    "subtitle": "Elige el programa perfecto para alcanzar tus objetivos con apoyo personal y orientación.",
+    "mostPopular": "Más Popular",
+    "startNow": "Comenzar",
+    "additionalTitle": "SERVICIOS ADICIONALES",
+    "ctaTitle": "¿LISTO PARA COMENZAR TU TRANSFORMACIÓN?",
+    "ctaDescription": "Reserva una consulta gratuita para discutir tus objetivos y encontrar el programa perfecto para tu viaje fitness.",
+    "ctaButton": "Reservar Consulta Gratuita",
+    "sushkaPro": {
+      "title": "Corte PRO",
+      "price": "580₪ → 405₪",
+      "discount": "(30% descuento)",
+      "features": [
+        "8 entrenamientos Tabata poderosos (20/10, 40/20)",
+        "Plan de nutrición que activa la quema de grasa",
+        "Actividad en casa + recomendaciones de recuperación",
+        "Apoyo constante: motivación, recordatorios, respuestas a \"¿puedo comer un plátano?\""
+      ]
+    },
+    "strengthTone": {
+      "title": "Fuerza y Tono",
+      "price": "600₪ → 420₪",
+      "discount": "(30% descuento)",
+      "features": [
+        "8 entrenamientos para estabilizadores, respiración, estiramiento",
+        "Fortalecimiento de músculos pélvicos y abdominales sin sobrecarga",
+        "Plan de nutrición para ligereza, tono y anti-estrés",
+        "Apoyo suave pero constante"
+      ]
+    },
+    "steelAbs": {
+      "title": "Abdominales de Acero",
+      "price": "550₪ → 385₪",
+      "discount": "(30% descuento)",
+      "features": [
+        "8 entrenamientos para músculos abdominales profundos",
+        "Técnica correcta para cada ejercicio",
+        "Plan de nutrición para definición y vientre plano",
+        "Apoyo constante y control de técnica"
+      ]
+    },
+    "trxBalance": {
+      "title": "Balance TRX",
+      "price": "800₪ → 560₪",
+      "discount": "(30% descuento)",
+      "features": [
+        "8 entrenamientos personales en TRX",
+        "Enfoque en músculos profundos y equilibrio",
+        "Estiramiento, movilización, trabajo respiratorio",
+        "Apoyo y corrección de técnica",
+        "Nutrición + recuperación"
+      ]
+    },
+    "postpartumRecovery": {
+      "title": "Recuperación Postparto",
+      "price": "350₪ / 85€",
+      "period": "por mes",
+      "features": [
+        "8 sesiones por mes (2 por semana)",
+        "Horario flexible, apoyo completo",
+        "Sin miradas indiscretas — solo tú y el entrenador"
+      ]
+    },
+    "nutritionConsultation": {
+      "title": "Consulta de Nutrición",
+      "price": "40₪ / 107€",
+      "type": "consulta",
+      "features": [
+        "Análisis de tu nutrición real por 3 o 7 días",
+        "Análisis de macronutrientes (calorías, proteínas, grasas, carbohidratos)",
+        "Dónde comes en exceso, incluso \"en dieta\"",
+        "Lo que realmente interfiere — no un sándwich, sino deficiencia de proteína o sueño",
+        "Consejos sobre qué y cómo cambiar — sin restricciones estrictas",
+        "Agua, café, estrés, deslices — todo lo tomaremos en cuenta"
+      ]
+    },
+    "additional": {
+      "groupTraining": {
+        "title": "Entrenamiento Grupal",
+        "description": "Sesiones de grupo pequeño para amigos o familia",
+        "price": "Desde $50/persona"
+      },
+      "onlineCoaching": {
+        "title": "Coaching Online",
+        "description": "Entrenamiento remoto y orientación nutricional",
+        "price": "Desde $100/mes"
+      },
+      "fitnessAssessment": {
+        "title": "Evaluación Fitness",
+        "description": "Evaluación integral de fitness y establecimiento de objetivos",
+        "price": "$75/sesión"
+      }
+    }
+  },
+  "about": {
+    "title": "SOBRE MÍ",
+    "subtitle": "Soy una entrenadora de fitness certificada. Ayudo a las mujeres a recuperar fuerza, ligereza y confianza a través de entrenamientos personales y programas claros que se adaptan a la vida real.",
+    "imageAlt": "Entrenadora Personal",
+    "storyTitle": "MI HISTORIA",
+    "story1": "Mi viaje en el fitness comenzó hace más de 10 años. Pasé por mis propias transformaciones y me convencí de cómo el entrenamiento regular y la nutrición adecuada cambian el cuerpo, el bienestar y el estado de ánimo.",
+    "story2": "Hoy trabajo con mujeres de diferentes niveles de condición física: desde principiantes hasta aquellas que regresan al deporte después de una pausa. Guío cuidadosamente, explico la técnica y doy solo lo que realmente funciona.",
+    "story3": "La base de mis programas es un enfoque personal, progresión competente de cargas y atención a los detalles. Cada entrenamiento se adapta a tus objetivos, recursos y ritmo de vida.",
+    "startNow": "Comenzar",
+    "philosophyTitle": "MI FILOSOFÍA",
+    "philosophy": "\"El fitness no se trata de compararse con otros. Se trata de pequeños pasos diarios hacia un yo fuerte y saludable. Mi tarea es estar cerca: monitorear la técnica, dar tareas claras y apoyar en cada etapa, para que el resultado no sea accidental, sino sostenible.\"",
+    "achievements": {
+      "clients": "Clientes Satisfechos",
+      "experience": "Años de Experiencia",
+      "sport": "Años en Deportes",
+      "certificates": "Certificados"
     }
   }
 }

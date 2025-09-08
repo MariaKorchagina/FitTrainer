@@ -27,14 +27,14 @@ export const ContactPage = (): JSX.Element => {
     
     try {
       // Create mailto link with form data
-      const subject = encodeURIComponent(`Новое сообщение от ${formData.name}`);
+      const subject = encodeURIComponent(t("contact.form.subject", { name: formData.name }));
       const body = encodeURIComponent(`
-Имя: ${formData.name}
-Email: ${formData.email}
-Телефон: ${formData.phone || 'Не указан'}
-Услуга: ${formData.service || 'Не выбрана'}
+${t("contact.form.name")}: ${formData.name}
+${t("contact.form.email")}: ${formData.email}
+${t("contact.form.phone")}: ${formData.phone || t("contact.form.notProvided")}
+${t("contact.form.service")}: ${formData.service || t("contact.form.notSelected")}
 
-Сообщение:
+${t("contact.form.message")}:
 ${formData.message}
       `);
       
@@ -53,34 +53,34 @@ ${formData.message}
       });
       
       // Show success message (optional)
-      alert("Спасибо за ваше сообщение! Откроется почтовый клиент для отправки.");
+      alert(t("contact.form.successMessage"));
       
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("Произошла ошибка при отправке сообщения. Попробуйте еще раз.");
+      alert(t("contact.form.errorMessage"));
     }
   };
 
   const contactInfo = [
     {
       icon: <MapPin className="w-6 h-6" />,
-      title: "Location",
-      details: ["123 Fitness Street", "Los Angeles, CA 90210"]
+      title: t("contact.info.location.title"),
+      details: t("contact.info.location.details", { returnObjects: true }) as string[]
     },
     {
       icon: <Phone className="w-6 h-6" />,
-      title: "Phone",
-      details: ["+1 (555) 123-4567", "+1 (555) 987-6543"]
+      title: t("contact.info.phone.title"),
+      details: t("contact.info.phone.details", { returnObjects: true }) as string[]
     },
     {
       icon: <Mail className="w-6 h-6" />,
-      title: "Email",
-      details: ["john@personaltrainer.com", "info@johnfitness.com"]
+      title: t("contact.info.email.title"),
+      details: t("contact.info.email.details", { returnObjects: true }) as string[]
     },
     {
       icon: <Clock className="w-6 h-6" />,
-      title: "Hours",
-      details: ["Mon-Fri: 6:00 AM - 10:00 PM", "Sat-Sun: 8:00 AM - 8:00 PM"]
+      title: t("contact.info.hours.title"),
+      details: t("contact.info.hours.details", { returnObjects: true }) as string[]
     }
   ];
 
@@ -103,14 +103,14 @@ ${formData.message}
             <Card className="bg-[#1f1f1f] border border-[#ffffff33] rounded-[20px] p-8">
               <CardContent className="p-0">
                 <h2 className="[font-family:'Anton',Helvetica] font-normal text-white text-2xl md:text-3xl tracking-[-0.30px] leading-[1.2] mb-8">
-                  ОТПРАВИТЬ СООБЩЕНИЕ
+                  {t("contact.form.title")}
                 </h2>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block [font-family:'Outfit',Helvetica] font-medium text-white text-sm mb-2">
-                        Полное имя *
+                        {t("contact.form.fullName")} *
                       </label>
                       <input
                         type="text"
@@ -119,13 +119,13 @@ ${formData.message}
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#ffffff33] rounded-lg text-white placeholder-[#909090] focus:border-[#ff2332] focus:outline-none transition-colors"
-                        placeholder="Введите ваше полное имя"
+                        placeholder={t("contact.form.fullNamePlaceholder")}
                       />
                     </div>
                     
                     <div>
                       <label className="block [font-family:'Outfit',Helvetica] font-medium text-white text-sm mb-2">
-                        Email адрес *
+                        {t("contact.form.emailAddress")} *
                       </label>
                       <input
                         type="email"
@@ -134,7 +134,7 @@ ${formData.message}
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#ffffff33] rounded-lg text-white placeholder-[#909090] focus:border-[#ff2332] focus:outline-none transition-colors"
-                        placeholder="Введите ваш email"
+                        placeholder={t("contact.form.emailPlaceholder")}
                       />
                     </div>
                   </div>
@@ -142,7 +142,7 @@ ${formData.message}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block [font-family:'Outfit',Helvetica] font-medium text-white text-sm mb-2">
-                        Номер телефона
+                        {t("contact.form.phoneNumber")}
                       </label>
                       <input
                         type="tel"
@@ -150,13 +150,13 @@ ${formData.message}
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#ffffff33] rounded-lg text-white placeholder-[#909090] focus:border-[#ff2332] focus:outline-none transition-colors"
-                        placeholder="Введите ваш номер телефона"
+                        placeholder={t("contact.form.phonePlaceholder")}
                       />
                     </div>
                     
                     <div>
                       <label className="block [font-family:'Outfit',Helvetica] font-medium text-white text-sm mb-2">
-                        Интересующая услуга
+                        {t("contact.form.interestedService")}
                       </label>
                       <select
                         name="service"
@@ -164,19 +164,19 @@ ${formData.message}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#ffffff33] rounded-lg text-white focus:border-[#ff2332] focus:outline-none transition-colors"
                       >
-                        <option value="">Выберите услугу</option>
-                        <option value="personal-training">Персональные тренировки</option>
-                        <option value="training-nutrition">Тренировки + Питание</option>
-                        <option value="nutrition-only">Консультации по питанию</option>
-                        <option value="group-training">Групповые тренировки</option>
-                        <option value="online-coaching">Онлайн коучинг</option>
+                        <option value="">{t("contact.form.selectService")}</option>
+                        <option value="personal-training">{t("contact.form.services.personalTraining")}</option>
+                        <option value="training-nutrition">{t("contact.form.services.trainingNutrition")}</option>
+                        <option value="nutrition-only">{t("contact.form.services.nutritionOnly")}</option>
+                        <option value="group-training">{t("contact.form.services.groupTraining")}</option>
+                        <option value="online-coaching">{t("contact.form.services.onlineCoaching")}</option>
                       </select>
                     </div>
                   </div>
 
                   <div>
                     <label className="block [font-family:'Outfit',Helvetica] font-medium text-white text-sm mb-2">
-                      Сообщение *
+                      {t("contact.form.message")} *
                     </label>
                     <textarea
                       name="message"
@@ -185,7 +185,7 @@ ${formData.message}
                       required
                       rows={5}
                       className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#ffffff33] rounded-lg text-white placeholder-[#909090] focus:border-[#ff2332] focus:outline-none transition-colors resize-vertical"
-                      placeholder="Расскажите о ваших фитнес-целях и что вы хотели бы достичь..."
+                      placeholder={t("contact.form.messagePlaceholder")}
                     />
                   </div>
 
@@ -194,7 +194,7 @@ ${formData.message}
                     className="w-full h-[50px] bg-[#ff2332] hover:bg-[#e01e2b] rounded-xl transition-all duration-300 hover:scale-105"
                   >
                     <span className="[font-family:'Outfit',Helvetica] font-bold text-white text-base">
-                      Отправить сообщение
+                      {t("contact.form.submitButton")}
                     </span>
                   </Button>
                 </form>
@@ -206,7 +206,7 @@ ${formData.message}
           <div className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]">
             <div className="space-y-8">
               <h2 className="[font-family:'Anton',Helvetica] font-normal text-white text-2xl md:text-3xl tracking-[-0.30px] leading-[1.2]">
-                CONTACT INFORMATION
+                {t("contact.info.title")}
               </h2>
 
               <div className="space-y-6">
@@ -240,7 +240,7 @@ ${formData.message}
               {/* Social Media */}
               <div>
                 <h3 className="[font-family:'Outfit',Helvetica] font-bold text-white text-lg mb-4">
-                  Подписывайтесь
+                  {t("contact.social.title")}
                 </h3>
                 <div className="flex gap-4">
                   <a
@@ -277,11 +277,10 @@ ${formData.message}
               <Card className="bg-[#ff2332]/10 border border-[#ff2332]/30 rounded-[15px] p-6">
                 <CardContent className="p-0">
                   <h3 className="[font-family:'Outfit',Helvetica] font-bold text-[#ff2332] text-lg mb-2">
-                    Гарантия быстрого ответа
+                    {t("contact.quickResponse.title")}
                   </h3>
                   <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">
-                    Обычно я отвечаю на все запросы в течение 24 часов. По срочным вопросам 
-                    звоните напрямую для немедленной помощи.
+                    {t("contact.quickResponse.description")}
                   </p>
                 </CardContent>
               </Card>

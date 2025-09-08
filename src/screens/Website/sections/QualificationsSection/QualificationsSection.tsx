@@ -1,8 +1,10 @@
-import React from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
+import { useTranslation } from "react-i18next";
 import "./QualificationsSection.css";
 
 export const QualificationsSection = (): JSX.Element => {
+  const { t } = useTranslation();
+  
   const certifications = [
     { id: 1, image: "/1.jpg" },
     { id: 2, image: "/2.jpg" },
@@ -23,11 +25,11 @@ export const QualificationsSection = (): JSX.Element => {
         <div className="qualifications-text-section">
           <div className="qualifications-header">
             <h2 className="qualifications-title">
-              Сертификаты
+              {t("qualifications.title")}
             </h2>
 
             <p className="qualifications-description">
-              Я постоянно учусь и совершенствуюсь, чтобы давать вам только лучшие и современные методики.
+              {t("qualifications.description")}
             </p>
           </div>
 
@@ -48,7 +50,7 @@ export const QualificationsSection = (): JSX.Element => {
                   <CardContent className="qualifications-cert-content">
                     <img
                       src={cert.image}
-                      alt={`Сертификат ${cert.id}`}
+                      alt={t("qualifications.certificateAlt", { id: cert.id })}
                       className="qualifications-cert-image"
                     />
                   </CardContent>
@@ -68,7 +70,7 @@ export const QualificationsSection = (): JSX.Element => {
                   <CardContent className="qualifications-cert-content">
                     <img
                       src={cert.image}
-                      alt={`Сертификат ${cert.id}`}
+                      alt={t("qualifications.certificateAlt", { id: cert.id })}
                       className="qualifications-cert-image"
                     />
                   </CardContent>
@@ -88,7 +90,7 @@ export const QualificationsSection = (): JSX.Element => {
                   <CardContent className="qualifications-cert-content">
                     <img
                       src={cert.image}
-                      alt={`Сертификат ${cert.id}`}
+                      alt={t("qualifications.certificateAlt", { id: cert.id })}
                       className="qualifications-cert-image"
                     />
                   </CardContent>

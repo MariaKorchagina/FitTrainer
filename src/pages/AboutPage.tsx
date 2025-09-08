@@ -1,19 +1,21 @@
 import { Card, CardContent } from "../components/ui/card";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./AboutPage.css";
 
 export const AboutPage = (): JSX.Element => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleGetStarted = () => {
     navigate('/contact');
   };
 
   const achievements = [
-    { number: "200+", label: "Довольных клиентов" },
-    { number: "10", label: "Лет опыта" },
-    { number: "10", label: "Лет в спорте" },
-    { number: "50+", label: "Сертификатов" },
+    { number: "200+", label: t("about.achievements.clients") },
+    { number: "10", label: t("about.achievements.experience") },
+    { number: "10", label: t("about.achievements.sport") },
+    { number: "50+", label: t("about.achievements.certificates") },
   ];
 
   return (
@@ -22,11 +24,10 @@ export const AboutPage = (): JSX.Element => {
         {/* Hero Section */}
         <div className="about-hero">
           <h1 className="about-title">
-            ОБО МНЕ
+            {t("about.title")}
           </h1>
           <p className="about-subtitle">
-            Я — сертифицированный фитнес‑тренер. Помогаю женщинам вернуть силу, лёгкость и уверенность
-            через персональные тренировки и понятные программы, которые вписываются в реальную жизнь.
+            {t("about.subtitle")}
           </p>
         </div>
 
@@ -35,31 +36,28 @@ export const AboutPage = (): JSX.Element => {
           {/* Image */}
           <div className="about-image">
             <img
-              alt="Personal Trainer"
+              alt={t("about.imageAlt")}
               src="/trainer7.png"
             />
           </div>
 
           {/* Content */}
           <div className="about-text">
-            <h2>МОЯ ИСТОРИЯ</h2>
+            <h2>{t("about.storyTitle")}</h2>
             <div className="space-y-6">
               <p>
-                Мой путь в фитнесе начался более 10 лет назад. Я прошла через собственные трансформации и убедилась,
-                как регулярные тренировки и адекватное питание меняют тело, самочувствие и настроение.
+                {t("about.story1")}
               </p>
               <p>
-                Сегодня я работаю с женщинами разного уровня подготовки: от новичков до тех, кто возвращается к спорту
-                после паузы. Я бережно веду, объясняю технику и даю только то, что действительно работает.
+                {t("about.story2")}
               </p>
               <p>
-                В основе моих программ — персональный подход, грамотная прогрессия нагрузок и внимание к деталям.
-                Каждая тренировка адаптируется под ваши цели, ресурсы и ритм жизни.
+                {t("about.story3")}
               </p>
             </div>
 
             <button className="about-button" onClick={handleGetStarted}>
-              <span>Начни сейчас</span>
+              <span>{t("about.startNow")}</span>
             </button>
           </div>
         </div>
@@ -85,11 +83,9 @@ export const AboutPage = (): JSX.Element => {
 
         {/* Philosophy */}
         <div className="philosophy">
-          <h2>МОЯ ФИЛОСОФИЯ</h2>
+          <h2>{t("about.philosophyTitle")}</h2>
           <p>
-            «Фитнес — это не про сравнение с другими. Это про ежедневные маленькие шаги к себе сильной и здоровой.
-            Моя задача — быть рядом: следить за техникой, давать понятные задания и поддерживать на каждом этапе,
-            чтобы результат был не случайным, а устойчивым».
+            {t("about.philosophy")}
           </p>
         </div>
       </div>

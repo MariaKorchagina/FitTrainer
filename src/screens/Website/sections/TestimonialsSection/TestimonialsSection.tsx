@@ -2,64 +2,127 @@ import { useState } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import "./TestimonialsSection.css";
 
-const testimonialData = [
+const getTestimonialData = (t: any) => [
   {
-    quote:
-      "«Я никогда не чувствовала себя такой сильной! Лилия бережно, но требовательно вела меня, объясняла технику и поддерживала на каждом шаге. Минус 7 кг и совершенно иное ощущение тела — рекомендую!»",
+    quote: t("testimonials.quote1"),
     author: "",
     images: [
       {
         src: "/beforeafter1.jpeg",
-        alt: "Before/After 1",
+        alt: t("testimonials.imageAlt1"),
         className: "rounded-[10px_0px_0px_10px]",
-      },
-      {
-        src: "/beforeafter2.jpeg",
-        alt: "Before/After 2",
-        className: "rounded-[0px_10px_10px_0px]",
       },
     ],
   },
   {
-    quote:
-      "«Занятия 1 на 1 с Лилией — это то, чего мне не хватало. Никаких сомнений и хаоса: чёткий план, внимание к технике и поддержка на каждом шаге. Минус 6 кг за месяц и ощущение силы и контроля над телом — я в восторге!»",
+    quote: t("testimonials.quote2"),
+    author: "",
+    images: [
+      {
+        src: "/beforeafter2.jpeg",
+        alt: t("testimonials.imageAlt2"),
+        className: "rounded-[10px_0px_0px_10px]",
+      },
+    ],
+  },
+  {
+    quote: t("testimonials.quote3"),
     author: "",
     images: [
       {
         src: "/beforeafter3.jpeg",
-        alt: "Before/After 3",
+        alt: t("testimonials.imageAlt3"),
         className: "rounded-[10px_0px_0px_10px]",
-      },
-      {
-        src: "/beforeafter4.jpeg",
-        alt: "Before/After 4",
-        className: "rounded-[0px_10px_10px_0px]",
       },
     ],
   },
   {
-    quote:
-      "«Через месяц занятий с Лилией ушла тяжесть в теле, появился тонус и энергия. Упражнения понятные, техника под контролем — минус 5 см в талии и уверенность каждый день!»",
+    quote: t("testimonials.quote4"),
+    author: "",
+    images: [
+      {
+        src: "/beforeafter4.jpeg",
+        alt: t("testimonials.imageAlt4"),
+        className: "rounded-[10px_0px_0px_10px]",
+      },
+    ],
+  },
+  {
+    quote: t("testimonials.quote5"),
     author: "",
     images: [
       {
         src: "/beforeafter5.jpeg",
-        alt: "Before/After 5",
+        alt: t("testimonials.imageAlt5"),
         className: "rounded-[10px_0px_0px_10px]",
       },
+    ],
+  },
+  {
+    quote: t("testimonials.quote6"),
+    author: "",
+    images: [
       {
         src: "/beforeafter6.jpeg",
-        alt: "Before/After 6",
-        className: "rounded-[0px_10px_10px_0px]",
+        alt: t("testimonials.imageAlt6"),
+        className: "rounded-[10px_0px_0px_10px]",
+      },
+    ],
+  },
+  {
+    quote: t("testimonials.quote7"),
+    author: "",
+    images: [
+      {
+        src: "/beforeafter7.jpeg",
+        alt: t("testimonials.imageAlt7"),
+        className: "rounded-[10px_0px_0px_10px]",
+      },
+    ],
+  },
+  {
+    quote: t("testimonials.quote8"),
+    author: "",
+    images: [
+      {
+        src: "/beforeafter8.jpeg",
+        alt: t("testimonials.imageAlt8"),
+        className: "rounded-[10px_0px_0px_10px]",
+      },
+    ],
+  },
+  {
+    quote: t("testimonials.quote9"),
+    author: "",
+    images: [
+      {
+        src: "/beforeafter9.jpeg",
+        alt: t("testimonials.imageAlt9"),
+        className: "rounded-[10px_0px_0px_10px]",
+      },
+    ],
+  },
+  {
+    quote: t("testimonials.quote10"),
+    author: "",
+    images: [
+      {
+        src: "/beforeafter10.jpeg",
+        alt: t("testimonials.imageAlt10"),
+        className: "rounded-[10px_0px_0px_10px]",
       },
     ],
   },
 ];
 
 export const TestimonialsSection = (): JSX.Element => {
+  const { t } = useTranslation();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  
+  const testimonialData = getTestimonialData(t);
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonialData.length);
@@ -80,7 +143,7 @@ export const TestimonialsSection = (): JSX.Element => {
         <div className="testimonials-main">
           {/* Main heading */}
           <h1 className="testimonials-title">
-            Отзывы участниц
+            {t("testimonials.title")}
           </h1>
 
           {/* Main content container */}
@@ -105,8 +168,8 @@ export const TestimonialsSection = (): JSX.Element => {
             {/* Images container */}
             <div className="testimonials-images-container">
               <img
-                className={`testimonials-image ${["/beforeafter3.jpeg", "/beforeafter5.jpeg"].includes(currentData.images?.[0]?.src || "") ? "testimonials-image--contain" : ""}`}
-                alt={currentData.images?.[0]?.alt || "Client testimonial"}
+                className={`testimonials-image ${["/beforeafter3.jpeg", "/beforeafter4.jpeg", "/beforeafter5.jpeg", "/beforeafter8.jpeg", "/beforeafter10.jpeg"].includes(currentData.images?.[0]?.src || "") ? "testimonials-image--contain" : ""}`}
+                alt={currentData.images?.[0]?.alt || t("testimonials.defaultImageAlt")}
                 src={currentData.images?.[0]?.src || "/beforeafter1.jpeg"}
               />
             </div>
@@ -123,7 +186,7 @@ export const TestimonialsSection = (): JSX.Element => {
                     index === currentTestimonial ? "testimonials-dot--active" : "testimonials-dot--inactive"
                   }`}
                   onClick={() => setCurrentTestimonial(index)}
-                  aria-label={`Go to testimonial ${index + 1}`}
+                  aria-label={t("testimonials.goToTestimonial", { number: index + 1 })}
                 />
               ))}
             </div>
@@ -133,7 +196,7 @@ export const TestimonialsSection = (): JSX.Element => {
               <Button
                 className="testimonials-arrow-button"
                 onClick={prevTestimonial}
-                aria-label="Previous testimonial"
+                aria-label={t("testimonials.previousTestimonial")}
               >
                 <ChevronLeft className="testimonials-arrow-icon" />
               </Button>
@@ -141,7 +204,7 @@ export const TestimonialsSection = (): JSX.Element => {
               <Button
                 className="testimonials-arrow-button"
                 onClick={nextTestimonial}
-                aria-label="Next testimonial"
+                aria-label={t("testimonials.nextTestimonial")}
               >
                 <ChevronRight className="testimonials-arrow-icon" />
               </Button>
@@ -152,7 +215,7 @@ export const TestimonialsSection = (): JSX.Element => {
         {/* Decorative element */}
         <img
           className="testimonials-decorative"
-          alt="Decorative element"
+          alt={t("testimonials.decorativeAlt")}
           src="https://c.animaapp.com/mf57cyx5gYVcx1/img/group-31.png"
         />
       </div>

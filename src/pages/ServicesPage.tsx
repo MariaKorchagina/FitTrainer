@@ -1,94 +1,63 @@
-import React from "react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { CheckCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const ServicesPage = (): JSX.Element => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleGetStarted = () => {
     navigate('/contact');
   };
   const services = [
     {
-      title: "Сушка PRO",
-      price: "580₪ → 405₪\n(скидка 30%)",
+      title: t("services.sushkaPro.title"),
+      price: `${t("services.sushkaPro.price")}\n${t("services.sushkaPro.discount")}`,
       period: "",
       description: "",
-      features: [
-        "8 мощных тренировок Табата (20/10, 40/20)",
-        "План питания, запускающий сжигание жира",
-        "Домашняя активность + рекомендации по восстановлению",
-        "Постоянная поддержка: мотивация, напоминания, ответы на \"можно ли банан?\""
-      ],
+      features: t("services.sushkaPro.features", { returnObjects: true }) as string[],
       popular: false
     },
     {
-      title: "Сила и Тонус",
-      price: "600₪ → 420₪\n(скидка 30%)",
+      title: t("services.strengthTone.title"),
+      price: `${t("services.strengthTone.price")}\n${t("services.strengthTone.discount")}`,
       period: "",
       description: "",
-      features: [
-        "8 тренировок на стабилизаторы, дыхание, растяжку",
-        "Укрепление мышц таза и живота без перегруза",
-        "План питания на лёгкость, тонус и антистресс",
-        "Мягкая, но постоянная поддержка"
-      ],
+      features: t("services.strengthTone.features", { returnObjects: true }) as string[],
       popular: true
     },
     {
-      title: "Стальной пресс",
-      price: "550₪ → 385₪\n(скидка 30%)",
+      title: t("services.steelAbs.title"),
+      price: `${t("services.steelAbs.price")}\n${t("services.steelAbs.discount")}`,
       period: "",
       description: "",
-      features: [
-        "8 тренировок на глубокие мышцы живота",
-        "Правильная техника каждого упражнения",
-        "План питания для рельефа и плоского живота",
-        "Постоянная поддержка и контроль техники"
-      ],
+      features: t("services.steelAbs.features", { returnObjects: true }) as string[],
       popular: false
     },
     {
-      title: "TRX Баланс",
-      price: "800₪ → 560₪\n(скидка 30%)",
+      title: t("services.trxBalance.title"),
+      price: `${t("services.trxBalance.price")}\n${t("services.trxBalance.discount")}`,
       period: "",
       description: "",
-      features: [
-        "8 персональных тренировок на TRX",
-        "Упор на глубокие мышцы и баланс",
-        "Растяжка, мобилизация, работа с дыханием",
-        "Поддержка и корректировка техники",
-        "Питание + восстановление"
-      ],
+      features: t("services.trxBalance.features", { returnObjects: true }) as string[],
       popular: false
     },
     {
-      title: "Восстановление после родов",
-      price: "350₪ / 85€\nв месяц",
+      title: t("services.postpartumRecovery.title"),
+      price: `${t("services.postpartumRecovery.price")}\n${t("services.postpartumRecovery.period")}`,
       period: "",
       description: "",
-      features: [
-        "8 занятий в месяц (2 в неделю)",
-        "Гибкий график, полная поддержка",
-        "Без чужих взглядов — только ты и тренер"
-      ],
+      features: t("services.postpartumRecovery.features", { returnObjects: true }) as string[],
       popular: false
     },
     {
-      title: "Питание под ключ",
-      price: "40₪ / 107€\nконсультация",
+      title: t("services.nutritionConsultation.title"),
+      price: `${t("services.nutritionConsultation.price")}\n${t("services.nutritionConsultation.type")}`,
       period: "",
       description: "",
-      features: [
-        "Разбор твоего реального питания за 3 или 7 дней",
-        "Анализ КБЖУ (калорий, белков, жиров, углеводов)",
-        "Где ты переедаешь, даже \"на диете\"",
-        "Что на самом деле мешает — не бутерброд, а дефицит белка или сна",
-        "Советы, что и как поменять — без жестких ограничений",
-        "Вода, кофе, стрессы, срывы — всё учтём"
-      ],
+      features: t("services.nutritionConsultation.features", { returnObjects: true }) as string[],
       popular: false
     }
   ];
@@ -96,19 +65,19 @@ export const ServicesPage = (): JSX.Element => {
 
   const additionalServices = [
     {
-      title: "Group Training",
-      description: "Small group sessions for friends or family",
-      price: "From $50/person"
+      title: t("services.additional.groupTraining.title"),
+      description: t("services.additional.groupTraining.description"),
+      price: t("services.additional.groupTraining.price")
     },
     {
-      title: "Online Coaching",
-      description: "Remote training and nutrition guidance",
-      price: "From $100/month"
+      title: t("services.additional.onlineCoaching.title"),
+      description: t("services.additional.onlineCoaching.description"),
+      price: t("services.additional.onlineCoaching.price")
     },
     {
-      title: "Fitness Assessment",
-      description: "Comprehensive fitness evaluation and goal setting",
-      price: "$75/session"
+      title: t("services.additional.fitnessAssessment.title"),
+      description: t("services.additional.fitnessAssessment.description"),
+      price: t("services.additional.fitnessAssessment.price")
     }
   ];
 
@@ -118,10 +87,10 @@ export const ServicesPage = (): JSX.Element => {
         {/* Hero Section */}
         <div className="text-center mb-20">
           <h1 className="[font-family:'Anton',Helvetica] font-normal text-white text-4xl md:text-6xl tracking-[-0.60px] leading-[1.2] mb-8 translate-y-[-1rem] animate-fade-in opacity-0">
-            ПРОГРАММЫ ТРЕНИРОВОК
+            {t("services.title")}
           </h1>
           <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-xl md:text-2xl tracking-[0] leading-[1.3] max-w-4xl mx-auto translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
-            Выберите идеальную программу, чтобы достичь своих целей с персональным сопровождением и поддержкой.
+            {t("services.subtitle")}
           </p>
         </div>
 
@@ -143,7 +112,7 @@ export const ServicesPage = (): JSX.Element => {
             >
               {service.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#ff2332] text-white px-4 py-2 rounded-full text-sm font-bold">
-                  Most Popular
+                  {t("services.mostPopular")}
                 </div>
               )}
               
@@ -190,7 +159,7 @@ export const ServicesPage = (): JSX.Element => {
 
               <Button className="w-full bg-[#ff2332] hover:bg-[#ff2332]/90 rounded-xl h-12 transition-all duration-300 hover:scale-105" onClick={handleGetStarted}>
                 <span className="[font-family:'Outfit',Helvetica] font-bold text-white text-base">
-                  Начни сейчас
+                  {t("services.startNow")}
                 </span>
               </Button>
             </Card>
@@ -200,7 +169,7 @@ export const ServicesPage = (): JSX.Element => {
         {/* Additional Services */}
         <div className="mb-20">
           <h2 className="[font-family:'Anton',Helvetica] font-normal text-white text-3xl md:text-4xl tracking-[-0.40px] leading-[1.2] mb-12 text-center translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:1000ms]">
-            ADDITIONAL SERVICES
+            {t("services.additionalTitle")}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -233,14 +202,14 @@ export const ServicesPage = (): JSX.Element => {
         {/* CTA Section */}
         <div className="text-center bg-[#1f1f1f] rounded-[20px] p-12 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:1600ms]">
           <h2 className="[font-family:'Anton',Helvetica] font-normal text-white text-3xl md:text-4xl tracking-[-0.40px] leading-[1.2] mb-6">
-            READY TO START YOUR TRANSFORMATION?
+            {t("services.ctaTitle")}
           </h2>
           <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-lg mb-8 max-w-2xl mx-auto">
-            Book a free consultation to discuss your goals and find the perfect program for your fitness journey.
+            {t("services.ctaDescription")}
           </p>
-          <Button className="h-[60px] px-8 bg-[#ff2332] hover:bg-[#e01e2b] rounded-xl transition-all duration-300 hover:scale-105">
+          <Button className="h-[60px] px-8 bg-[#ff2332] hover:bg-[#e01e2b] rounded-xl transition-all duration-300 hover:scale-105" onClick={handleGetStarted}>
             <span className="[font-family:'Outfit',Helvetica] font-bold text-white text-lg">
-              Book Free Consultation
+              {t("services.ctaButton")}
             </span>
           </Button>
         </div>

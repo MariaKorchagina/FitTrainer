@@ -1,12 +1,18 @@
 import { Button } from "../../../../components/ui/button";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import "./FooterSection.css";
 
 export const FooterSection = (): JSX.Element => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   
   const handleGetStarted = () => {
     window.open('https://wa.me/972549961795', '_blank');
+  };
+
+  const handleContactClick = () => {
+    navigate('/contact');
   };
 
   return (
@@ -52,11 +58,9 @@ export const FooterSection = (): JSX.Element => {
         <div className="site-footer-inner">
           {/* Column 1 */}
           <div className="footer-col">
-            <h3 className="footer-col-title">Личный тренер Лилия Яцкая</h3>
+            <h3 className="footer-col-title">{t("footer.brandTitle")}</h3>
             <p className="footer-col-text">
-              Помогаю женщинам вернуть ощущение силы и лёгкости в теле через
-              персональные тренировки и продуманные программы: без лишнего
-              стресса, с вниманием к технике и результату.
+              {t("footer.brandDescription")}
             </p>
           </div>
 
@@ -73,8 +77,9 @@ export const FooterSection = (): JSX.Element => {
 
           {/* Column 3 (Contact) - right */}
           <div className="footer-col footer-col--contact">
-            <h3 className="footer-col-title">Начни сейчас</h3>
-            <p className="footer-col-text footer-col-text--contact">+972 54 996 1795</p>
+            <h3 className="footer-col-title" onClick={handleContactClick} style={{ cursor: 'pointer' }}>
+              {t("footer.contact")}
+            </h3>
             <div className="footer-socials">
               <a className="footer-social" href="https://wa.me/972549961795" target="_blank" rel="noreferrer" aria-label="WhatsApp">
                 <svg className="footer-social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.93 11.93 0 0 0 12.06 0C5.5 0 .2 5.3.2 11.86c0 2.09.54 4.1 1.57 5.89L0 24l6.43-1.66a11.78 11.78 0 0 0 5.64 1.44h.01c6.56 0 11.86-5.3 11.86-11.86 0-3.17-1.23-6.15-3.42-8.43ZM12.08 21.3h-.01a9.77 9.77 0 0 1-4.98-1.36l-.36-.21-3.82.98 1.02-3.72-.24-.38a9.78 9.78 0 0 1-1.5-5.15c0-5.4 4.39-9.79 9.8-9.79 2.61 0 5.06 1.02 6.9 2.87a9.68 9.68 0 0 1 2.86 6.92c0 5.4-4.39 9.79-9.8 9.79Zm5.57-7.28c-.3-.15-1.77-.87-2.04-.97-.27-.1-.46-.15-.65.15-.19.3-.75.97-.92 1.17-.17.2-.34.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.67-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.53-.08-.15-.65-1.56-.9-2.13-.24-.58-.48-.5-.65-.5h-.56c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.13 3.25 5.15 4.56.72.31 1.28.5 1.72.64.72.23 1.37.2 1.88.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z" fill="white"/></svg>

@@ -70,6 +70,30 @@
       "selectService": "Select a service",
       "message": "Message",
       "sendMessage": "Send Message",
+      "fullNamePlaceholder": "Enter your full name",
+      "emailAddress": "Email Address",
+      "emailPlaceholder": "Enter your email",
+      "phoneNumber": "Phone Number",
+      "phonePlaceholder": "Enter your phone number",
+      "interestedService": "Service Interest",
+      "messagePlaceholder": "Tell us about your fitness goals and what you'd like to achieve...",
+      "submitButton": "Send Message",
+      "subject": "New message from {{name}}",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "service": "Service",
+      "notProvided": "Not provided",
+      "notSelected": "Not selected",
+      "successMessage": "Thank you for your message! Your email client will open for sending.",
+      "errorMessage": "An error occurred while sending the message. Please try again.",
+      "services": {
+        "personalTraining": "Personal Training",
+        "trainingNutrition": "Training + Nutrition",
+        "nutritionOnly": "Nutrition Consultation",
+        "groupTraining": "Group Training",
+        "onlineCoaching": "Online Coaching"
+      },
       "placeholders": {
         "fullName": "Enter your full name",
         "email": "Enter your email",
@@ -79,9 +103,32 @@
     },
     "info": {
       "title": "CONTACT INFORMATION",
+      "location": {
+        "title": "Location",
+        "details": ["Israel", "Online Training"]
+      },
+      "phone": {
+        "title": "Phone",
+        "details": ["+972 54 996 1795"]
+      },
+      "email": {
+        "title": "Email",
+        "details": ["kobysheva_maria@mail.ru"]
+      },
+      "hours": {
+        "title": "Hours",
+        "details": ["Mon-Fri: 6:00 AM - 10:00 PM", "Sat-Sun: 8:00 AM - 8:00 PM"]
+      },
       "follow": "Follow Me",
       "guarantee": "Quick Response Guarantee",
       "guaranteeText": "I typically respond to all inquiries within 24 hours. For urgent matters, please call directly for immediate assistance."
+    },
+    "social": {
+      "title": "Follow Me"
+    },
+    "quickResponse": {
+      "title": "Quick Response Guarantee",
+      "description": "I typically respond to all inquiries within 24 hours. For urgent matters, please call directly for immediate assistance."
     }
   },
   "footer": {
@@ -89,16 +136,175 @@
     "description": "Write to me on WhatsApp — I'll help you choose a program and answer all your questions.",
     "whatsapp": "Write to WhatsApp",
     "menu": "Menu",
-    "contact": "Get Started"
+    "contact": "Get Started",
+    "brandTitle": "Personal Trainer Lilia Yatskaya",
+    "brandDescription": "I help women regain a sense of strength and lightness in their body through personal training and thoughtful programs: without unnecessary stress, with attention to technique and results."
   },
   "cta": {
     "title": "Hello, my name is Lilia!",
-    "description": "I am a certified fitness trainer, and I'm here so you can finally feel: \"I control my body\".\n\nI conduct training in Pilates, TRX and Tabata directions — both online and in person.\nI work with women who are tired of feeling weakness, heaviness, instability in their body and in life.\n\nMy goal is not just to get you in shape, but to help you regain control, energy and confidence.\nEach program is tailored to your goals, capabilities and lifestyle.",
+    "description": "I am a certified fitness trainer, and I'm here so you can finally feel: \"I control my body\".\n\nI conduct training in Pilates, TRX and Tabata directions — both online and in person. I work with women who are tired of feeling weakness, heaviness, instability in their body and in life. My goal is not just to get you in shape, but to help you regain control, energy and confidence. Each program is tailored to your goals, capabilities and lifestyle.",
     "imageAlt": "Lilia - fitness trainer",
     "stats": {
       "clients": "Satisfied clients",
       "experience": "Years of experience",
       "sports": "Years in sports"
+    }
+  },
+  "qualifications": {
+    "title": "Certificates",
+    "description": "I constantly learn and improve to give you only the best and most modern methods.",
+    "certificateAlt": "Certificate {{id}}"
+  },
+  "testimonials": {
+    "title": "Client Testimonials",
+    "quote1": "\"I never felt so strong! Lilia gently but demandingly guided me, explained technique and supported me every step of the way. Minus 7 kg and a completely different body feeling — I recommend!\"",
+    "quote2": "\"One-on-one sessions with Lilia were exactly what I was missing. No doubts or chaos: clear plan, attention to technique and support at every step. Minus 6 kg in a month and feeling of strength and control over my body — I'm delighted!\"",
+    "quote3": "\"After a month of training with Lilia, the heaviness in my body went away, tone and energy appeared. Exercises are clear, technique is under control — minus 5 cm in waist and confidence every day!\"",
+    "quote4": "\"In 2 months with Lilia I not only lost 8 kg, but completely changed my attitude towards sports. Now training is not torture, but pleasure. My body became toned and my mood — excellent!\"",
+    "quote5": "\"Lilia helped me recover after childbirth. In 3 months I returned to my previous shape and even became better! Exercises are adapted to my condition, support is constant. I highly recommend!\"",
+    "quote6": "\"The result exceeded all expectations! In a month with Lilia I lost 5 kg and gained incredible self-confidence. Every workout is a step towards a better version of myself!\"",
+    "quote7": "\"Lilia is a true professional! She helped me not only lose weight, but also fall in love with sports. Now I feel energetic and happy every day!\"",
+    "quote8": "\"Thanks to Lilia, I realized that sports can be enjoyable. In 2 months I changed not only externally, but also internally. Thank you so much for your support!\"",
+    "quote9": "\"Lilia helped me believe in myself! Result in a month — minus 6 kg and a completely new attitude towards my body. I recommend to everyone who wants to change their life!\"",
+    "quote10": "\"In 3 months with Lilia I became a different person. Not only lost 7 kg, but also gained inner strength and confidence. This is the best investment in myself!\"",
+    "imageAlt1": "Before/After 1",
+    "imageAlt2": "Before/After 2",
+    "imageAlt3": "Before/After 3",
+    "imageAlt4": "Before/After 4",
+    "imageAlt5": "Before/After 5",
+    "imageAlt6": "Before/After 6",
+    "imageAlt7": "Before/After 7",
+    "imageAlt8": "Before/After 8",
+    "imageAlt9": "Before/After 9",
+    "imageAlt10": "Before/After 10",
+    "defaultImageAlt": "Client testimonial",
+    "goToTestimonial": "Go to testimonial {{number}}",
+    "previousTestimonial": "Previous testimonial",
+    "nextTestimonial": "Next testimonial",
+    "decorativeAlt": "Decorative element"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "question1": "What tasks can be solved with me?",
+    "answer1": "Lose weight\nGet definition and develop strength\nStrengthen the cardiovascular system\nAdjust nutrition and lifestyle forever\nRecover after childbirth: lose weight, gain lightness and flexibility in the body",
+    "question2": "Who are my programs suitable for?",
+    "answer2": "If you don't have time for long workouts and constant trips to the gym\nIf you can't gather strength and start exercising\nIf you started before but quit due to lack of motivation\nIf you feel tired, anxious and stressed and don't know how to change it\nIf you want to exercise but don't know where to start and how to train properly\nIf you need support and a simple plan that will really fit into your life\nIf you want to exercise at home or in the gym, but you need a flexible and understandable approach",
+    "question3": "How do the workouts go?",
+    "answer3": "All workouts are online, but this is not a recording or group session.\nThis is a format where only you and the trainer.\n1 on 1. No distractions. Only your result.\n\nThis is practically non-existent on the market.\nI am completely with you in every session:\n✅ I see everything\n✅ I control the technique\n✅ I select exercises specifically for you\n✅ I know when you can do more — and gently lead you there\n\nI studied a lot and went through it myself — I know from my own example how to restore shape quickly and effectively.\nAnd most importantly — how to love sports without stress, without tension, every day.",
+    "question4": "What is the minimum equipment?",
+    "answer4": "All classes can be conducted at home, without complex equipment. The course provides a list and recommendations for purchase or free home alternatives."
+  },
+  "services": {
+    "title": "TRAINING PROGRAMS",
+    "subtitle": "Choose the perfect program to achieve your goals with personal support and guidance.",
+    "mostPopular": "Most Popular",
+    "startNow": "Get Started",
+    "additionalTitle": "ADDITIONAL SERVICES",
+    "ctaTitle": "READY TO START YOUR TRANSFORMATION?",
+    "ctaDescription": "Book a free consultation to discuss your goals and find the perfect program for your fitness journey.",
+    "ctaButton": "Book Free Consultation",
+    "sushkaPro": {
+      "title": "Cut PRO",
+      "price": "580₪ → 405₪",
+      "discount": "(30% off)",
+      "features": [
+        "8 powerful Tabata workouts (20/10, 40/20)",
+        "Nutrition plan that triggers fat burning",
+        "Home activity + recovery recommendations",
+        "Constant support: motivation, reminders, answers to \"can I have a banana?\""
+      ]
+    },
+    "strengthTone": {
+      "title": "Strength & Tone",
+      "price": "600₪ → 420₪",
+      "discount": "(30% off)",
+      "features": [
+        "8 workouts for stabilizers, breathing, stretching",
+        "Strengthening pelvic and abdominal muscles without overload",
+        "Nutrition plan for lightness, tone and anti-stress",
+        "Gentle but constant support"
+      ]
+    },
+    "steelAbs": {
+      "title": "Steel Abs",
+      "price": "550₪ → 385₪",
+      "discount": "(30% off)",
+      "features": [
+        "8 workouts for deep abdominal muscles",
+        "Proper technique for each exercise",
+        "Nutrition plan for definition and flat stomach",
+        "Constant support and technique control"
+      ]
+    },
+    "trxBalance": {
+      "title": "TRX Balance",
+      "price": "800₪ → 560₪",
+      "discount": "(30% off)",
+      "features": [
+        "8 personal TRX workouts",
+        "Focus on deep muscles and balance",
+        "Stretching, mobilization, breathing work",
+        "Support and technique correction",
+        "Nutrition + recovery"
+      ]
+    },
+    "postpartumRecovery": {
+      "title": "Postpartum Recovery",
+      "price": "350₪ / 85€",
+      "period": "per month",
+      "features": [
+        "8 sessions per month (2 per week)",
+        "Flexible schedule, full support",
+        "No prying eyes — just you and the trainer"
+      ]
+    },
+    "nutritionConsultation": {
+      "title": "Nutrition Consultation",
+      "price": "40₪ / 107€",
+      "type": "consultation",
+      "features": [
+        "Analysis of your real nutrition for 3 or 7 days",
+        "Macro analysis (calories, proteins, fats, carbohydrates)",
+        "Where you overeat, even \"on a diet\"",
+        "What really interferes — not a sandwich, but protein or sleep deficiency",
+        "Advice on what and how to change — without strict restrictions",
+        "Water, coffee, stress, breakdowns — we'll take everything into account"
+      ]
+    },
+    "additional": {
+      "groupTraining": {
+        "title": "Group Training",
+        "description": "Small group sessions for friends or family",
+        "price": "From $50/person"
+      },
+      "onlineCoaching": {
+        "title": "Online Coaching",
+        "description": "Remote training and nutrition guidance",
+        "price": "From $100/month"
+      },
+      "fitnessAssessment": {
+        "title": "Fitness Assessment",
+        "description": "Comprehensive fitness evaluation and goal setting",
+        "price": "$75/session"
+      }
+    }
+  },
+  "about": {
+    "title": "ABOUT ME",
+    "subtitle": "I am a certified fitness trainer. I help women regain strength, lightness and confidence through personal training and clear programs that fit into real life.",
+    "imageAlt": "Personal Trainer",
+    "storyTitle": "MY STORY",
+    "story1": "My fitness journey began more than 10 years ago. I went through my own transformations and became convinced how regular training and adequate nutrition change the body, well-being and mood.",
+    "story2": "Today I work with women of different fitness levels: from beginners to those who return to sports after a break. I carefully guide, explain technique and give only what really works.",
+    "story3": "The basis of my programs is a personal approach, competent load progression and attention to details. Each workout is adapted to your goals, resources and life rhythm.",
+    "startNow": "Get Started",
+    "philosophyTitle": "MY PHILOSOPHY",
+    "philosophy": "\"Fitness is not about comparing yourself to others. It's about daily small steps towards a strong and healthy self. My task is to be nearby: monitor technique, give clear tasks and support at every stage, so that the result is not accidental, but sustainable.\"",
+    "achievements": {
+      "clients": "Happy Clients",
+      "experience": "Years of Experience",
+      "sport": "Years in Sports",
+      "certificates": "Certificates"
     }
   }
 }
