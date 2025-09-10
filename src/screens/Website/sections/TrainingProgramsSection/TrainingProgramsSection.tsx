@@ -153,7 +153,7 @@ export const TrainingProgramsSection = (): JSX.Element => {
         {/* View All Programs Button */}
         <div className="text-center mt-12">
           <Button 
-            className="bg-[#ff2332] hover:bg-[#e01e2b] text-white px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105"
+            className="bg-[#ff2332] hover:bg-[#e01e2b] text-white px-12 py-4 rounded-xl transition-all duration-300 hover:scale-105"
             onClick={handleViewAllPrograms}
           >
             <span className="font-bold text-lg">{t("programs.viewAll")}</span>
