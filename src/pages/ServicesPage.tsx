@@ -11,6 +11,7 @@ export const ServicesPage = (): JSX.Element => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
+  const [expandedAdditionalCard, setExpandedAdditionalCard] = useState<number | null>(null);
 
   const handleGetStarted = () => {
     navigate('/contact');
@@ -18,6 +19,10 @@ export const ServicesPage = (): JSX.Element => {
 
   const toggleExpanded = (index: number) => {
     setExpandedCard(expandedCard === index ? null : index);
+  };
+
+  const toggleAdditionalExpanded = (index: number) => {
+    setExpandedAdditionalCard(expandedAdditionalCard === index ? null : index);
   };
   const services = [
     {
@@ -361,9 +366,8 @@ export const ServicesPage = (): JSX.Element => {
             {t("services.additionalTitle")}
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="additional-services-grid">
             {additionalServices.map((service, index) => {
-              const additionalIndex = index + 6; // 6-7 для дополнительных услуг
               return (
               <Card
                 key={index}
@@ -382,7 +386,7 @@ export const ServicesPage = (): JSX.Element => {
                     {service.title === t("services.additional.totalReset.title") && t("services.additional.totalReset.extendedDescription") && (
                       <button
                         className="expand-button-total-reset"
-                        onClick={() => toggleExpanded(additionalIndex)}
+                        onClick={() => toggleAdditionalExpanded(index)}
                         aria-label="Expand description"
                       >
                         <Expand className="expand-icon-total-reset" />
@@ -429,7 +433,7 @@ export const ServicesPage = (): JSX.Element => {
                       </p>
                       
                       {/* Extended Description - показывается только при расширении */}
-                      {t("services.additional.totalReset.extendedDescription") && expandedCard === additionalIndex && (
+                      {t("services.additional.totalReset.extendedDescription") && expandedAdditionalCard === index && (
                         <div className="program-extended-description">
                           <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
                             {t("services.additional.totalReset.whatChanges")}

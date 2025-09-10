@@ -124,9 +124,82 @@ export const TrainingProgramsSection = (): JSX.Element => {
 
                   {/* Extended Description */}
                   {program.extendedDescription && shouldShow && (
+                    <div className="program-extended-description">
+                      {program.title === "Сушка PRO" ? (
+                        <>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            Хватит ждать месяцы, чтобы увидеть результат. Эта программа делает тело подтянутым, сильным и рельефным быстрее, чем ты думаешь:
+                          </p>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Жир тает даже после тренировки — тело работает на результат круглосуточно.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Целлюлит уменьшается, кожа становится плотнее и ровнее.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Каждая тренировка даёт ощущение силы и контроля над телом.</span>
+                          </div>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4 mt-4">
+                            Что внутри:
+                          </p>
+                        </>
+                      ) : program.title === "Сильное тело без прыжков. Пилатес" ? (
+                        <>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            Не любишь бег, прыжки и изнуряющее кардио? Пилатес — мягкий, безопасный и при этом эффективный способ привести тело в форму:
+                          </p>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Сжигаем жир и формируем рельеф — без перегрузки суставов.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Укрепляем мышцы таза, живота и стабилизаторы — для плоского живота и красивой осанки.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Растяжка и дыхание — улучшает мобильность и общее самочувствие.</span>
+                          </div>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4 mt-4">
+                            Что внутри:
+                          </p>
+                        </>
+                      ) : program.title === "Стальной пресс" ? (
+                        <>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            Хочешь плоский живот, рельеф и пресс, на который будут оглядываться?
+                          </p>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            Эта программа работает быстро и эффективно. Уже с первых тренировок уходит «мешок» и живот становится крепче.
+                          </p>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Кор включается, мышцы начинают формировать рельеф и кубики.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Спина выпрямляется — прощай сутулость и тяжесть.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Руки подтягиваются — никакой дряблости и целлюлита.</span>
+                          </div>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            Первые изменения ты замечаешь уже через несколько занятий.
+                          </p>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4 mt-4">
+                            Что внутри:
+                          </p>
+                        </>
+                      ) : (
                     <p className="program-extended-description">
                       {program.extendedDescription}
                     </p>
+                      )}
+                    </div>
                   )}
 
                   {/* Features List */}
@@ -160,7 +233,7 @@ export const TrainingProgramsSection = (): JSX.Element => {
         {/* View All Programs Button */}
         <div className="text-center mt-12">
           <Button 
-            className="bg-[#ff2332] hover:bg-[#e01e2b] text-white px-12 py-4 rounded-xl transition-all duration-300 hover:scale-105"
+            className="bg-[#ff2332] hover:bg-[#e01e2b] text-white px-16 py-6 rounded-xl transition-all duration-300 hover:scale-105"
             onClick={handleViewAllPrograms}
           >
             <span className="font-bold text-lg">{t("programs.viewAll")}</span>

@@ -67,7 +67,6 @@
   animation: fade-in 1s ease forwards;
   animation-delay: 200ms;
   opacity: 0;
-  align-items: stretch;
 }
 
 @media (min-width: 768px) {
@@ -101,7 +100,7 @@
   cursor: pointer;
   position: relative;
   height: 100%;
-  min-height: 600px !important;
+  min-height: 600px;
 }
 
 .program-card:hover {

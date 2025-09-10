@@ -212,6 +212,57 @@ export const TestimonialsSection = (): JSX.Element => {
           </div>
         </div>
 
+        {/* Comments Carousel */}
+        <div className="comments-carousel">
+          <div className="comments-carousel-track">
+            <div className="comments-carousel-item">
+              <img src="/comment1.jpeg" alt="Comment 1" className="comments-image" />
+            </div>
+            <div className="comments-carousel-item">
+              <img src="/comment2.jpeg" alt="Comment 2" className="comments-image" />
+            </div>
+            <div className="comments-carousel-item">
+              <img src="/comment3.jpeg" alt="Comment 3" className="comments-image" />
+            </div>
+            <div className="comments-carousel-item">
+              <img src="/comment4.jpeg" alt="Comment 4" className="comments-image" />
+            </div>
+            <div className="comments-carousel-item">
+              <video 
+                src="/comment5.mp4" 
+                className="comments-video" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+              />
+            </div>
+            {/* Duplicate for seamless loop */}
+            <div className="comments-carousel-item">
+              <img src="/comment1.jpeg" alt="Comment 1" className="comments-image" />
+            </div>
+            <div className="comments-carousel-item">
+              <img src="/comment2.jpeg" alt="Comment 2" className="comments-image" />
+            </div>
+            <div className="comments-carousel-item">
+              <img src="/comment3.jpeg" alt="Comment 3" className="comments-image" />
+            </div>
+            <div className="comments-carousel-item">
+              <img src="/comment4.jpeg" alt="Comment 4" className="comments-image" />
+            </div>
+            <div className="comments-carousel-item">
+              <video 
+                src="/comment5.mp4" 
+                className="comments-video" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Decorative element */}
         <img
           className="testimonials-decorative"
