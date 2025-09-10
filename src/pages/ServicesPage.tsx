@@ -1,63 +1,83 @@
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Expand } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import "../screens/Website/sections/TrainingProgramsSection/TrainingProgramsSection.css";
+import "./ServicesPage.css";
 
 export const ServicesPage = (): JSX.Element => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   const handleGetStarted = () => {
     navigate('/contact');
   };
+
+  const toggleExpanded = (index: number) => {
+    setExpandedCard(expandedCard === index ? null : index);
+  };
   const services = [
     {
-      title: t("services.sushkaPro.title"),
-      price: `${t("services.sushkaPro.price")}\n${t("services.sushkaPro.discount")}`,
+      title: t("programs.sushkaPro.title"),
+      price: `${t("programs.sushkaPro.price")}\n${t("programs.sushkaPro.discount")}`,
       period: "",
-      description: "",
-      features: t("services.sushkaPro.features", { returnObjects: true }) as string[],
+      description: t("programs.sushkaPro.description"),
+      extendedDescription: t("programs.sushkaPro.extendedDescription"),
+      features: t("programs.sushkaPro.features", { returnObjects: true }) as string[],
+      details: t("programs.sushkaPro.details"),
       popular: false
     },
     {
-      title: t("services.strengthTone.title"),
-      price: `${t("services.strengthTone.price")}\n${t("services.strengthTone.discount")}`,
+      title: t("programs.strengthTone.title"),
+      price: `${t("programs.strengthTone.price")}\n${t("programs.strengthTone.discount")}`,
       period: "",
-      description: "",
-      features: t("services.strengthTone.features", { returnObjects: true }) as string[],
+      description: t("programs.strengthTone.description"),
+      extendedDescription: t("programs.strengthTone.extendedDescription"),
+      features: t("programs.strengthTone.features", { returnObjects: true }) as string[],
+      details: t("programs.strengthTone.details"),
       popular: true
     },
     {
-      title: t("services.steelAbs.title"),
-      price: `${t("services.steelAbs.price")}\n${t("services.steelAbs.discount")}`,
+      title: t("programs.steelAbs.title"),
+      price: `${t("programs.steelAbs.price")}\n${t("programs.steelAbs.discount")}`,
       period: "",
-      description: "",
-      features: t("services.steelAbs.features", { returnObjects: true }) as string[],
+      description: t("programs.steelAbs.description"),
+      extendedDescription: t("programs.steelAbs.extendedDescription"),
+      features: t("programs.steelAbs.features", { returnObjects: true }) as string[],
+      details: t("programs.steelAbs.details"),
       popular: false
     },
     {
-      title: t("services.trxBalance.title"),
-      price: `${t("services.trxBalance.price")}\n${t("services.trxBalance.discount")}`,
+      title: t("programs.trxFitness.title"),
+      price: t("programs.trxFitness.price"),
       period: "",
-      description: "",
-      features: t("services.trxBalance.features", { returnObjects: true }) as string[],
+      description: t("programs.trxFitness.description"),
+      extendedDescription: t("programs.trxFitness.extendedDescription"),
+      features: t("programs.trxFitness.features", { returnObjects: true }) as string[],
+      details: t("programs.trxFitness.details"),
       popular: false
     },
     {
-      title: t("services.postpartumRecovery.title"),
-      price: `${t("services.postpartumRecovery.price")}\n${t("services.postpartumRecovery.period")}`,
+      title: t("programs.postpartumRecovery.title"),
+      price: t("programs.postpartumRecovery.price"),
       period: "",
-      description: "",
-      features: t("services.postpartumRecovery.features", { returnObjects: true }) as string[],
+      description: t("programs.postpartumRecovery.description"),
+      extendedDescription: t("programs.postpartumRecovery.extendedDescription"),
+      features: t("programs.postpartumRecovery.features", { returnObjects: true }) as string[],
+      details: t("programs.postpartumRecovery.details"),
       popular: false
     },
     {
-      title: t("services.nutritionConsultation.title"),
-      price: `${t("services.nutritionConsultation.price")}\n${t("services.nutritionConsultation.type")}`,
+      title: t("programs.stretchingSplits.title"),
+      price: t("programs.stretchingSplits.price"),
       period: "",
-      description: "",
-      features: t("services.nutritionConsultation.features", { returnObjects: true }) as string[],
+      description: t("programs.stretchingSplits.description"),
+      extendedDescription: t("programs.stretchingSplits.extendedDescription"),
+      features: t("programs.stretchingSplits.features", { returnObjects: true }) as string[],
+      details: t("programs.stretchingSplits.details"),
       popular: false
     }
   ];
@@ -70,40 +90,33 @@ export const ServicesPage = (): JSX.Element => {
       price: t("services.additional.groupTraining.price")
     },
     {
-      title: t("services.additional.onlineCoaching.title"),
-      description: t("services.additional.onlineCoaching.description"),
-      price: t("services.additional.onlineCoaching.price")
-    },
-    {
-      title: t("services.additional.fitnessAssessment.title"),
-      description: t("services.additional.fitnessAssessment.description"),
-      price: t("services.additional.fitnessAssessment.price")
+      title: t("services.additional.totalReset.title"),
+      description: t("services.additional.totalReset.description"),
+      price: t("services.additional.totalReset.price")
     }
   ];
 
   return (
-    <div className="bg-[#1a1a1a] w-full min-h-screen pt-24">
-      <div className="max-w-7xl mx-auto px-4 py-20">
+    <div className="services-page-container">
+      <div className="services-content-wrapper">
         {/* Hero Section */}
-        <div className="text-center mb-20">
-          <h1 className="[font-family:'Anton',Helvetica] font-normal text-white text-4xl md:text-6xl tracking-[-0.60px] leading-[1.2] mb-8 translate-y-[-1rem] animate-fade-in opacity-0">
+        <div className="services-hero-section">
+          <h1 className="services-hero-title">
             {t("services.title")}
           </h1>
-          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-xl md:text-2xl tracking-[0] leading-[1.3] max-w-4xl mx-auto translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
+          <p className="services-hero-subtitle">
             {t("services.subtitle")}
           </p>
         </div>
 
         {/* Main Services */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {services.map((service, index) => (
+        <div className="services-main-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {services.map((service, index) => {
+            const mainIndex = index; // 0-5 для основных программ
+            return (
             <Card
               key={index}
-              className={`relative flex flex-col justify-between p-8 bg-[#1f1f1f] rounded-[20px] shadow-[0px_20px_40px_#0000001a] backdrop-blur-[10px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10px)_brightness(100%)] translate-y-[-1rem] animate-fade-in opacity-0 hover:scale-105 transition-all duration-300 ${
-                service.popular 
-                  ? 'border-2 border-[#ff2332] transform scale-105' 
-                  : 'border border-[#ffffff33]'
-              }`}
+              className={`service-card ${service.popular ? 'service-card--popular' : ''}`}
               style={
                 {
                   "--animation-delay": `${400 + index * 200}ms`,
@@ -116,54 +129,68 @@ export const ServicesPage = (): JSX.Element => {
                 </div>
               )}
               
-              <CardContent className="p-0">
-                <div className="text-center mb-6">
-                  <h3 className="[font-family:'Outfit',Helvetica] font-bold text-white text-xl mb-2">
-                    {service.title}
-                  </h3>
-                  <div className="mb-2">
-                    {service.price.includes("\n") ? (
-                      <div className={`program-price ${service.popular ? 'text-[#ff2332]' : 'text-white'}`}>
-                        <div className="price-main">{service.price.split("\n")[0]}</div>
-                        <div className="price-discount">{service.price.split("\n")[1]}</div>
-                      </div>
-                    ) : (
-                      <div className={`[font-family:'Anton',Helvetica] font-normal text-6xl tracking-[0] leading-[1] ${
-                        service.popular ? 'text-[#ff2332]' : 'text-white'
-                      }`}>{service.price}</div>
+              <CardContent className="service-card-content program-card-content">
+                <div className="service-card-top program-card-top">
+                  <div className="service-title-container program-title-container">
+                    <h3 className="program-title">
+                      {service.title}
+                    </h3>
+                    {service.extendedDescription && (
+                      <button
+                        className="expand-button"
+                        onClick={() => toggleExpanded(mainIndex)}
+                        aria-label="Expand description"
+                      >
+                        <Expand className="expand-icon" />
+                      </button>
                     )}
                   </div>
-                  {service.period && (
-                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-base">
-                      {service.period}
+
+                  <div className={`service-price program-price program-price--${service.popular ? 'red' : 'white'}`}>
+                    {service.price.includes("\n") ? (
+                      <>
+                        <div className="price-main">{service.price.split("\n")[0]}</div>
+                        <div className="price-discount">{service.price.split("\n")[1]}</div>
+                      </>
+                    ) : (
+                      service.price
+                    )}
+                  </div>
+
+                  <p className={`service-description program-description ${service.title === "TRX: фитнес-зал нового поколения" || service.title === "Новое тело после родов: живот подтянется, отёки уйдут" ? "!text-sm" : ""}`} style={service.title === "TRX: фитнес-зал нового поколения" || service.title === "Новое тело после родов: живот подтянется, отёки уйдут" ? { fontSize: '0.9rem' } : {}}>
+                    {service.description}
+                  </p>
+
+                  {/* Extended Description */}
+                  {service.extendedDescription && expandedCard === index && (
+                    <p className="program-extended-description">
+                      {service.extendedDescription}
                     </p>
                   )}
-                  {service.description && (
-                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mt-2">
-                      {service.description}
-                    </p>
-                  )}
+
+                  <div className="service-features program-features text-left">
+                    {service.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-start gap-3 mb-2 text-left">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="text-[#909090] text-sm text-left">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="space-y-3 mb-8">
-                  {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-[#ff2332] flex-shrink-0" />
-                      <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
+                <div className="service-card-bottom program-card-bottom">
+                  <Button className="service-button program-button" onClick={handleGetStarted}>
+                    <span>{t("services.startNow")}</span>
+                  </Button>
+
+                  <p className="service-details program-details">
+                    {service.details}
+                  </p>
                 </div>
               </CardContent>
-
-              <Button className="w-full bg-[#ff2332] hover:bg-[#ff2332]/90 rounded-xl h-12 transition-all duration-300 hover:scale-105" onClick={handleGetStarted}>
-                <span className="[font-family:'Outfit',Helvetica] font-bold text-white text-base">
-                  {t("services.startNow")}
-                </span>
-              </Button>
             </Card>
-          ))}
+            );
+          })}
         </div>
 
         {/* Additional Services */}
@@ -172,8 +199,10 @@ export const ServicesPage = (): JSX.Element => {
             {t("services.additionalTitle")}
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {additionalServices.map((service, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {additionalServices.map((service, index) => {
+              const additionalIndex = index + 6; // 6-7 для дополнительных услуг
+              return (
               <Card
                 key={index}
                 className="bg-[#1f1f1f] border border-[#ffffff33] rounded-[20px] p-6 translate-y-[-1rem] animate-fade-in opacity-0 hover:scale-105 transition-all duration-300"
@@ -184,18 +213,131 @@ export const ServicesPage = (): JSX.Element => {
                 }
               >
                 <CardContent className="p-0 text-center">
-                  <h3 className="[font-family:'Outfit',Helvetica] font-bold text-white text-lg mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
-                    {service.description}
-                  </p>
+                  <div className="program-title-container-additional">
+                    <h3 className="[font-family:'Outfit',Helvetica] font-bold text-white text-lg mb-3" style={service.title === t("services.additional.groupTraining.title") || service.title === t("programs.trxFitness.title") ? { fontSize: '0.9rem' } : {}}>
+                      {service.title}
+                    </h3>
+                    {service.title === t("services.additional.totalReset.title") && (
+                      <button
+                        className="expand-button-total-reset"
+                        onClick={() => toggleExpanded(additionalIndex)}
+                        aria-label="Expand description"
+                      >
+                        <Expand className="expand-icon-total-reset" />
+                      </button>
+                    )}
+                  </div>
+                  {service.title === t("services.additional.groupTraining.title") ? (
+                    <div className="text-left mb-4">
+                      <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                        {t("services.additional.groupTraining.intro")}
+                      </p>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.groupTraining.points.nutritionBreakdown")}</span>
+                      </div>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.groupTraining.points.macroAnalysis")}</span>
+                      </div>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.groupTraining.points.hiddenOvereating")}</span>
+                      </div>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.groupTraining.points.realReasons")}</span>
+                      </div>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.groupTraining.points.practicalAdvice")}</span>
+                      </div>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.groupTraining.points.allFactors")}</span>
+                      </div>
+                      <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mt-4">
+                        {t("services.additional.groupTraining.result")}
+                      </p>
+                    </div>
+                  ) : service.title === t("services.additional.totalReset.title") ? (
+                    <div className="text-left mb-4">
+                      <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                        {t("services.additional.totalReset.intro")}
+                      </p>
+                      <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                        {t("services.additional.totalReset.whatChanges")}
+                      </p>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.body")}</span>
+                      </div>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.mindset")}</span>
+                      </div>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.habits")}</span>
+                      </div>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.nutrition")}</span>
+                      </div>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.energy")}</span>
+                      </div>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.inner")}</span>
+                      </div>
+                      <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4 mt-4">
+                        {t("services.additional.totalReset.whatInside")}
+                      </p>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.inside.training")}</span>
+                      </div>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.inside.coaching")}</span>
+                      </div>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.inside.nutrition")}</span>
+                      </div>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.inside.meditation")}</span>
+                      </div>
+                      <div className="flex items-start gap-3 mb-2">
+                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.inside.support")}</span>
+                      </div>
+                      <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mt-4">
+                        {t("services.additional.totalReset.result")}
+                      </p>
+                      {expandedCard === additionalIndex && (
+                        <div className="program-extended-description-additional">
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            {t("services.additional.totalReset.extendedContent")}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                      {service.description}
+                    </p>
+                  )}
                   <div className="[font-family:'Anton',Helvetica] font-normal text-[#ff2332] text-xl">
                     {service.price}
                   </div>
                 </CardContent>
               </Card>
-            ))}
+            );
+          })}
           </div>
         </div>
 

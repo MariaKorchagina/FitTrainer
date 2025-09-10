@@ -275,13 +275,13 @@
 
 @media (max-width: 768px) {
   .footer-title {
-    margin-top: -2rem;
+    margin-top: -4rem; /* changed from -2rem to -4rem to move block lower */
     text-align: center; /* center like 'Сертификаты' */
     font-size: 2.5rem; /* match mobile size of 'Сертификаты' */
     letter-spacing: -0.6px;
   }
   .footer-text {
-    margin-top: 1rem; /* add space below the image */
+    margin-top: -1rem; /* changed from 1rem to -1rem to move block lower */
     align-items: center; /* center content on mobile */
     text-align: center;
   }

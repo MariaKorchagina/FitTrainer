@@ -73,10 +73,13 @@ export const Header = (): JSX.Element => {
                   {item.label}
                 </Link>
               ))}
-              <Link to="/contact" className="mobile-nav-button">
+              <Link to="/contact" className="mobile-nav-button" onClick={() => setIsMenuOpen(false)}>
                 <span>{t("navigation.contact")}</span>
               </Link>
             </nav>
+            <div className="mobile-language-switcher">
+              <LanguageSwitcher />
+            </div>
           </div>
         )}
       </div>

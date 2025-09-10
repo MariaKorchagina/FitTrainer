@@ -1,0 +1,485 @@
+/* ServicesPage.css */
+
+/* Main Container */
+.services-page-container {
+  background-color: #1a1a1a;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 6rem;
+}
+
+.services-content-wrapper {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Hero Section */
+.services-hero-section {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+/* Main Services Section */
+.services-hero-title {
+  font-family: 'Anton', Helvetica, sans-serif;
+  font-weight: normal;
+  color: white;
+  font-size: 2.5rem;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  transform: translateY(-1rem);
+  animation: fade-in 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.services-hero-subtitle {
+  font-family: 'Outfit', Helvetica;
+  font-weight: normal;
+  color: #909090;
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  line-height: 1.3;
+  max-width: 64rem;
+  margin: 0 auto;
+  transform: translateY(-1rem);
+  animation: fade-in 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .services-hero-title {
+    font-size: 2.75rem;
+  }
+  
+  .services-hero-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+/* Main Services Grid */
+.main-services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 5rem;
+  align-items: start; /* Важно: не растягивать элементы по высоте */
+}
+
+@media (min-width: 768px) {
+  .main-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Override Tailwind grid alignment for services page */
+.services-main-grid {
+  align-items: start !important; /* Выравниваем блоки по началу */
+}
+
+/* Service card with adaptive height */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 600px; /* Минимальная высота для всех блоков */
+  height: auto; /* Позволяем увеличиваться при необходимости */
+  position: relative;
+  padding: 2rem;
+  background-color: #1f1f1f;
+  border-radius: 20px;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px) brightness(100%);
+  -webkit-backdrop-filter: blur(10px) brightness(100%);
+  transform: translateY(-1rem);
+  animation: fade-in 1s ease forwards;
+  opacity: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: visible; /* Позволяем контенту расширяться */
+  box-sizing: border-box;
+  align-self: start; /* Выравниваем по началу */
+}
+
+/* Переопределяем стили из TrainingProgramsSection.css для ServicesPage */
+.service-card.program-card {
+  height: auto !important; /* Позволяем карточке увеличиваться по высоте */
+  min-height: 600px !important; /* Минимальная высота для всех блоков */
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 2rem !important;
+}
+
+.service-card:hover {
+  transform: translateY(-1rem) scale(1.05);
+  box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.17);
+}
+
+.service-card--popular {
+  border: 2px solid #ff2332;
+  transform: translateY(-1rem) scale(1.05);
+}
+
+/* Popular badge */
+.popular-badge {
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff2332;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+/* Service card content with flex layout */
+.service-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Растягивается на всю доступную высоту */
+  justify-content: space-between; /* Равномерное распределение элементов */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 !important; /* Убираем стандартный padding от CardContent */
+  min-height: auto !important;
+  height: auto !important;
+  gap: 0 !important;
+}
+
+/* Service card top section */
+.service-card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+/* Service card bottom section */
+.service-card-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+/* Service card elements */
+.service-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.service-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.service-features {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-top: 15px;
+}
+
+.service-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.service-button {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Program Description with smaller font for specific programs */
+.program-description-small {
+  font-size: 0.9rem !important;
+}
+
+/* Additional Services Section */
+.additional-services-title {
+  font-family: 'Anton', Helvetica;
+  font-weight: normal;
+  color: white;
+  font-size: 3rem;
+  letter-spacing: -0.40px;
+  line-height: 1.2;
+  margin-bottom: 3rem;
+  text-align: center;
+  transform: translateY(-1rem);
+  animation: fade-in 0.6s ease-out 1s forwards;
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .additional-services-title {
+    font-size: 4rem;
+  }
+}
+
+.additional-services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .additional-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Additional Service Card */
+.additional-service-card {
+  background-color: #1f1f1f;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 1.5rem;
+  transform: translateY(-1rem);
+  animation: fade-in 0.6s ease-out forwards;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.additional-service-card:hover {
+  transform: translateY(-1rem) scale(1.05);
+}
+
+/* Additional service content */
+.additional-service-content {
+  padding: 0;
+  text-align: center;
+}
+
+/* Additional service description text */
+.additional-service-description {
+  font-family: 'Outfit', Helvetica;
+  font-weight: normal;
+  color: #909090;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+/* Additional service price */
+.additional-service-price {
+  font-family: 'Anton', Helvetica;
+  font-weight: normal;
+  color: #ff2332;
+  font-size: 1.25rem;
+}
+
+/* CheckCircle icon styles */
+.check-circle-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #ff2332;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+/* Feature item */
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.feature-text {
+  font-family: 'Outfit', Helvetica;
+  font-weight: normal;
+  color: #909090;
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+/* Additional Service Title with smaller font for specific services */
+.additional-service-title-small {
+  font-size: 0.9rem !important;
+}
+
+/* Expand button positioning for Total Reset only */
+.expand-button-total-reset {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 35, 50, 0.1);
+  border: 1px solid rgba(255, 35, 50, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.expand-button-total-reset:hover {
+  background-color: rgba(255, 35, 50, 0.2);
+  border-color: rgba(255, 35, 50, 0.5);
+  transform: scale(1.1);
+}
+
+.expand-icon-total-reset {
+  width: 16px;
+  height: 16px;
+  color: #ff2332;
+  transition: transform 0.3s ease;
+}
+
+.expand-button-total-reset:hover .expand-icon-total-reset {
+  transform: rotate(180deg);
+}
+
+/* Program title container for additional services */
+.program-title-container-additional {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+  min-height: 60px;
+}
+
+/* Extended description for additional services */
+.program-extended-description-additional {
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: 400;
+  color: #b0b0b0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 16rem;
+  margin: 0.75rem 0 1rem 0;
+  text-align: left;
+  text-align: justify;
+  white-space: pre-line;
+  min-height: auto;
+}
+
+/* Extended description for main programs */
+.program-extended-description {
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: 400;
+  color: #b0b0b0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 100%;
+  width: 100%;
+  margin: 0.75rem 0 1rem 0;
+  text-align: left;
+  text-align: justify;
+  white-space: pre-line;
+  min-height: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  background-color: #1f1f1f;
+  border-radius: 20px;
+  padding: 3rem;
+  transform: translateY(-1rem);
+  animation: fade-in 0.6s ease-out 1.6s forwards;
+  opacity: 0;
+}
+
+.cta-title {
+  font-family: 'Anton', Helvetica;
+  font-weight: normal;
+  color: white;
+  font-size: 3rem;
+  letter-spacing: -0.40px;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cta-title {
+    font-size: 2.75rem;
+  }
+}
+
+.cta-description {
+  font-family: 'Outfit', Helvetica;
+  font-weight: normal;
+  color: #909090;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  height: 60px;
+  padding: 0 2rem;
+  background-color: #ff2332;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e01e2b;
+  transform: scale(1.05);
+}
+
+.cta-button-text {
+  font-family: 'Outfit', Helvetica;
+  font-weight: bold;
+  color: white;
+  font-size: 1.125rem;
+}
+
+/* Animation keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

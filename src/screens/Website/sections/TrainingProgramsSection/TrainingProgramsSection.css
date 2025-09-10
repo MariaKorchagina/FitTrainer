@@ -100,8 +100,7 @@
   transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
-  min-height: 420px;
-  height: 100%;
+  min-height: 900px;
 }
 
 .program-card:hover {
@@ -132,13 +131,78 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0;
   padding: 0;
   text-align: center;
   flex: 1;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
+  height: 100%;
+}
+
+.program-card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.program-card-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.program-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  height: 60px;
+  flex-shrink: 0;
   margin-bottom: 1.5rem;
+}
+
+.expand-button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 35, 50, 0.1);
+  border: 1px solid rgba(255, 35, 50, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.expand-button:hover {
+  background-color: rgba(255, 35, 50, 0.2);
+  border-color: rgba(255, 35, 50, 0.5);
+  transform: scale(1.1);
+}
+
+.expand-icon {
+  width: 16px;
+  height: 16px;
+  color: #ff2332;
+  transition: transform 0.3s ease;
+}
+
+.expand-button:hover .expand-icon {
+  transform: rotate(180deg);
 }
 
 .program-title {
@@ -158,7 +222,7 @@
   font-size: 2.5rem;
   letter-spacing: -1px;
   line-height: 1.2;
-  margin: 0.5rem 0;
+  margin: 0 0 1.5rem 0;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -199,7 +263,7 @@
   letter-spacing: 0.2px;
   line-height: 1.5;
   max-width: 16rem;
-  margin: 0;
+  margin: 0 0 1.5rem 0;
   text-align: center;
 }
 
@@ -215,6 +279,26 @@
   text-align: center;
   opacity: 0.8;
   font-style: italic;
+}
+
+.program-extended-description {
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: 400;
+  color: #b0b0b0;
+  font-size: 1rem;
+  letter-spacing: 0.1px;
+  line-height: 1.5;
+  max-width: 16rem;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.program-features {
+  min-height: 120px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .program-button {

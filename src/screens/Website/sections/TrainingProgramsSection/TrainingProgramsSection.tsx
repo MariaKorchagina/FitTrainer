@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Expand } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./TrainingProgramsSection.css";
@@ -9,6 +9,7 @@ import "./TrainingProgramsSection.css";
 export const TrainingProgramsSection = (): JSX.Element => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   const trainingPrograms = [
     {
@@ -16,6 +17,7 @@ export const TrainingProgramsSection = (): JSX.Element => {
       price: `${t("programs.sushkaPro.price")}\n${t("programs.sushkaPro.discount")}`,
       priceColor: "white",
       description: t("programs.sushkaPro.description"),
+      extendedDescription: t("programs.sushkaPro.extendedDescription"),
       details: t("programs.sushkaPro.details"),
       features: t("programs.sushkaPro.features", { returnObjects: true }) as string[],
       featured: false,
@@ -26,6 +28,7 @@ export const TrainingProgramsSection = (): JSX.Element => {
       price: `${t("programs.strengthTone.price")}\n${t("programs.strengthTone.discount")}`,
       priceColor: "red",
       description: t("programs.strengthTone.description"),
+      extendedDescription: t("programs.strengthTone.extendedDescription"),
       details: t("programs.strengthTone.details"),
       features: t("programs.strengthTone.features", { returnObjects: true }) as string[],
       featured: true,
@@ -36,6 +39,7 @@ export const TrainingProgramsSection = (): JSX.Element => {
       price: `${t("programs.steelAbs.price")}\n${t("programs.steelAbs.discount")}`,
       priceColor: "white",
       description: t("programs.steelAbs.description"),
+      extendedDescription: t("programs.steelAbs.extendedDescription"),
       details: t("programs.steelAbs.details"),
       features: t("programs.steelAbs.features", { returnObjects: true }) as string[],
       featured: false,
@@ -49,6 +53,10 @@ export const TrainingProgramsSection = (): JSX.Element => {
 
   const handleViewAllPrograms = () => {
     navigate('/services');
+  };
+
+  const toggleExpanded = (index: number) => {
+    setExpandedCard(expandedCard === index ? null : index);
   };
 
   return (
@@ -77,45 +85,67 @@ export const TrainingProgramsSection = (): JSX.Element => {
               }
             >
               <CardContent className="program-card-content">
-                <h3 className="program-title">
-                  {program.title}
-                </h3>
+                <div className="program-card-top">
+                  <div className="program-title-container">
+                    <h3 className="program-title">
+                      {program.title}
+                    </h3>
+                    {program.extendedDescription && (
+                      <button
+                        className="expand-button"
+                        onClick={() => toggleExpanded(index)}
+                        aria-label="Expand description"
+                      >
+                        <Expand className="expand-icon" />
+                      </button>
+                    )}
+                  </div>
 
-                <div className={`program-price program-price--${program.priceColor}`}>
-                  {program.price.includes('\n') ? (
-                    <>
-                      <div className="price-main">{program.price.split('\n')[0]}</div>
-                      <div className="price-discount">{program.price.split('\n')[1]}</div>
-                    </>
-                  ) : (
-                    program.price
+                  <div className={`program-price program-price--${program.priceColor}`}>
+                    {program.price.includes('\n') ? (
+                      <>
+                        <div className="price-main">{program.price.split('\n')[0]}</div>
+                        <div className="price-discount">{program.price.split('\n')[1]}</div>
+                      </>
+                    ) : (
+                      program.price
+                    )}
+                  </div>
+
+                  <p className="program-description">
+                    {program.description}
+                  </p>
+
+                  {/* Extended Description for Steel Abs */}
+                  {program.extendedDescription && expandedCard === index && (
+                    <p className="program-extended-description">
+                      {program.extendedDescription}
+                    </p>
+                  )}
+
+                  {/* Features List */}
+                  {program.features && (
+                    <div className="program-features text-left">
+                      {program.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-start gap-3 mb-2 text-left">
+                          <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                          <span className="text-[#909090] text-sm text-left">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
                   )}
                 </div>
 
-                <p className="program-description">
-                  {program.description}
-                </p>
+                <div className="program-card-bottom">
+                  <Button className="program-button" onClick={handleGetStarted}>
+                    <span>{t("programs.startNow")}</span>
+                  </Button>
 
-                {/* Features List */}
-                {program.features && (
-                  <div className="program-features text-left">
-                    {program.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-start gap-3 mb-2 text-left">
-                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
-                        <span className="text-[#909090] text-sm text-left">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                  <p className="program-details">
+                    {program.details}
+                  </p>
+                </div>
               </CardContent>
-
-              <Button className="program-button" onClick={handleGetStarted}>
-                <span>{t("programs.startNow")}</span>
-              </Button>
-
-              <p className="program-details">
-                {program.details}
-              </p>
             </Card>
           ))}
         </div>

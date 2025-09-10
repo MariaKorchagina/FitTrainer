@@ -20,41 +20,91 @@
     "startNow": "Get Started",
     "sushkaPro": {
       "title": "Cut PRO",
-      "price": "$580 → $405",
-      "discount": "(30% off)",
+      "price": "87 $",
+      "discount": "",
       "description": "Quick results - fat goes away, body in tone",
-      "details": "Perfect for those who need to burn maximum in a short time",
+      "extendedDescription": "Stop waiting months to see results. This program makes your body toned, strong and defined faster than you think:\n\nFat melts even after training — your body works for results 24/7.\n\nCellulite decreases, skin becomes denser and smoother.\n\nEvery workout gives you a feeling of strength and control over your body.\n\nWhat's inside:",
+      "details": "Start today and feel how your body changes from the first week.",
       "features": [
-        "8 powerful Tabata workouts (20/10, 40/20)",
-        "Nutrition plan that triggers fat burning",
-        "Home activity + recovery recommendations",
-        "Constant support: motivation, reminders, answers to \"can I have a banana?\""
+        "8 high-intensity cardio Tabata workouts\nof 30 minutes each — maximum results in minimum time.",
+        "4 online recordings for independent training — train when it's convenient.",
+        "Video report checking and technique correction — to make workouts safe and effective.",
+        "Nutrition plan that accelerates fat burning and boosts metabolism.",
+        "Full support: motivation, answers to questions, workout reminders."
       ]
     },
     "strengthTone": {
-      "title": "Strength & Tone",
-      "price": "$600 → $420",
-      "discount": "(30% off)",
+      "title": "Strong Body Without Jumps. Pilates",
+      "price": "66 $",
+      "discount": "",
       "description": "Firm figure without overload - through pilates",
-      "details": "Feminine strength, flexibility and lightness in the body",
+      "extendedDescription": "Don't like running, jumping and exhausting cardio? Pilates is a gentle, safe and effective way to get your body in shape:\n\nWe burn fat and build definition — without overloading joints.\n\n\nWe strengthen pelvic, abdominal and stabilizer muscles — for a flat stomach and beautiful posture.\n\n\nStretching and breathing — improves mobility and overall well-being.\n\n\nWhat's inside:",
+      "details": "Start today — feel slim, strong and light from the first week.",
       "features": [
-        "8 workouts for stabilizers, breathing, stretching",
-        "Strengthening pelvic and abdominal muscles without overload",
-        "Nutrition plan for lightness, tone and anti-stress",
-        "Soft but constant support"
+        "8 workouts of 30 minutes each — gentle but effective,\nbody in tone from the first week.",
+        "4 online recordings for independent training — train when it's convenient.",
+        "Video report checking and technique correction — to make workouts safe and effective.",
+        "Nutrition plan for weight loss, tone and anti-stress — body and mind in harmony.",
+        "Full support: motivation, answers to questions, workout reminders."
       ]
     },
     "steelAbs": {
       "title": "Steel Abs",
-      "price": "$550 → $385",
-      "discount": "(30% off)",
-      "description": "Deep muscles + perfect technique = relief",
-      "details": "For those who want not just \"cubes\", but control and confidence",
+      "price": "72 $",
+      "discount": "",
+      "description": "Flat stomach and definition",
+      "extendedDescription": "Want a flat stomach, definition and abs that people will turn to look at? This program works fast and effectively. From the very first workouts, the \"pouch\" disappears and the stomach becomes stronger. The core engages, muscles begin to form definition and abs. The back straightens — goodbye slouching and heaviness. Arms tighten up — no flabbiness or cellulite. You notice the first changes after just a few sessions. What's inside:",
+      "details": "Start today — and feel how your body changes from the first steps.",
       "features": [
-        "8 workouts for deep abdominal muscles",
+        "8 workouts for deep abdominal\nmuscles",
         "Correct technique for each exercise",
         "Nutrition plan for relief and flat stomach",
         "Constant support and technique control"
+      ]
+    },
+    "trxFitness": {
+      "title": "TRX: Next-Generation Fitness",
+      "price": "77 $",
+      "discount": "",
+      "description": "Forget about machines and gyms. TRX trains your body with a focus on stabilizers — deep, effective and modern.",
+      "extendedDescription": "We work with deep muscles and balance — the body becomes strong, stable and toned.\n\nStretching and mobilization — we increase flexibility and joint mobility.\n\nBreathing and awareness — you control every movement, enhancing the result.\n\nWhat's inside:",
+      "details": "Start today — feel strength, balance and control over your body from the first week.",
+      "features": [
+        "8 personal training sessions of 30 minutes — maximum effect in minimum time.",
+        "4 online recordings for independent training — train wherever convenient.",
+        "Video report checking and technique correction — safe and effective.",
+        "Nutrition plan and recovery recommendations — energy, tone and slimness support.",
+        "Full support: motivation, answers to questions, workout reminders."
+      ]
+    },
+    "postpartumRecovery": {
+      "title": "New Body After Birth: Stomach Tightens, Swelling Goes Away",
+      "price": "39 $",
+      "discount": "",
+      "description": "Your body has gone through serious stress — now it's important to recover properly.",
+      "extendedDescription": "This program is created specifically for women after childbirth: safe but effective exercises for the abdomen, pelvis and posture.\n\n💫 What the program gives:\nWe tighten the abdomen and work with diastasis.\n\nWe strengthen the pelvic and hip muscles.\n\nWe start lymph flow — swelling and heaviness go away.\n\nWe align posture, relieve stress from the back.\n\nWe add breathing practices — energy and anti-stress.\n\nWhat's inside:",
+      "details": "Start today — feel how your stomach tightens, swelling goes away, and strength returns from the first week.",
+      "features": [
+        "8 personal training sessions of 30 minutes (2 times a week) — comfortable rhythm and result.",
+        "4 online recordings for independent home training.",
+        "Technique control and correction — every movement under supervision.",
+        "Nutrition plan and recovery recommendations — lightness, tone and anti-stress.",
+        "Full support: motivation, answers to questions, workout reminders."
+      ]
+    },
+    "stretchingSplits": {
+      "title": "Stretching and Splits: Straight Back, Flexibility and Minus Swelling",
+      "price": "72 $",
+      "discount": "",
+      "description": "Slouching, tension, heaviness in the body? Time to return lightness.",
+      "extendedDescription": "The \"Stretching + Splits\" program gently aligns the back, develops flexibility and starts lymph flow — swelling and cellulite go away.\n\n💫 Result: straight posture, flexible joints, toned body.\n\nWhat's inside:",
+      "details": "In just 1-2 weeks your back will straighten, your body will become flexible, and swelling will go away.",
+      "features": [
+        "8 personal training sessions of 30 minutes (2 times a week) — flexibility without overload.",
+        "4 online recordings for independent home training.",
+        "Technique control and correction — every movement is safe.",
+        "Nutrition plan and recommendations for lightness and against swelling.",
+        "Full support: motivation, answers to questions, workout reminders."
       ]
     }
   },
@@ -205,8 +255,8 @@
     "ctaButton": "Book Free Consultation",
     "sushkaPro": {
       "title": "Cut PRO",
-      "price": "$580 → $405",
-      "discount": "(30% off)",
+      "price": "87 $",
+      "discount": "",
       "features": [
         "8 powerful Tabata workouts (20/10, 40/20)",
         "Nutrition plan that triggers fat burning",
@@ -227,8 +277,8 @@
     },
     "steelAbs": {
       "title": "Steel Abs",
-      "price": "$550 → $385",
-      "discount": "(30% off)",
+      "price": "72 $",
+      "discount": "",
       "features": [
         "8 workouts for deep abdominal muscles",
         "Proper technique for each exercise",
@@ -273,19 +323,38 @@
     },
     "additional": {
       "groupTraining": {
-        "title": "Group Training",
-        "description": "Small group sessions for friends or family",
-        "price": "From $50/person"
+        "title": "Nutrition Analysis: Let's Break Down 7 Days",
+        "description": "Stop guessing why the diet isn't working. We'll analyze your real nutrition and show where the hidden mistakes are:\n\nNutrition breakdown — detailed for 7 days.\n\nMacro analysis — calories, proteins, fats, carbohydrates.\n\nHidden overeating — even \"on a diet\" you might be eating more than you think.\n\nReal reasons for breakdown — not a sandwich, but lack of protein, sleep or stress.\n\nPractical advice — what and how to change without strict restrictions.\n\nAccounting for all factors — water, coffee, stress, breakdowns — we won't miss anything.\n\nResult: understanding your nutrition, simple adjustments and real steps to your goal without stress and restrictions.",
+        "price": "35 $"
       },
       "onlineCoaching": {
         "title": "Online Coaching",
         "description": "Remote training and nutrition guidance",
         "price": "From $100/month"
       },
-      "fitnessAssessment": {
-        "title": "Fitness Assessment",
-        "description": "Comprehensive fitness evaluation and goal setting",
-        "price": "$75/session"
+      "totalReset": {
+        "title": "Total Reset: Body and Mind Reboot",
+        "description": "This is not a course or training. This is a transformation program where I take you by the hand and change everything: body, habits, mindset.",
+        "price": "92 $",
+        "intro": "This is not a course or training. This is a transformation program where I take you by the hand and change everything: body, habits, mindset.",
+        "whatChanges": "What changes:",
+        "changes": {
+          "body": "Body — strength, functional and breathing practices. Stomach tightens, definition appears, swelling goes away.",
+          "mindset": "Mindset — we learn to remove sabotage, turn on discipline and confidence.",
+          "habits": "Habits — early rise, exercise, running, sleep and nutrition control.",
+          "nutrition": "Nutrition — no \"diet\", only a system that will fit into life.",
+          "energy": "Energy and focus — meditations and breathing practices relieve stress and restore balance.",
+          "inner": "Inner attitude — affirmations and mindset work change self-image and accelerate results."
+        },
+        "whatInside": "What's inside:",
+        "inside": {
+          "training": "8 personal training sessions of 40 minutes — minimum time, maximum effect.",
+          "coaching": "4 coaching sessions: about habits, mindset, goals and energy.",
+          "nutrition": "Nutrition plan + simple ready menus.",
+          "meditation": "Meditations and affirmations — for concentration, calm and confidence.",
+          "support": "Personal support and daily reminders — you're always in touch with the coach."
+        },
+        "result": "✨ In 30 days you will have not only a toned body, but also a new mindset: you get up earlier, eat consciously, move more and feel confident every day."
       }
     }
   },

@@ -20,41 +20,91 @@
     "startNow": "Comenzar",
     "sushkaPro": {
       "title": "Corte PRO",
-      "price": "580€ → 405€",
-      "discount": "(30% descuento)",
+      "price": "82 €",
+      "discount": "",
       "description": "Resultados rápidos - la grasa se va, el cuerpo en tono",
-      "details": "Perfecto para quienes necesitan quemar máximo en poco tiempo",
+      "extendedDescription": "Deja de esperar meses para ver resultados. Este programa hace tu cuerpo tonificado, fuerte y definido más rápido de lo que piensas: La grasa se derrite incluso después del entrenamiento — tu cuerpo trabaja para resultados 24/7. La celulitis disminuye, la piel se vuelve más densa y suave. Cada entrenamiento te da una sensación de fuerza y control sobre tu cuerpo. Qué incluye:",
+      "details": "Comienza hoy y siente cómo tu cuerpo cambia desde la primera semana.",
       "features": [
-        "8 entrenamientos Tabata poderosos (20/10, 40/20)",
-        "Plan de nutrición que activa la quema de grasa",
-        "Actividad en casa + recomendaciones de recuperación",
-        "Apoyo constante: motivación, recordatorios, respuestas a \"¿puedo comer un plátano?\""
+        "8 entrenamientos cardio Tabata de alta intensidad\nde 30 minutos cada uno — máximo resultado en mínimo tiempo.",
+        "4 grabaciones online para entrenamiento independiente — entrena cuando te convenga.",
+        "Revisión de reportes de video y corrección de técnica — para hacer los entrenamientos seguros y efectivos.",
+        "Plan de nutrición que acelera la quema de grasa y acelera el metabolismo.",
+        "Apoyo completo: motivación, respuestas a preguntas, recordatorios de entrenamiento."
       ]
     },
     "strengthTone": {
-      "title": "Fuerza y Tono",
-      "price": "600€ → 420€",
-      "discount": "(30% descuento)",
+      "title": "Cuerpo Fuerte Sin Saltos. Pilates",
+      "price": "62 €",
+      "discount": "",
       "description": "Figura firme sin sobrecarga - a través del pilates",
-      "details": "Fuerza femenina, flexibilidad y ligereza en el cuerpo",
+      "extendedDescription": "¿No te gusta correr, saltar y cardio agotador? El pilates es una forma suave, segura y efectiva de poner tu cuerpo en forma:\n\nQuemamos grasa y formamos definición — sin sobrecargar las articulaciones.\n\n\nFortalecemos músculos pélvicos, abdominales y estabilizadores — para vientre plano y hermosa postura.\n\n\nEstiramiento y respiración — mejora la movilidad y el bienestar general.\n\n\nQué incluye:",
+      "details": "Comienza hoy — siente delgadez, fuerza y ligereza desde la primera semana.",
       "features": [
-        "8 entrenamientos para estabilizadores, respiración, estiramiento",
-        "Fortalecimiento de músculos pélvicos y abdominales sin sobrecarga",
-        "Plan de nutrición para ligereza, tono y anti-estrés",
-        "Apoyo suave pero constante"
+        "8 entrenamientos de 30 minutos cada uno — suave pero efectivo,\ncuerpo en tono desde la primera semana.",
+        "4 grabaciones online para entrenamiento independiente — entrena cuando te convenga.",
+        "Revisión de reportes de video y corrección de técnica — para hacer los entrenamientos seguros y efectivos.",
+        "Plan de nutrición para pérdida de peso, tono y anti-estrés — cuerpo y mente en armonía.",
+        "Apoyo completo: motivación, respuestas a preguntas, recordatorios de entrenamiento."
       ]
     },
     "steelAbs": {
       "title": "Abdominales de Acero",
-      "price": "550€ → 385€",
-      "discount": "(30% descuento)",
-      "description": "Músculos profundos + técnica perfecta = definición",
+      "price": "67 €",
+      "discount": "",
+      "description": "Vientre plano y definición",
+      "extendedDescription": "¿Quieres un vientre plano, definición y abdominales que llamen la atención? Este programa funciona rápido y efectivamente. Desde las primeras sesiones desaparece la \"barriga\" y el vientre se fortalece. El core se activa, los músculos comienzan a formar definición y abdominales. La espalda se endereza — adiós encorvamiento y pesadez. Los brazos se tonifican — sin flacidez ni celulitis. Notas los primeros cambios después de solo unas pocas sesiones. Qué incluye:",
       "details": "Para quienes quieren no solo \"cubos\", sino control y confianza",
       "features": [
-        "8 entrenamientos para músculos abdominales profundos",
+        "8 entrenamientos para músculos\nabdominales profundos",
         "Técnica correcta para cada ejercicio",
         "Plan de nutrición para definición y vientre plano",
         "Apoyo constante y control de técnica"
+      ]
+    },
+    "trxFitness": {
+      "title": "TRX: Gimnasio de Nueva Generación",
+      "price": "72 €",
+      "discount": "",
+      "description": "Olvídate de máquinas y gimnasios. TRX entrena tu cuerpo con enfoque en estabilizadores — profundo, efectivo y moderno.",
+      "extendedDescription": "Trabajamos con músculos profundos y equilibrio — el cuerpo se vuelve fuerte, estable y tonificado.\n\nEstiramiento y movilización — aumentamos la flexibilidad y movilidad articular.\n\nRespiración y conciencia — controlas cada movimiento, potenciando el resultado.\n\nQué incluye:",
+      "details": "Comienza hoy — siente fuerza, equilibrio y control sobre tu cuerpo desde la primera semana.",
+      "features": [
+        "8 entrenamientos personales de 30 minutos — máximo efecto en mínimo tiempo.",
+        "4 grabaciones online para entrenamiento independiente — entrena donde te convenga.",
+        "Revisión de reportes de video y corrección de técnica — seguro y efectivo.",
+        "Plan de nutrición y recomendaciones de recuperación — apoyo de energía, tono y delgadez.",
+        "Apoyo completo: motivación, respuestas a preguntas, recordatorios de entrenamiento."
+      ]
+    },
+    "postpartumRecovery": {
+      "title": "Nuevo Cuerpo Después del Parto: Abdomen se Tensa, Hinchazón Desaparece",
+      "price": "36 €",
+      "discount": "",
+      "description": "Tu cuerpo ha pasado por una carga seria — ahora es importante recuperarse correctamente.",
+      "extendedDescription": "Este programa está creado específicamente para mujeres después del parto: ejercicios seguros pero efectivos para el abdomen, pelvis y postura.\n\n💫 Lo que da el programa:\nTensamos el abdomen y trabajamos con diástasis.\n\nFortalecemos los músculos pélvicos y de cadera.\n\nActivamos el flujo linfático — desaparecen la hinchazón y pesadez.\n\nAlineamos la postura, aliviamos la carga de la espalda.\n\nAñadimos prácticas de respiración — energía y anti-estrés.\n\nQué incluye:",
+      "details": "Comienza hoy — siente cómo el abdomen se tensa, la hinchazón desaparece y las fuerzas regresan desde la primera semana.",
+      "features": [
+        "8 entrenamientos personales de 30 minutos (2 veces por semana) — ritmo cómodo y resultado.",
+        "4 grabaciones online para entrenamiento independiente en casa.",
+        "Control de técnica y corrección — cada movimiento bajo supervisión.",
+        "Plan de nutrición y recomendaciones de recuperación — ligereza, tono y anti-estrés.",
+        "Apoyo completo: motivación, respuestas a preguntas, recordatorios de entrenamiento."
+      ]
+    },
+    "stretchingSplits": {
+      "title": "Estiramiento y Spagat: Espalda Recta, Flexibilidad y Menos Hinchazón",
+      "price": "67 €",
+      "discount": "",
+      "description": "¿Encogimiento, tensiones, pesadez en el cuerpo? Es hora de devolver la ligereza.",
+      "extendedDescription": "El programa «Estiramiento + Spagat» alinea suavemente la espalda, desarrolla flexibilidad y activa el flujo linfático — desaparecen hinchazón y celulitis.\n\n💫 Resultado: postura recta, articulaciones flexibles, cuerpo tonificado.\n\nQué incluye:",
+      "details": "En solo 1-2 semanas la espalda se enderezará, el cuerpo se volverá flexible y la hinchazón desaparecerá.",
+      "features": [
+        "8 entrenamientos personales de 30 minutos (2 veces por semana) — flexibilidad sin sobrecarga.",
+        "4 grabaciones online para entrenamiento independiente en casa.",
+        "Control de técnica y corrección — cada movimiento es seguro.",
+        "Plan de nutrición y recomendaciones para ligereza y contra hinchazón.",
+        "Apoyo completo: motivación, respuestas a preguntas, recordatorios de entrenamiento."
       ]
     }
   },
@@ -205,8 +255,8 @@
     "ctaButton": "Reservar Consulta Gratuita",
     "sushkaPro": {
       "title": "Corte PRO",
-      "price": "580€ → 405€",
-      "discount": "(30% descuento)",
+      "price": "82 €",
+      "discount": "",
       "features": [
         "8 entrenamientos Tabata poderosos (20/10, 40/20)",
         "Plan de nutrición que activa la quema de grasa",
@@ -227,8 +277,8 @@
     },
     "steelAbs": {
       "title": "Abdominales de Acero",
-      "price": "550€ → 385€",
-      "discount": "(30% descuento)",
+      "price": "67 €",
+      "discount": "",
       "features": [
         "8 entrenamientos para músculos abdominales profundos",
         "Técnica correcta para cada ejercicio",
@@ -273,19 +323,38 @@
     },
     "additional": {
       "groupTraining": {
-        "title": "Entrenamiento Grupal",
-        "description": "Sesiones de grupo pequeño para amigos o familia",
-        "price": "Desde $50/persona"
+        "title": "Análisis de tu Nutrición: Analicemos 7 Días",
+        "description": "Deja de adivinar por qué la dieta no funciona. Analizaremos tu nutrición real y mostraremos dónde están los errores ocultos:\n\nDesglose de tu nutrición — detallado por 7 días.\n\nAnálisis de macronutrientes — calorías, proteínas, grasas, carbohidratos.\n\nSobrealimentación oculta — incluso \"en dieta\" puedes estar comiendo más de lo que piensas.\n\nRazones reales del desliz — no un sándwich, sino falta de proteína, sueño o estrés.\n\nConsejos prácticos — qué y cómo cambiar sin restricciones estrictas.\n\nContabilización de todos los factores — agua, café, estrés, deslizes — no nos perderemos nada.\n\nResultado: comprensión de tu nutrición, ajustes simples y pasos reales hacia tu objetivo sin estrés y restricciones.",
+        "price": "35 €"
       },
       "onlineCoaching": {
         "title": "Coaching Online",
         "description": "Entrenamiento remoto y orientación nutricional",
         "price": "Desde $100/mes"
       },
-      "fitnessAssessment": {
-        "title": "Evaluación Fitness",
-        "description": "Evaluación integral de fitness y establecimiento de objetivos",
-        "price": "$75/sesión"
+      "totalReset": {
+        "title": "Total Reset: Reinicio del Cuerpo y la Mente",
+        "description": "Esto no es un curso ni entrenamiento. Es un programa de transformación donde te tomo de la mano y cambio todo: cuerpo, hábitos, mentalidad.",
+        "price": "85 €",
+        "intro": "Esto no es un curso ni entrenamiento. Es un programa de transformación donde te tomo de la mano y cambio todo: cuerpo, hábitos, mentalidad.",
+        "whatChanges": "Qué cambia:",
+        "changes": {
+          "body": "Cuerpo — prácticas de fuerza, funcionales y respiratorias. El abdomen se tensa, aparece la definición, se van las hinchazones.",
+          "mindset": "Mentalidad — aprendemos a quitar el sabotaje, activar la disciplina y la confianza.",
+          "habits": "Hábitos — levantarse temprano, ejercicio, correr, control del sueño y nutrición.",
+          "nutrition": "Nutrición — ninguna \"dieta\", solo un sistema que se integrará en la vida.",
+          "energy": "Energía y enfoque — meditaciones y prácticas respiratorias alivian el estrés y restauran el equilibrio.",
+          "inner": "Actitud interna — afirmaciones y trabajo mental cambian la imagen de uno mismo y aceleran los resultados."
+        },
+        "whatInside": "Qué incluye:",
+        "inside": {
+          "training": "8 sesiones de entrenamiento personal de 40 minutos — mínimo tiempo, máximo efecto.",
+          "coaching": "4 sesiones de coaching: sobre hábitos, mentalidad, objetivos y energía.",
+          "nutrition": "Plan de nutrición + menús simples listos.",
+          "meditation": "Meditaciones y afirmaciones — para concentración, calma y confianza.",
+          "support": "Apoyo personal y recordatorios diarios — siempre estás en contacto con el coach."
+        },
+        "result": "✨ En 30 días tendrás no solo un cuerpo tonificado, sino también una nueva mentalidad: te levantas más temprano, comes conscientemente, te mueves más y sientes confianza cada día."
       }
     }
   },

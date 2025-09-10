@@ -84,15 +84,16 @@
   font-family: 'Anton', Helvetica, sans-serif;
   font-weight: normal;
   color: white;
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   letter-spacing: -0.6px;
   line-height: 1.2;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .cta-title {
-    font-size: 1.75rem;
+    font-size: 2.75rem;
   }
 }
 
