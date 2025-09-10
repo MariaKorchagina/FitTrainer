@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { CheckCircle, Expand } from "lucide-react";
@@ -55,9 +55,12 @@ export const TrainingProgramsSection = (): JSX.Element => {
     navigate('/services');
   };
 
-  const toggleExpanded = (index: number) => {
-    setExpandedCard(expandedCard === index ? null : index);
-  };
+  const toggleExpanded = useCallback((index: number) => {
+    setExpandedCard(prevExpandedCard => {
+      const newValue = prevExpandedCard === index ? null : index;
+      return newValue;
+    });
+  }, []);
 
   return (
     <div className="training-programs-container">
@@ -74,7 +77,10 @@ export const TrainingProgramsSection = (): JSX.Element => {
 
         {/* Programs Grid */}
         <div className="programs-grid">
-          {trainingPrograms.map((program, index) => (
+          {trainingPrograms.map((program, index) => {
+            const mainIndex = index; // Используем ту же логику, что и в ServicesPage
+            const shouldShow = expandedCard === mainIndex;
+            return (
             <Card
               key={index}
               className={`program-card program-card--${program.type} ${program.featured ? 'program-card--featured' : ''}`}
@@ -93,7 +99,7 @@ export const TrainingProgramsSection = (): JSX.Element => {
                     {program.extendedDescription && (
                       <button
                         className="expand-button"
-                        onClick={() => toggleExpanded(index)}
+                        onClick={() => toggleExpanded(mainIndex)}
                         aria-label="Expand description"
                       >
                         <Expand className="expand-icon" />
@@ -116,8 +122,8 @@ export const TrainingProgramsSection = (): JSX.Element => {
                     {program.description}
                   </p>
 
-                  {/* Extended Description for Steel Abs */}
-                  {program.extendedDescription && expandedCard === index && (
+                  {/* Extended Description */}
+                  {program.extendedDescription && shouldShow && (
                     <p className="program-extended-description">
                       {program.extendedDescription}
                     </p>
@@ -147,7 +153,8 @@ export const TrainingProgramsSection = (): JSX.Element => {
                 </div>
               </CardContent>
             </Card>
-          ))}
+            );
+          })}
         </div>
 
         {/* View All Programs Button */}

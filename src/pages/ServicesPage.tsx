@@ -163,9 +163,171 @@ export const ServicesPage = (): JSX.Element => {
 
                   {/* Extended Description */}
                   {service.extendedDescription && expandedCard === index && (
-                    <p className="program-extended-description">
-                      {service.extendedDescription}
-                    </p>
+                    <div className="program-extended-description">
+                      {service.title === "Сушка PRO" ? (
+                        <>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            Хватит ждать месяцы, чтобы увидеть результат. Эта программа делает тело подтянутым, сильным и рельефным быстрее, чем ты думаешь:
+                          </p>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Жир тает даже после тренировки — тело работает на результат круглосуточно.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Целлюлит уменьшается, кожа становится плотнее и ровнее.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Каждая тренировка даёт ощущение силы и контроля над телом.</span>
+                          </div>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4 mt-4">
+                            Что внутри:
+                          </p>
+                        </>
+                      ) : service.title === "Сильное тело без прыжков. Пилатес" ? (
+                        <>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            Не любишь бег, прыжки и изнуряющее кардио? Пилатес — мягкий, безопасный и при этом эффективный способ привести тело в форму:
+                          </p>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Сжигаем жир и формируем рельеф — без перегрузки суставов.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Укрепляем мышцы таза, живота и стабилизаторы — для плоского живота и красивой осанки.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Растяжка и дыхание — улучшает мобильность и общее самочувствие.</span>
+                          </div>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4 mt-4">
+                            Что внутри:
+                          </p>
+                        </>
+                      ) : service.title === "Стальной пресс" ? (
+                        <>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            Хочешь плоский живот, рельеф и пресс, на который будут оглядываться?
+                          </p>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            Эта программа работает быстро и эффективно. Уже с первых тренировок уходит «мешок» и живот становится крепче.
+                          </p>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Кор включается, мышцы начинают формировать рельеф и кубики.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Спина выпрямляется — прощай сутулость и тяжесть.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Руки подтягиваются — никакой дряблости и целлюлита.</span>
+                          </div>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            Первые изменения ты замечаешь уже через несколько занятий.
+                          </p>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4 mt-4">
+                            Что внутри:
+                          </p>
+                        </>
+                      ) : service.title === "TRX: фитнес-зал нового поколения" ? (
+                        <>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            Что меняется:
+                          </p>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Тело — силовые, функциональные и дыхательные практики. Живот подтягивается, появляется рельеф, уходят отёки.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Мышление — учимся убирать саботаж, включать дисциплину и уверенность.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Привычки — ранний подъём, зарядка, бег, контроль сна и питания.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Питание — никакой «диеты», только система, которая встроится в жизнь.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Энергия и фокус — медитации и дыхательные практики снимают стресс и возвращают баланс.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Внутренний настрой — аффирмации и работа с мышлением меняют образ себя и ускоряют результат.</span>
+                          </div>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4 mt-4">
+                            Что внутри:
+                          </p>
+                        </>
+                      ) : service.title === "Новое тело после родов: живот подтянется, отёки уйдут" ? (
+                        <>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            Эта программа создана специально для женщин после родов: безопасные, но эффективные упражнения для живота, таза и осанки.
+                          </p>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            💫 Что даёт программа:
+                          </p>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Подтягиваем живот и работаем с диастазом.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Укрепляем мышцы таза и тазобедренных суставов.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Запускаем лимфоток — уходит отёчность и тяжесть.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Выравниваем осанку, снимаем нагрузку со спины.</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Добавляем дыхательные практики — энергия и антистресс.</span>
+                          </div>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4 mt-4">
+                            Что внутри:
+                          </p>
+                        </>
+                      ) : service.title === "Растяжка и шпагат: прямая спина, гибкость и минус отёки" ? (
+                        <>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            Программа «Растяжка + шпагат» мягко выравнивает спину, развивает гибкость и запускает лимфоток — уходят отёки и целлюлит.
+                          </p>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            💫 Результат:
+                          </p>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Ровная осанка</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Гибкие суставы</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">Подтянутое тело</span>
+                          </div>
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4 mt-4">
+                            Что внутри:
+                          </p>
+                        </>
+                      ) : (
+                        <p className="program-extended-description">
+                          {service.extendedDescription}
+                        </p>
+                      )}
+                    </div>
                   )}
 
                   <div className="service-features program-features text-left">
@@ -205,19 +367,19 @@ export const ServicesPage = (): JSX.Element => {
               return (
               <Card
                 key={index}
-                className="bg-[#1f1f1f] border border-[#ffffff33] rounded-[20px] p-6 translate-y-[-1rem] animate-fade-in opacity-0 hover:scale-105 transition-all duration-300"
+                className="additional-service-card bg-[#1f1f1f] border border-[#ffffff33] rounded-[20px] p-6 translate-y-[-1rem] animate-fade-in opacity-0 hover:scale-105 transition-all duration-300"
                 style={
                   {
                     "--animation-delay": `${1200 + index * 100}ms`,
                   } as React.CSSProperties
                 }
               >
-                <CardContent className="p-0 text-center">
+                <CardContent className="additional-service-content p-0 text-center">
                   <div className="program-title-container-additional">
                     <h3 className="[font-family:'Outfit',Helvetica] font-bold text-white text-lg mb-3" style={service.title === t("services.additional.groupTraining.title") || service.title === t("programs.trxFitness.title") ? { fontSize: '0.9rem' } : {}}>
                       {service.title}
                     </h3>
-                    {service.title === t("services.additional.totalReset.title") && (
+                    {service.title === t("services.additional.totalReset.title") && t("services.additional.totalReset.extendedDescription") && (
                       <button
                         className="expand-button-total-reset"
                         onClick={() => toggleExpanded(additionalIndex)}
@@ -265,33 +427,40 @@ export const ServicesPage = (): JSX.Element => {
                       <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
                         {t("services.additional.totalReset.intro")}
                       </p>
-                      <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
-                        {t("services.additional.totalReset.whatChanges")}
-                      </p>
-                      <div className="flex items-start gap-3 mb-2">
-                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
-                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.body")}</span>
-                      </div>
-                      <div className="flex items-start gap-3 mb-2">
-                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
-                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.mindset")}</span>
-                      </div>
-                      <div className="flex items-start gap-3 mb-2">
-                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
-                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.habits")}</span>
-                      </div>
-                      <div className="flex items-start gap-3 mb-2">
-                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
-                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.nutrition")}</span>
-                      </div>
-                      <div className="flex items-start gap-3 mb-2">
-                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
-                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.energy")}</span>
-                      </div>
-                      <div className="flex items-start gap-3 mb-2">
-                        <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
-                        <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.inner")}</span>
-                      </div>
+                      
+                      {/* Extended Description - показывается только при расширении */}
+                      {t("services.additional.totalReset.extendedDescription") && expandedCard === additionalIndex && (
+                        <div className="program-extended-description">
+                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                            {t("services.additional.totalReset.whatChanges")}
+                          </p>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.body")}</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.mindset")}</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.habits")}</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.nutrition")}</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.energy")}</span>
+                          </div>
+                          <div className="flex items-start gap-3 mb-2">
+                            <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
+                            <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.changes.inner")}</span>
+                          </div>
+                        </div>
+                      )}
+                      
                       <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4 mt-4">
                         {t("services.additional.totalReset.whatInside")}
                       </p>
@@ -318,20 +487,13 @@ export const ServicesPage = (): JSX.Element => {
                       <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mt-4">
                         {t("services.additional.totalReset.result")}
                       </p>
-                      {expandedCard === additionalIndex && (
-                        <div className="program-extended-description-additional">
-                          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
-                            {t("services.additional.totalReset.extendedContent")}
-                          </p>
-                        </div>
-                      )}
                     </div>
                   ) : (
                     <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
                       {service.description}
                     </p>
                   )}
-                  <div className="[font-family:'Anton',Helvetica] font-normal text-[#ff2332] text-xl">
+                  <div className="additional-service-price [font-family:'Anton',Helvetica] font-normal text-[#ff2332] text-xl">
                     {service.price}
                   </div>
                 </CardContent>

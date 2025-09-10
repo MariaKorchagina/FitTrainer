@@ -332,6 +332,41 @@
   font-size: 0.9rem !important;
 }
 
+/* General expand button styles */
+.expand-button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 35, 50, 0.1);
+  border: 1px solid rgba(255, 35, 50, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.expand-button:hover {
+  background-color: rgba(255, 35, 50, 0.2);
+  border-color: rgba(255, 35, 50, 0.5);
+  transform: scale(1.1);
+}
+
+.expand-icon {
+  width: 16px;
+  height: 16px;
+  color: #ff2332;
+  transition: transform 0.3s ease;
+}
+
+.expand-button:hover .expand-icon {
+  transform: rotate(180deg);
+}
+
 /* Expand button positioning for Total Reset only */
 .expand-button-total-reset {
   position: absolute;
@@ -377,6 +412,23 @@
   margin-bottom: 1rem;
   flex-shrink: 0;
   min-height: 60px;
+}
+
+/* Additional services card layout */
+.additional-service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.additional-service-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.additional-service-price {
+  margin-top: auto;
 }
 
 /* Extended description for additional services */
