@@ -11,6 +11,43 @@
     </style>
     <link href="tailwind.css" rel="stylesheet" />
     <link href="tailwind.css" rel="stylesheet" />
+    
+    <!-- Marquiz script start -->
+    <script>
+    (function(w, d, s, o){
+      try {
+        var j = d.createElement(s); 
+        j.async = true; 
+        j.src = '//script.marquiz.ru/v2.js';
+        j.onload = function() {
+          try {
+            if (document.readyState !== 'loading') Marquiz.init(o);
+            else document.addEventListener("DOMContentLoaded", function() {
+              Marquiz.init(o);
+            });
+          } catch (e) {
+            console.warn('Marquiz init error:', e);
+          }
+        };
+        j.onerror = function() {
+          console.warn('Marquiz script failed to load');
+        };
+        d.head.insertBefore(j, d.head.firstElementChild);
+      } catch (e) {
+        console.warn('Marquiz setup error:', e);
+      }
+    })(window, document, 'script', {
+        host: '//quiz.marquiz.ru',
+        region: 'ru',
+        id: '68c07b95528c4c0019cb5f39',
+        autoOpen: false,
+        autoOpenFreq: 'once',
+        openOnExit: false,
+        disableOnMobile: false
+      }
+    );
+    </script>
+    <!-- Marquiz script end -->
   </head>
   <body>
     <div id="app"></div>

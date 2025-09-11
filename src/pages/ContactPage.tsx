@@ -14,6 +14,8 @@ export const ContactPage = (): JSX.Element => {
     service: ""
   });
 
+
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -96,6 +98,7 @@ ${formData.message}
             {t("contact.subtitle")}
           </p>
         </div>
+
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Form */}
@@ -259,7 +262,7 @@ ${formData.message}
                     className="w-12 h-12 bg-[#1f1f1f] border border-[#ffffff33] rounded-lg flex items-center justify-center text-[#909090] hover:text-white hover:border-[#ff2332] transition-all duration-300 hover:scale-110"
                     aria-label="Telegram"
                   >
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M9.04 15.54 8.9 19.4c.4 0 .58-.18.79-.4l1.9-1.83 3.94 2.9c.72.4 1.24.18 1.44-.66l2.61-12.26h.01c.23-1.06-.38-1.47-1.08-1.21L3.2 10.2c-1.03.4-1.01.98-.18 1.24л4.64 1.45 10.78-6.8c.51-.33.98-.15.6.18L9.04 15.54Z"/></svg>
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M9.04 15.54 8.9 19.4c.4 0 .58-.18.79-.4l1.9-1.83 3.94 2.9c.72.4 1.24.18 1.44-.66l2.61-12.26h.01c.23-1.06-.38-1.47-1.08-1.21L3.2 10.2c-1.03.4-1.01.98-.18 1.24l4.64 1.45 10.78-6.8c.51-.33.98-.15.6.18L9.04 15.54Z"/></svg>
                   </a>
                   <a
                     href="https://wa.me/972549961795"

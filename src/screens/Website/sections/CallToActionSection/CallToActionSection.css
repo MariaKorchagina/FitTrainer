@@ -15,28 +15,43 @@
 @media (min-width: 1024px) {
   .cta-content {
     flex-direction: row;
-    gap: 5rem;
+    align-items: flex-start;
+    gap: 4rem;
+    justify-content: space-between;
+  }
+  
+  .cta-image-section {
+    width: 45%;
+    max-width: 500px;
+    height: 600px;
+  }
+  
+  .cta-text-section {
+    width: 50%;
+    max-width: 500px;
   }
 }
 
 .cta-image-section {
   position: relative;
   width: 100%;
-  max-width: 545px;
-  height: 652px;
+  max-width: 500px;
+  height: 600px;
   opacity: 1;
   transform: translateY(0);
   transition: all 0.3s ease;
   border-radius: 1.5rem;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .cta-trainer-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 60%;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+  clip-path: inset(0 0 20% 0);
 }
 
 /* Ensure trainer10.png fits completely in the block */
@@ -66,7 +81,7 @@
   align-items: flex-start;
   gap: 1.875rem;
   flex: 1;
-  /* max-width: 500px; */
+  max-width: 500px;
 }
 
 .cta-header {
@@ -88,7 +103,7 @@
   letter-spacing: -0.6px;
   line-height: 1.2;
   margin-bottom: 1rem;
-  text-align: center;
+  text-align: left;
 }
 
 @media (min-width: 768px) {
@@ -194,4 +209,9 @@
   50% {
     opacity: 0.8;
   }
+}
+
+.start-page_has_bg.start-page_theme_expanded .start-page__bg {
+  left: -20% !important;
+  right: 0;
 }
