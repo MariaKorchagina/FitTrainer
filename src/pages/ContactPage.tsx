@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { MapPin, Phone, Mail, Clock, Instagram } from "lucide-react";
@@ -14,6 +14,7 @@ export const ContactPage = (): JSX.Element => {
     message: "",
     service: ""
   });
+
 
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -98,6 +99,7 @@ ${formData.message}
             {t("contact.subtitle")}
           </p>
         </div>
+
 
 
 
