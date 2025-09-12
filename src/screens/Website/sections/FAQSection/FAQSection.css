@@ -3,6 +3,9 @@
   width: 100%;
   /* padding: 5rem 0; */
   background-color: #1a1a1a;
+  position: relative;
+  z-index: 10;
+  padding-bottom: 2rem;
 }
 .faq-container {
   max-width: 100rem;

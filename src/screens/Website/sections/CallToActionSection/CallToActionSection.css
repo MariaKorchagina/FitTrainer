@@ -60,12 +60,12 @@
 }
 
 .cta-trainer-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 60%;
-  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
-  clip-path: inset(0 0 20% 0);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+    /* clip-path: inset(0 0 20% 0); */
 }
 
 /* Ensure trainer10.png fits completely in the block */

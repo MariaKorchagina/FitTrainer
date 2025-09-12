@@ -16,73 +16,25 @@
     <script>
     (function(w, d, s, o){
       var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';j.onload = function() {
-        console.log('Marquiz script loaded');
-        if (document.readyState !== 'loading') {
+        if (document.readyState !== 'loading') Marquiz.init(o);
+        else document.addEventListener("DOMContentLoaded", function() {
           Marquiz.init(o);
-          console.log('Marquiz initialized immediately');
-        } else {
-          document.addEventListener("DOMContentLoaded", function() {
-            Marquiz.init(o);
-            console.log('Marquiz initialized on DOMContentLoaded');
-          });
-        }
-      };
-      j.onerror = function() {
-        console.error('Marquiz script failed to load');
+        });
       };
       d.head.insertBefore(j, d.head.firstElementChild);
     })(window, document, 'script', {
         host: '//quiz.marquiz.ru',
         region: 'ru',
         id: '68c07b95528c4c0019cb5f39',
-        autoOpen: 0,
-        autoOpenFreq: 'always',
+        autoOpen: false,
+        autoOpenFreq: 'once',
         openOnExit: false,
-        disableOnMobile: false,
-        position: 'center'
+        disableOnMobile: false
       }
     );
     </script>
     <!-- Marquiz script end -->
     
-    <!-- Custom CSS for Marquiz positioning -->
-    <style>
-    @media (max-width: 768px) {
-      .marquiz-popup {
-        position: fixed !important;
-        top: 50% !important;
-        left: 50% !important;
-        transform: translate(-50%, -50%) !important;
-        z-index: 9999 !important;
-        max-width: 90vw !important;
-        max-height: 90vh !important;
-        margin: 0 !important;
-      }
-      
-      .marquiz-popup .marquiz-popup__close {
-        position: absolute !important;
-        top: 10px !important;
-        right: 10px !important;
-        z-index: 10000 !important;
-        background: rgba(0, 0, 0, 0.7) !important;
-        color: white !important;
-        border: none !important;
-        border-radius: 50% !important;
-        width: 30px !important;
-        height: 30px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        cursor: pointer !important;
-        font-size: 18px !important;
-        font-weight: bold !important;
-      }
-      
-      .marquiz-popup .marquiz-popup__close:hover {
-        background: rgba(0, 0, 0, 0.9) !important;
-      }
-    }
-    </style>
   </head>
   <body>
     <div id="app"></div>

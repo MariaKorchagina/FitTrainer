@@ -36,7 +36,7 @@ export const FooterSection = (): JSX.Element => {
               <div className="footer-text-inner">
                 <h2 className="footer-title">{t("footer.title")}</h2>
 
-                <p className="footer-description">
+                <p className="footer-description footer-description-mobile">
                   {t("footer.description")}
                 </p>
               </div>
