@@ -1,8 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { MapPin, Phone, Mail, Clock, Instagram } from "lucide-react";
 import { useTranslation } from "react-i18next";
+
+// TypeScript declaration for Marquiz
+declare global {
+  interface Window {
+    Marquiz: {
+      add: (config: [string, any]) => void;
+      init: (config: any) => void;
+    };
+  }
+}
 
 
 export const ContactPage = (): JSX.Element => {
@@ -14,6 +24,57 @@ export const ContactPage = (): JSX.Element => {
     message: "",
     service: ""
   });
+
+  // Initialize Marquiz quiz with useEffect
+  useEffect(() => {
+    console.log('ContactPage: Initializing Marquiz...');
+    
+    const initMarquiz = () => {
+      console.log('ContactPage: initMarquiz called, window.Marquiz:', !!window.Marquiz);
+      
+      if (window.Marquiz) {
+        try {
+          console.log('ContactPage: Adding Marquiz widget...');
+          window.Marquiz.add(['Inline', {
+            id: '68c07b95528c4c0019cb5f39',
+            buttonText: '«Старт»',
+            bgColor: '#ff2332',
+            textColor: '#fff',
+            rounded: true,
+            shadow: 'rgba(255, 35, 50, 0.5)',
+            blicked: true,
+            fixed: false,
+            buttonOnMobile: true,
+            disableOnMobile: false,
+            width: '1280',
+            height: '859',
+            fullWidth: false
+          }]);
+          console.log('ContactPage: Marquiz widget added successfully');
+        } catch (error) {
+          console.error('ContactPage: Error initializing Marquiz quiz:', error);
+        }
+      } else {
+        console.log('ContactPage: Marquiz not available, retrying in 100ms...');
+        setTimeout(initMarquiz, 100);
+      }
+    };
+
+    // Try to initialize immediately
+    initMarquiz();
+
+    // Also listen for the marquizLoaded event
+    const handleMarquizLoaded = () => {
+      console.log('ContactPage: marquizLoaded event received');
+      initMarquiz();
+    };
+
+    document.addEventListener('marquizLoaded', handleMarquizLoaded);
+
+    return () => {
+      document.removeEventListener('marquizLoaded', handleMarquizLoaded);
+    };
+  }, []);
 
 
 
@@ -93,11 +154,16 @@ ${formData.message}
         {/* Hero Section */}
         <div className="text-center mb-20">
           <h1 className="[font-family:'Anton',Helvetica] font-normal text-white text-4xl md:text-6xl tracking-[-0.60px] leading-[1.2] mb-8 translate-y-[-1rem] animate-fade-in opacity-0">
-            {t("contact.title")}
+            Начни сейчас
           </h1>
           <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-xl md:text-2xl tracking-[0] leading-[1.3] max-w-4xl mx-auto translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
             {t("contact.subtitle")}
           </p>
+        </div>
+
+        {/* Marquiz Quiz */}
+        <div className="text-center mb-16">
+          <div data-marquiz-id="68c07b95528c4c0019cb5f39"></div>
         </div>
 
 
@@ -108,8 +174,9 @@ ${formData.message}
 
 
 
+        {/* Contact Form and Information - COMMENTED OUT */}
+        {/* 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
           <div className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
             <Card className="bg-[#1f1f1f] border border-[#ffffff33] rounded-[20px] p-8">
               <CardContent className="p-0">
@@ -213,7 +280,6 @@ ${formData.message}
             </Card>
           </div>
 
-          {/* Contact Information */}
           <div className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]">
             <div className="space-y-8">
               <h2 className="[font-family:'Anton',Helvetica] font-normal text-white text-2xl md:text-3xl tracking-[-0.30px] leading-[1.2]">
@@ -248,7 +314,6 @@ ${formData.message}
                 ))}
               </div>
 
-              {/* Social Media */}
               <div>
                 <h3 className="[font-family:'Outfit',Helvetica] font-bold text-white text-lg mb-4">
                   {t("contact.social.title")}
@@ -284,7 +349,6 @@ ${formData.message}
                 </div>
               </div>
 
-              {/* Quick Response */}
               <Card className="bg-[#ff2332]/10 border border-[#ff2332]/30 rounded-[15px] p-6">
                 <CardContent className="p-0">
                   <h3 className="[font-family:'Outfit',Helvetica] font-bold text-[#ff2332] text-lg mb-2">
@@ -298,6 +362,7 @@ ${formData.message}
             </div>
           </div>
         </div>
+        */}
       </div>
     </div>
   );

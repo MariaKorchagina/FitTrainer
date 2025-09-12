@@ -324,8 +324,19 @@
     "additional": {
       "groupTraining": {
         "title": "Análisis de tu Nutrición: Analicemos 7 Días",
-        "description": "Deja de adivinar por qué la dieta no funciona. Analizaremos tu nutrición real y mostraremos dónde están los errores ocultos:\n\nDesglose de tu nutrición — detallado por 7 días.\n\nAnálisis de macronutrientes — calorías, proteínas, grasas, carbohidratos.\n\nSobrealimentación oculta — incluso \"en dieta\" puedes estar comiendo más de lo que piensas.\n\nRazones reales del desliz — no un sándwich, sino falta de proteína, sueño o estrés.\n\nConsejos prácticos — qué y cómo cambiar sin restricciones estrictas.\n\nContabilización de todos los factores — agua, café, estrés, deslizes — no nos perderemos nada.\n\nResultado: comprensión de tu nutrición, ajustes simples y pasos reales hacia tu objetivo sin estrés y restricciones.",
-        "price": "35 €"
+        "description": "Deja de adivinar por qué la dieta no funciona. Analizaremos tu nutrición real y mostraremos dónde están los errores ocultos:",
+        "price": "35 €",
+        "intro": "Deja de adivinar por qué la dieta no funciona. Analizaremos tu nutrición real y mostraremos dónde están los errores ocultos:",
+        "whatIncludes": "Qué incluye:",
+        "points": {
+          "nutritionBreakdown": "Desglose de tu nutrición — detallado por 7 días.",
+          "macroAnalysis": "Análisis de macronutrientes — calorías, proteínas, grasas, carbohidratos.",
+          "hiddenOvereating": "Sobrealimentación oculta — incluso \"en dieta\" puedes estar comiendo más de lo que piensas.",
+          "realReasons": "Razones reales del desliz — no un sándwich, sino falta de proteína, sueño o estrés.",
+          "practicalAdvice": "Consejos prácticos — qué y cómo cambiar sin restricciones estrictas.",
+          "allFactors": "Contabilización de todos los factores — agua, café, estrés, deslizes — no nos perderemos nada."
+        },
+        "result": "Resultado: comprensión de tu nutrición, ajustes simples y pasos reales hacia tu objetivo sin estrés y restricciones."
       },
       "onlineCoaching": {
         "title": "Coaching Online",

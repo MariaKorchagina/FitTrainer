@@ -3,19 +3,30 @@ import { Card, CardContent } from "../components/ui/card";
 import { CheckCircle, Expand } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import "../screens/Website/sections/TrainingProgramsSection/TrainingProgramsSection.css";
 import "./ServicesPage.css";
 
 export const ServicesPage = (): JSX.Element => {
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n, ready } = useTranslation();
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
   const [expandedAdditionalCard, setExpandedAdditionalCard] = useState<number | null>(null);
+  const [refreshKey, setRefreshKey] = useState(0);
+  // Force refresh when language changes
+  useEffect(() => {
+    setRefreshKey(prev => prev + 1);
+  }, [i18n.language]);
+
+  // Don't render until translations are ready
+  if (!ready) {
+    return <div>Loading...</div>;
+  }
 
   const handleGetStarted = () => {
     navigate('/contact');
   };
+
 
   const toggleExpanded = (index: number) => {
     setExpandedCard(expandedCard === index ? null : index);
@@ -88,21 +99,51 @@ export const ServicesPage = (): JSX.Element => {
   ];
 
 
-  const additionalServices = [
+  const additionalServices = useMemo(() => [
     {
       title: t("services.additional.groupTraining.title"),
       description: t("services.additional.groupTraining.description"),
-      price: t("services.additional.groupTraining.price")
+      price: t("services.additional.groupTraining.price"),
+      intro: t("services.additional.groupTraining.intro"),
+      whatIncludes: t("services.additional.groupTraining.whatIncludes"),
+      points: {
+        nutritionBreakdown: t("services.additional.groupTraining.points.nutritionBreakdown"),
+        macroAnalysis: t("services.additional.groupTraining.points.macroAnalysis"),
+        hiddenOvereating: t("services.additional.groupTraining.points.hiddenOvereating"),
+        realReasons: t("services.additional.groupTraining.points.realReasons"),
+        practicalAdvice: t("services.additional.groupTraining.points.practicalAdvice"),
+        allFactors: t("services.additional.groupTraining.points.allFactors")
+      },
+      result: t("services.additional.groupTraining.result")
     },
     {
       title: t("services.additional.totalReset.title"),
       description: t("services.additional.totalReset.description"),
-      price: t("services.additional.totalReset.price")
+      price: t("services.additional.totalReset.price"),
+      intro: t("services.additional.totalReset.intro"),
+      whatChanges: t("services.additional.totalReset.whatChanges"),
+      changes: {
+        body: t("services.additional.totalReset.changes.body"),
+        mindset: t("services.additional.totalReset.changes.mindset"),
+        habits: t("services.additional.totalReset.changes.habits"),
+        nutrition: t("services.additional.totalReset.changes.nutrition"),
+        energy: t("services.additional.totalReset.changes.energy"),
+        inner: t("services.additional.totalReset.changes.inner")
+      },
+      whatInside: t("services.additional.totalReset.whatInside"),
+      inside: {
+        training: t("services.additional.totalReset.inside.training"),
+        coaching: t("services.additional.totalReset.inside.coaching"),
+        nutrition: t("services.additional.totalReset.inside.nutrition"),
+        meditation: t("services.additional.totalReset.inside.meditation"),
+        support: t("services.additional.totalReset.inside.support")
+      },
+      result: t("services.additional.totalReset.result")
     }
-  ];
+  ], [t, i18n.language, refreshKey]);
 
   return (
-    <div className="services-page-container">
+    <div className="services-page-container" key={`${i18n.language}-${refreshKey}`}>
       <div className="services-content-wrapper">
         {/* Hero Section */}
         <div className="services-hero-section">
@@ -380,7 +421,7 @@ export const ServicesPage = (): JSX.Element => {
               >
                 <CardContent className="additional-service-content p-0 text-center">
                   <div className="program-title-container-additional">
-                    <h3 className="[font-family:'Outfit',Helvetica] font-bold text-white text-lg mb-3" style={service.title === t("services.additional.groupTraining.title") || service.title === t("programs.trxFitness.title") ? { fontSize: '0.9rem' } : {}}>
+                    <h3 className="[font-family:'Outfit',Helvetica] font-bold text-white text-lg mb-3">
                       {service.title}
                     </h3>
                     {service.title === t("services.additional.totalReset.title") && t("services.additional.totalReset.extendedDescription") && (

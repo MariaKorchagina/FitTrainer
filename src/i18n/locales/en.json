@@ -324,8 +324,19 @@
     "additional": {
       "groupTraining": {
         "title": "Nutrition Analysis: Let's Break Down 7 Days",
-        "description": "Stop guessing why the diet isn't working. We'll analyze your real nutrition and show where the hidden mistakes are:\n\nNutrition breakdown — detailed for 7 days.\n\nMacro analysis — calories, proteins, fats, carbohydrates.\n\nHidden overeating — even \"on a diet\" you might be eating more than you think.\n\nReal reasons for breakdown — not a sandwich, but lack of protein, sleep or stress.\n\nPractical advice — what and how to change without strict restrictions.\n\nAccounting for all factors — water, coffee, stress, breakdowns — we won't miss anything.\n\nResult: understanding your nutrition, simple adjustments and real steps to your goal without stress and restrictions.",
-        "price": "35 $"
+        "description": "Stop guessing why the diet isn't working. We'll analyze your real nutrition and show where the hidden mistakes are:",
+        "price": "35 $",
+        "intro": "Stop guessing why the diet isn't working. We'll analyze your real nutrition and show where the hidden mistakes are:",
+        "whatIncludes": "What includes:",
+        "points": {
+          "nutritionBreakdown": "Nutrition breakdown — detailed for 7 days.",
+          "macroAnalysis": "Macro analysis — calories, proteins, fats, carbohydrates.",
+          "hiddenOvereating": "Hidden overeating — even \"on a diet\" you might be eating more than you think.",
+          "realReasons": "Real reasons for breakdown — not a sandwich, but lack of protein, sleep or stress.",
+          "practicalAdvice": "Practical advice — what and how to change without strict restrictions.",
+          "allFactors": "Accounting for all factors — water, coffee, stress, breakdowns — we won't miss anything."
+        },
+        "result": "Result: understanding your nutrition, simple adjustments and real steps to your goal without stress and restrictions."
       },
       "onlineCoaching": {
         "title": "Online Coaching",

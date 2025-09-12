@@ -36,7 +36,7 @@ export const App = (): JSX.Element => {
               element={
                 <div className="bg-[#1a1a1a] w-full min-h-screen pt-24">
                   <section className="w-full py-20">
-                    <TestimonialsSection />
+                    <TestimonialsSection showCommentsCarousel={true} />
                   </section>
                 </div>
               } 
