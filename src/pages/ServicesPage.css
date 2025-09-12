@@ -513,6 +513,14 @@
   transition: all 0.3s ease;
 }
 
+@media (max-width: 768px) {
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
 .cta-button:hover {
   background-color: #e01e2b;
   transform: scale(1.05);

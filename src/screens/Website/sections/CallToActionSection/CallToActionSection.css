@@ -3,6 +3,7 @@
   max-width: 80rem;
   margin: 0 auto;
   padding: 0 1rem;
+  overflow: hidden;
 }
 
 .cta-content {
@@ -10,25 +11,35 @@
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+  position: relative;
+  width: 100%;
 }
 
 @media (min-width: 1024px) {
   .cta-content {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 4rem;
-    justify-content: space-between;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6rem !important;
+    align-items: start !important;
+    position: relative !important;
+    width: 100% !important;
   }
   
   .cta-image-section {
-    width: 45%;
-    max-width: 500px;
-    height: 600px;
+    width: 100% !important;
+    max-width: 500px !important;
+    height: 600px !important;
+    justify-self: start !important;
+    position: relative !important;
+    grid-column: 1 !important;
   }
   
   .cta-text-section {
-    width: 50%;
-    max-width: 500px;
+    width: 100% !important;
+    max-width: 500px !important;
+    justify-self: end !important;
+    position: relative !important;
+    grid-column: 2 !important;
   }
 }
 
@@ -43,6 +54,9 @@
   border-radius: 1.5rem;
   overflow: hidden;
   flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .cta-trainer-image {
@@ -82,6 +96,10 @@
   gap: 1.875rem;
   flex: 1;
   max-width: 500px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .cta-header {
@@ -214,4 +232,25 @@
 .start-page_has_bg.start-page_theme_expanded .start-page__bg {
   left: -20% !important;
   right: 0;
+}
+
+/* Принудительное разделение элементов */
+@media (min-width: 1024px) {
+  .cta-content {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6rem !important;
+  }
+  
+  .cta-image-section {
+    grid-column: 1 !important;
+    width: 100% !important;
+    max-width: 500px !important;
+  }
+  
+  .cta-text-section {
+    grid-column: 2 !important;
+    width: 100% !important;
+    max-width: 500px !important;
+  }
 }

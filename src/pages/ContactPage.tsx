@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { MapPin, Phone, Mail, Clock, Instagram } from "lucide-react";
 import { useTranslation } from "react-i18next";
+
+// Типы для Marquiz
+declare global {
+  interface Window {
+    Marquiz: {
+      add: (config: any[]) => void;
+    };
+  }
+}
 
 export const ContactPage = (): JSX.Element => {
   const { t } = useTranslation();
@@ -14,7 +23,51 @@ export const ContactPage = (): JSX.Element => {
     service: ""
   });
 
+  useEffect(() => {
+    // Инициализация Marquiz опросника с повторными попытками
+    let attempts = 0;
+    const maxAttempts = 10;
+    
+    const initMarquiz = () => {
+      attempts++;
+      
+      if (window.Marquiz) {
+        try {
+          window.Marquiz.add(['Inline', {
+            id: '68c07b95528c4c0019cb5f39',
+            buttonText: '«Старт»',
+            bgColor: '#ff2332',
+            textColor: '#fff',
+            rounded: true,
+            shadow: 'rgba(255, 35, 50, 0.5)',
+            blicked: true,
+            fixed: false,
+            buttonOnMobile: true,
+            disableOnMobile: false,
+            fullWidth: false
+          }]);
+          console.log('Marquiz initialized successfully');
+        } catch (error) {
+          console.error('Marquiz initialization error:', error);
+        }
+      } else if (attempts < maxAttempts) {
+        console.log(`Marquiz not ready, attempt ${attempts}/${maxAttempts}`);
+        setTimeout(initMarquiz, 1000);
+      } else {
+        console.error('Marquiz failed to load after maximum attempts');
+      }
+    };
 
+    // Начинаем инициализацию сразу
+    initMarquiz();
+    
+    // Также слушаем событие загрузки
+    document.addEventListener('marquizLoaded', initMarquiz);
+    
+    return () => {
+      document.removeEventListener('marquizLoaded', initMarquiz);
+    };
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -98,6 +151,18 @@ ${formData.message}
             {t("contact.subtitle")}
           </p>
         </div>
+
+        {/* Marquiz Questionnaire */}
+        <div className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:300ms] mb-16">
+          <div className="max-w-4xl mx-auto">
+            <div data-marquiz-id="68c07b95528c4c0019cb5f39"></div>
+            <script dangerouslySetInnerHTML={{
+              __html: `(function(t, p) {window.Marquiz ? Marquiz.add([t, p]) : document.addEventListener('marquizLoaded', function() {Marquiz.add([t, p])})})('Inline', {id: '68c07b95528c4c0019cb5f39', buttonText: '«Старт»', bgColor: '#ff2332', textColor: '#fff', rounded: true, shadow: 'rgba(255, 35, 50, 0.5)', blicked: true, fixed: false, buttonOnMobile: true, disableOnMobile: false, fullWidth: false})`
+            }} />
+          </div>
+        </div>
+
+
 
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
