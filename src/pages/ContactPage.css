@@ -1,0 +1,88 @@
+/* Marquiz Quiz Mobile Styles */
+.marquiz-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Mobile-specific styles for Marquiz */
+@media (max-width: 768px) {
+  .marquiz-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Target Marquiz iframe and elements */
+  .marquiz-container iframe,
+  .marquiz-container [data-marquiz-id] iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 400px !important;
+    border: none !important;
+    border-radius: 12px !important;
+  }
+  
+  /* Marquiz button styles for mobile */
+  .marquiz-container button,
+  .marquiz-container [data-marquiz-id] button {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    display: block !important;
+    padding: 12px 24px !important;
+    font-size: 16px !important;
+    border-radius: 8px !important;
+  }
+  
+  /* Marquiz content container */
+  .marquiz-container > div,
+  .marquiz-container [data-marquiz-id] > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+}
+
+/* Additional responsive styles */
+@media (max-width: 480px) {
+  .marquiz-container {
+    padding: 0 0.5rem;
+  }
+  
+  .marquiz-container iframe,
+  .marquiz-container [data-marquiz-id] iframe {
+    min-height: 350px !important;
+  }
+  
+  .marquiz-container button,
+  .marquiz-container [data-marquiz-id] button {
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+  }
+}
+
+/* Ensure Marquiz is visible */
+.marquiz-container,
+.marquiz-container [data-marquiz-id] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Mobile styles for fitness plan section */
+@media (max-width: 768px) {
+  .fitness-plan-section h3 {
+    text-align: center !important;
+  }
+  
+  .fitness-plan-section .space-y-6 > div {
+    text-align: left;
+  }
+  
+  .fitness-plan-section .space-y-6 > div .flex {
+    align-items: flex-start;
+  }
+}

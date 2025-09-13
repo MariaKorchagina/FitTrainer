@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { CheckCircle, Camera, Ruler, FileText, Dumbbell, Clock, Utensils, Target, TrendingUp, Shield } from "lucide-react";
+import "./ContactPage.css";
 
 // TypeScript declaration for Marquiz
 declare global {
@@ -36,9 +38,10 @@ export const ContactPage = (): JSX.Element => {
             fixed: false,
             buttonOnMobile: true,
             disableOnMobile: false,
-            width: '1280',
-            height: '859',
-            fullWidth: false
+            width: '100%',
+            height: 'auto',
+            fullWidth: true,
+            responsive: true
           }]);
           console.log('ContactPage: Marquiz widget added successfully');
         } catch (error) {
@@ -81,7 +84,172 @@ export const ContactPage = (): JSX.Element => {
 
         {/* Marquiz Quiz */}
         <div className="text-center mb-16">
-          <div data-marquiz-id="68c07b95528c4c0019cb5f39"></div>
+          <div 
+            data-marquiz-id="68c07b95528c4c0019cb5f39"
+            className="marquiz-container"
+            style={{
+              width: '100%',
+              maxWidth: '100%',
+              overflow: 'hidden'
+            }}
+          ></div>
+        </div>
+
+        {/* Individual Fitness Plan Information */}
+        <div className="max-w-4xl mx-auto mb-20">
+          <div className="bg-[#1f1f1f] border border-[#ffffff33] rounded-[20px] p-8 md:p-12">
+            <h2 className="[font-family:'Anton',Helvetica] font-normal text-white text-3xl md:text-4xl tracking-[-0.30px] leading-[1.2] mb-8 text-center">
+              Индивидуальный фитнес-план для вас 💪
+            </h2>
+            
+            <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-lg md:text-xl tracking-[0] leading-[1.4] mb-12 text-center">
+              После оплаты я свяжусь с вами для сбора исходных данных, чтобы создать максимально эффективный и безопасный план тренировок.
+            </p>
+
+            {/* What to prepare */}
+            <div className="mb-12 fitness-plan-section">
+              <h3 className="[font-family:'Anton',Helvetica] font-normal text-white text-2xl md:text-3xl tracking-[-0.20px] leading-[1.2] mb-8">
+                Что нужно будет подготовить:
+              </h3>
+              
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="text-[#ff2332] mt-1 flex-shrink-0">
+                    <Camera className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-lg mb-2">
+                      Фото для отслеживания прогресса
+                    </p>
+                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-base">
+                      Короткое фото спереди и сбоку в шортах и топе.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="text-[#ff2332] mt-1 flex-shrink-0">
+                    <Ruler className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-lg mb-2">
+                      Измерения тела:
+                    </p>
+                    <ul className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-base space-y-1 ml-4">
+                      <li>• Талия</li>
+                      <li>• Бёдра</li>
+                      <li>• Каждая нога (левая и правая)</li>
+                      <li>• Икры</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="text-[#ff2332] mt-1 flex-shrink-0">
+                    <FileText className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-lg mb-2">
+                      Анкета здоровья
+                    </p>
+                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-base">
+                      Я пришлю специальную форму, которую необходимо будет заполнить, подписать и прислать обратно. Это обязательный шаг для вашей безопасности и эффективности тренировок.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* What's included */}
+            <div className="mb-12 fitness-plan-section">
+              <h3 className="[font-family:'Anton',Helvetica] font-normal text-white text-2xl md:text-3xl tracking-[-0.20px] leading-[1.2] mb-8">
+                Ваш индивидуальный план включает:
+              </h3>
+              
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="text-[#ff2332] mt-1 flex-shrink-0">
+                    <Dumbbell className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-lg mb-2">
+                      Два онлайн-занятия в неделю по 30 минут с моим контролем.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="text-[#ff2332] mt-1 flex-shrink-0">
+                    <Clock className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-lg mb-2">
+                      Две самостоятельные тренировки, которые выполняете в удобное для вас время.
+                    </p>
+                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-base mt-2">
+                      После каждой самостоятельной тренировки вы присылаете короткое видео или фото с выполнением техники, я проверяю и даю рекомендации или корректирую технику.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="text-[#ff2332] mt-1 flex-shrink-0">
+                    <Utensils className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-lg mb-2">
+                      Ежедневное питание
+                    </p>
+                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-base">
+                      Вы присылаете мне своё питание каждый день, я корректирую рацион и даю обратную связь для достижения максимальных результатов.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Benefits */}
+            <div className="bg-[#ff2332]/10 border border-[#ff2332]/30 rounded-[15px] p-6 mb-8">
+              <h3 className="[font-family:'Anton',Helvetica] font-normal text-[#ff2332] text-xl md:text-2xl tracking-[-0.15px] leading-[1.2] mb-6">
+                💡 Всё это направлено на максимальные результаты и безопасное прогрессирование:
+              </h3>
+              
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="text-[#ff2332] mt-1 flex-shrink-0">
+                    <Target className="w-5 h-5" />
+                  </div>
+                  <p className="[font-family:'Outfit',Helvetica] font-normal text-white text-base">
+                    Контроль каждой тренировки и корректировка ошибок
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="text-[#ff2332] mt-1 flex-shrink-0">
+                    <TrendingUp className="w-5 h-5" />
+                  </div>
+                  <p className="[font-family:'Outfit',Helvetica] font-normal text-white text-base">
+                    Отслеживание прогресса по фото и измерениям
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="text-[#ff2332] mt-1 flex-shrink-0">
+                    <Shield className="w-5 h-5" />
+                  </div>
+                  <p className="[font-family:'Outfit',Helvetica] font-normal text-white text-base">
+                    Персональные рекомендации по питанию
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <p className="[font-family:'Outfit',Helvetica] font-bold text-white text-lg md:text-xl">
+                План полностью индивидуален под ваш уровень, цели и возможности
+              </p>
+            </div>
+          </div>
         </div>
 
 
