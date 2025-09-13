@@ -38,10 +38,9 @@ export const ContactPage = (): JSX.Element => {
             fixed: false,
             buttonOnMobile: true,
             disableOnMobile: false,
-            width: '100%',
-            height: 'auto',
-            fullWidth: true,
-            responsive: true
+            width: '1280',
+            height: '859',
+            fullWidth: false
           }]);
           console.log('ContactPage: Marquiz widget added successfully');
         } catch (error) {
@@ -84,15 +83,7 @@ export const ContactPage = (): JSX.Element => {
 
         {/* Marquiz Quiz */}
         <div className="text-center mb-16">
-          <div 
-            data-marquiz-id="68c07b95528c4c0019cb5f39"
-            className="marquiz-container"
-            style={{
-              width: '100%',
-              maxWidth: '100%',
-              overflow: 'hidden'
-            }}
-          ></div>
+          <div data-marquiz-id="68c07b95528c4c0019cb5f39"></div>
         </div>
 
         {/* Individual Fitness Plan Information */}

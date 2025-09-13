@@ -280,6 +280,16 @@
   gap: 0.5rem;
 }
 
+/* Mobile: horizontal menu */
+@media (max-width: 768px) {
+  .footer-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
 .footer-menu-link {
   font-family: 'Outfit', Helvetica, sans-serif;
   font-weight: 400;
