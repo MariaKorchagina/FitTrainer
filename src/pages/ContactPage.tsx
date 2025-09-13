@@ -1,7 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Button } from "../components/ui/button";
-import { Card, CardContent } from "../components/ui/card";
-import { MapPin, Phone, Mail, Clock, Instagram } from "lucide-react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 // TypeScript declaration for Marquiz
@@ -17,13 +14,6 @@ declare global {
 
 export const ContactPage = (): JSX.Element => {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-    service: ""
-  });
 
   // Initialize Marquiz quiz with useEffect
   useEffect(() => {
@@ -75,78 +65,6 @@ export const ContactPage = (): JSX.Element => {
       document.removeEventListener('marquizLoaded', handleMarquizLoaded);
     };
   }, []);
-
-
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent(t("contact.form.subject", { name: formData.name }));
-      const body = encodeURIComponent(`
-${t("contact.form.name")}: ${formData.name}
-${t("contact.form.email")}: ${formData.email}
-${t("contact.form.phone")}: ${formData.phone || t("contact.form.notProvided")}
-${t("contact.form.service")}: ${formData.service || t("contact.form.notSelected")}
-
-${t("contact.form.message")}:
-${formData.message}
-      `);
-      
-      const mailtoLink = `mailto:kobysheva_maria@mail.ru?subject=${subject}&body=${body}`;
-      
-      // Open email client
-      window.location.href = mailtoLink;
-      
-      // Reset form after successful submission
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-        service: ""
-      });
-      
-      // Show success message (optional)
-      alert(t("contact.form.successMessage"));
-      
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert(t("contact.form.errorMessage"));
-    }
-  };
-
-  const contactInfo = [
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: t("contact.info.location.title"),
-      details: t("contact.info.location.details", { returnObjects: true }) as string[]
-    },
-    {
-      icon: <Phone className="w-6 h-6" />,
-      title: t("contact.info.phone.title"),
-      details: t("contact.info.phone.details", { returnObjects: true }) as string[]
-    },
-    {
-      icon: <Mail className="w-6 h-6" />,
-      title: t("contact.info.email.title"),
-      details: t("contact.info.email.details", { returnObjects: true }) as string[]
-    },
-    {
-      icon: <Clock className="w-6 h-6" />,
-      title: t("contact.info.hours.title"),
-      details: t("contact.info.hours.details", { returnObjects: true }) as string[]
-    }
-  ];
 
   return (
     <div className="bg-[#1a1a1a] w-full min-h-screen pt-24">
