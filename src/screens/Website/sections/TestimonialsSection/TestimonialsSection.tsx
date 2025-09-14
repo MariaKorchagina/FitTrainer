@@ -29,17 +29,6 @@ const getTestimonialData = (t: any) => [
     ],
   },
   {
-    quote: t("testimonials.quote3"),
-    author: "",
-    images: [
-      {
-        src: "/beforeafter3.jpeg",
-        alt: t("testimonials.imageAlt3"),
-        className: "rounded-[10px_0px_0px_10px]",
-      },
-    ],
-  },
-  {
     quote: t("testimonials.quote4"),
     author: "",
     images: [
@@ -116,6 +105,28 @@ const getTestimonialData = (t: any) => [
       },
     ],
   },
+  {
+    quote: t("testimonials.quote11"),
+    author: "",
+    images: [
+      {
+        src: "/beforeafter11.jpeg",
+        alt: t("testimonials.imageAlt11"),
+        className: "rounded-[10px_0px_0px_10px]",
+      },
+    ],
+  },
+  {
+    quote: t("testimonials.quote12"),
+    author: "",
+    images: [
+      {
+        src: "/beforeafter12.jpeg",
+        alt: t("testimonials.imageAlt12"),
+        className: "rounded-[10px_0px_0px_10px]",
+      },
+    ],
+  },
 ];
 
 interface TestimonialsSectionProps {
@@ -172,7 +183,7 @@ export const TestimonialsSection = ({ showCommentsCarousel = false }: Testimonia
             {/* Images container */}
             <div className="testimonials-images-container">
               <img
-                className={`testimonials-image ${["/beforeafter3.jpeg", "/beforeafter4.jpeg", "/beforeafter5.jpeg", "/beforeafter8.jpeg", "/beforeafter9.jpeg", "/beforeafter10.jpeg"].includes(currentData.images?.[0]?.src || "") ? "testimonials-image--contain" : ""}`}
+                className={`testimonials-image ${["/beforeafter4.jpeg", "/beforeafter5.jpeg", "/beforeafter8.jpeg", "/beforeafter9.jpeg", "/beforeafter10.jpeg", "/beforeafter11.jpeg", "/beforeafter12.jpeg"].includes(currentData.images?.[0]?.src || "") ? "testimonials-image--contain" : ""}`}
                 alt={currentData.images?.[0]?.alt || t("testimonials.defaultImageAlt")}
                 src={currentData.images?.[0]?.src || "/beforeafter1.jpeg"}
               />
