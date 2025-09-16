@@ -45,6 +45,13 @@ export const FooterSection = (): JSX.Element => {
                   <p className="footer-description footer-description-mobile">
                     {t("footer.description")}
                   </p>
+                  
+                  {/* Mobile-only WhatsApp button */}
+                  <div className="footer-mobile-whatsapp">
+                    <Button className="footer-mobile-button" onClick={handleGetStarted}>
+                      <span>{t("footer.whatsapp")}</span>
+                    </Button>
+                  </div>
                 </div>
 
                 <div className="footer-button-wrap">

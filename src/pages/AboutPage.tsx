@@ -11,6 +11,7 @@ export const AboutPage = (): JSX.Element => {
     navigate('/contact');
   };
 
+
   const achievements = [
     { number: "200+", label: t("about.achievements.clients") },
     { number: "10", label: t("about.achievements.experience") },

@@ -114,6 +114,16 @@
     text-align: left;
     margin-left: 0;
   }
+
+  /* Ensure button is visible on mobile */
+  .about-button {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100%;
+    max-width: 300px;
+    margin: 2rem auto 0;
+  }
 }
 
 .about-text p {
@@ -133,8 +143,8 @@
   text-align: justify;
 }
 
+
 .about-button {
-  margin-top: 2rem;
   height: 60px;
   padding: 0 2rem;
   background-color: #ff2332;
@@ -142,7 +152,11 @@
   border-radius: 0.75rem;
   transition: all 0.3s ease;
   cursor: pointer;
+  position: relative;
+  z-index: 10;
+  margin-top: 2rem;
 }
+
 
 .about-button:hover {
   background-color: #e01e2b;

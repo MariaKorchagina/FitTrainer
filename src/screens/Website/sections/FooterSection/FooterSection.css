@@ -398,6 +398,51 @@
   .footer-socials {
     justify-content: center;
   }
+  
+  /* Override parent alignment for mobile WhatsApp button */
+  .footer-text .footer-text-inner {
+    align-items: center !important;
+  }
+  
+  /* Mobile-only WhatsApp button */
+  .footer-mobile-whatsapp {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+  
+  .footer-mobile-button {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: 50px;
+    background-color: #ff2332 !important;
+    border: none;
+    border-radius: 0.75rem;
+    color: white !important;
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+  
+  .footer-mobile-button:hover {
+    background-color: #e01e2b !important;
+    transform: scale(1.02);
+  }
+}
+
+/* Hide mobile WhatsApp button on desktop */
+@media (min-width: 769px) {
+  .footer-mobile-whatsapp {
+    display: none;
+  }
 }
 
 /* Скрываем текст "Личный тренер Лилия Яцкая" только на очень маленьких экранах (мобильные телефоны) */
