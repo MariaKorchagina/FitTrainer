@@ -259,7 +259,7 @@ export const ServicesPage = (): JSX.Element => {
           <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-lg mb-8 max-w-2xl mx-auto">
             {t("services.ctaDescription")}
           </p>
-          <Button className="h-[60px] px-8 bg-[#ff2332] hover:bg-[#e01e2b] rounded-xl transition-all duration-300 hover:scale-105" onClick={handleGetStarted}>
+          <Button className="h-[60px] px-8 bg-[#ff2332] hover:bg-[#e01e2b] rounded-xl transition-all duration-300 hover:scale-105" onClick={() => handleGetStarted()}>
             <span className="[font-family:'Outfit',Helvetica] font-bold text-white text-lg">
               {t("services.ctaButton")}
             </span>
