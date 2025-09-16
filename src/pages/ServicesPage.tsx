@@ -50,18 +50,22 @@ export const ServicesPage = (): JSX.Element => {
         try {
           console.log('ServicesPage: Adding Marquiz quiz...');
           
+          // Check if mobile device
+          const isMobile = window.innerWidth <= 768;
+          
           window.Marquiz.add(['Inline', {
             id: '68c07b95528c4c0019cb5f39',
-            buttonText: '«Старт»',
+            buttonText: isMobile ? '' : '«Старт»', // Hide button text on mobile
             bgColor: '#ff2332',
             textColor: '#fff',
             rounded: true,
             shadow: 'rgba(255, 35, 50, 0.5)',
             blicked: true,
             fixed: false,
-            buttonOnMobile: true,
+            buttonOnMobile: !isMobile, // Hide button on mobile
             disableOnMobile: false,
-            fullWidth: false
+            fullWidth: false,
+            autoOpen: isMobile ? 0 : false // Auto open on mobile
           }]);
           console.log('ServicesPage: Marquiz quiz added successfully');
         } catch (error) {
@@ -88,11 +92,21 @@ export const ServicesPage = (): JSX.Element => {
       initMarquizQuiz();
     };
 
+    // Handle window resize to update quiz behavior
+    const handleResize = () => {
+      // Reinitialize quiz on resize to update mobile/desktop behavior
+      if (window.Marquiz && typeof window.Marquiz.add === 'function') {
+        setTimeout(initMarquizQuiz, 500);
+      }
+    };
+
     document.addEventListener('marquizLoaded', handleMarquizLoaded);
+    window.addEventListener('resize', handleResize);
 
     return () => {
       clearTimeout(timer);
       document.removeEventListener('marquizLoaded', handleMarquizLoaded);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 

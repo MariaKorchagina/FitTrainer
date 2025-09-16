@@ -1,5 +1,13 @@
 /* ServicesPage.css */
 
+/* Hide Marquiz button on mobile */
+@media (max-width: 768px) {
+  .marquiz-widget__button,
+  .marquiz-inline__button {
+    display: none !important;
+  }
+}
+
 /* Main Container */
 .services-page-container {
   background-color: #1a1a1a;
