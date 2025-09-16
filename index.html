@@ -46,34 +46,51 @@
     
     <!-- Marquiz Widget -->
     <script>
+    console.log('HTML: Starting widget initialization...');
     (function(t, p) {
+      console.log('HTML: Widget function called, window.Marquiz exists:', !!window.Marquiz);
       if (window.Marquiz) {
-        Marquiz.add([t, p]);
-      } else {
-        document.addEventListener('marquizLoaded', function() {
+        console.log('HTML: Marquiz available, adding widget...');
+        try {
           Marquiz.add([t, p]);
-          
-          // Fix widget visibility
-          setTimeout(() => {
-            const mainWidget = document.querySelector('.marquiz-widget');
-            const widgetContainer = document.querySelector('.marquiz-widget__container');
+          console.log('HTML: Widget added successfully');
+        } catch (error) {
+          console.error('HTML: Error adding widget:', error);
+        }
+      } else {
+        console.log('HTML: Marquiz not available, waiting for marquizLoaded event...');
+        document.addEventListener('marquizLoaded', function() {
+          console.log('HTML: marquizLoaded event received, adding widget...');
+          try {
+            Marquiz.add([t, p]);
+            console.log('HTML: Widget added successfully after event');
             
-            if (mainWidget) {
-              mainWidget.style.display = 'block';
-              mainWidget.style.visibility = 'visible';
-              mainWidget.style.opacity = '1';
-              mainWidget.style.zIndex = '9999';
-              mainWidget.style.position = 'fixed';
-              mainWidget.style.bottom = '20px';
-              mainWidget.style.right = '20px';
+            // Fix widget visibility
+            setTimeout(() => {
+              const mainWidget = document.querySelector('.marquiz-widget');
+              const widgetContainer = document.querySelector('.marquiz-widget__container');
               
-              if (widgetContainer) {
-                widgetContainer.style.display = 'block';
-                widgetContainer.style.visibility = 'visible';
-                widgetContainer.style.opacity = '1';
+              if (mainWidget) {
+                console.log('HTML: Fixing widget visibility...');
+                mainWidget.style.display = 'block';
+                mainWidget.style.visibility = 'visible';
+                mainWidget.style.opacity = '1';
+                mainWidget.style.zIndex = '9999';
+                mainWidget.style.position = 'fixed';
+                mainWidget.style.bottom = '20px';
+                mainWidget.style.right = '20px';
+                
+                if (widgetContainer) {
+                  widgetContainer.style.display = 'block';
+                  widgetContainer.style.visibility = 'visible';
+                  widgetContainer.style.opacity = '1';
+                }
+                console.log('HTML: Widget visibility fixed');
               }
-            }
-          }, 2000);
+            }, 2000);
+          } catch (error) {
+            console.error('HTML: Error adding widget after event:', error);
+          }
         });
       }
     })('Widget', {

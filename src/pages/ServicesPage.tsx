@@ -4,6 +4,15 @@ import { CheckCircle, Expand } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect, useMemo } from "react";
+
+// TypeScript declaration for Marquiz
+declare global {
+  interface Window {
+    Marquiz: {
+      add: (config: [string, any]) => void;
+    };
+  }
+}
 import "../screens/Website/sections/TrainingProgramsSection/TrainingProgramsSection.css";
 import "./ServicesPage.css";
 
@@ -14,6 +23,61 @@ export const ServicesPage = (): JSX.Element => {
   const { t, i18n, ready } = useTranslation();
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
+  // Initialize Marquiz inline quiz
+  useEffect(() => {
+    console.log('ServicesPage: Initializing Marquiz quiz...');
+    
+    const initMarquizQuiz = () => {
+      console.log('ServicesPage: initMarquizQuiz called, window.Marquiz exists:', !!window.Marquiz);
+      
+      if (window.Marquiz && typeof window.Marquiz.add === 'function') {
+        try {
+          console.log('ServicesPage: Adding Marquiz quiz...');
+          window.Marquiz.add(['Inline', {
+            id: '68c07b95528c4c0019cb5f39',
+            buttonText: '«Старт»',
+            bgColor: '#ff2332',
+            textColor: '#fff',
+            rounded: true,
+            shadow: 'rgba(255, 35, 50, 0.5)',
+            blicked: true,
+            fixed: false,
+            buttonOnMobile: true,
+            disableOnMobile: false,
+            fullWidth: false
+          }]);
+          console.log('ServicesPage: Marquiz quiz added successfully');
+        } catch (error) {
+          console.error('ServicesPage: Error adding Marquiz quiz:', error);
+        }
+      } else {
+        console.log('ServicesPage: Marquiz not available, retrying in 1000ms...');
+        setTimeout(initMarquizQuiz, 1000);
+      }
+    };
+
+    // Try immediately
+    initMarquizQuiz();
+
+    // Try again after 2 seconds
+    const timer = setTimeout(() => {
+      console.log('ServicesPage: Second attempt after 2 seconds');
+      initMarquizQuiz();
+    }, 2000);
+
+    // Also listen for marquizLoaded event
+    const handleMarquizLoaded = () => {
+      console.log('ServicesPage: marquizLoaded event received');
+      initMarquizQuiz();
+    };
+
+    document.addEventListener('marquizLoaded', handleMarquizLoaded);
+
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener('marquizLoaded', handleMarquizLoaded);
+    };
+  }, []);
 
   const [expandedAdditionalCard, setExpandedAdditionalCard] = useState<number | null>(null);
   const [refreshKey, setRefreshKey] = useState(0);
@@ -159,6 +223,10 @@ export const ServicesPage = (): JSX.Element => {
           </p>
         </div>
 
+        {/* Marquiz Inline Quiz */}
+        <div className="text-center mb-16">
+          <div data-marquiz-id="68c07b95528c4c0019cb5f39"></div>
+        </div>
 
         {/* CTA Section */}
         <div className="text-center bg-[#1f1f1f] rounded-[20px] p-12 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:800ms] mb-16">
