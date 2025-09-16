@@ -12,41 +12,10 @@
     <link href="tailwind.css" rel="stylesheet" />
     <link href="tailwind.css" rel="stylesheet" />
     
-    <!-- Marquiz script start -->
-    <script>
-    console.log('Index.html: Loading Marquiz script...');
-    (function(w, d, s, o){
-      var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';j.onload = function() {
-        console.log('Index.html: Marquiz script loaded');
-        if (document.readyState !== 'loading') {
-          console.log('Index.html: Initializing Marquiz immediately');
-          Marquiz.init(o);
-        } else {
-          console.log('Index.html: Waiting for DOMContentLoaded');
-          document.addEventListener("DOMContentLoaded", function() {
-            console.log('Index.html: DOMContentLoaded, initializing Marquiz');
-            Marquiz.init(o);
-          });
-        }
-      };
-      d.head.insertBefore(j, d.head.firstElementChild);
-    })(window, document, 'script', {
-        host: '//quiz.marquiz.ru',
-        region: 'ru',
-        id: '68c07b95528c4c0019cb5f39',
-        autoOpen: false,
-        autoOpenFreq: 'once',
-        openOnExit: false,
-        disableOnMobile: false
-      }
-    );
-    </script>
-    <!-- Marquiz script end -->
     
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="./src/index.tsx"></script>
-    <script>(function(t, p) {window.Marquiz ? Marquiz.add([t, p]) : document.addEventListener('marquizLoaded', function() {Marquiz.add([t, p])})})('Widget', {id: '68c07b95528c4c0019cb5f39', position: 'right', delay: 10, autoOpen: 10, disableOnMobile: true, disableIfClosed: true, gradientEnabled: true, gradientColor: '#303537', gradientIntensity: 40})</script>
   </body>
 </html>

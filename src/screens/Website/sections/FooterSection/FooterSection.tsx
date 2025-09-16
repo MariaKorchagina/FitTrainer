@@ -1,11 +1,12 @@
 import { Button } from "../../../../components/ui/button";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./FooterSection.css";
 
 export const FooterSection = (): JSX.Element => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
   
   const handleGetStarted = () => {
     window.open('https://wa.me/972549961795', '_blank');
@@ -15,39 +16,45 @@ export const FooterSection = (): JSX.Element => {
     navigate('/contact');
   };
 
+  // Hide the "Не знаете с чего начать?" block on services page
+  const isServicesPage = location.pathname === '/services';
+
   return (
     <div className="footer">
       <div className="footer-container">
         <div className="footer-content-wrap">
           <div className="footer-bg-blur" />
 
-          <div className="footer-row">
-            {/* Image Section - trainer8 on the left */}
-            <div className="footer-image-wrap">
-              <img
-                className="footer-image"
-                alt="Лилия — тренер"
-                src="/trainer8.png"
-              />
-            </div>
-
-            {/* Content Section restored */}
-            <div className="footer-text">
-              <div className="footer-text-inner">
-                <h2 className="footer-title">{t("footer.title")}</h2>
-
-                <p className="footer-description footer-description-mobile">
-                  {t("footer.description")}
-                </p>
+          {/* Show "Не знаете с чего начать?" block only on non-services pages */}
+          {!isServicesPage && (
+            <div className="footer-row">
+              {/* Image Section - trainer8 on the left */}
+              <div className="footer-image-wrap">
+                <img
+                  className="footer-image"
+                  alt="Лилия — тренер"
+                  src="/trainer8.png"
+                />
               </div>
 
-              <div className="footer-button-wrap">
-                <Button className="footer-button" onClick={handleGetStarted}>
-                  <span>{t("footer.whatsapp")}</span>
-                </Button>
+              {/* Content Section restored */}
+              <div className="footer-text">
+                <div className="footer-text-inner">
+                  <h2 className="footer-title">{t("footer.title")}</h2>
+
+                  <p className="footer-description footer-description-mobile">
+                    {t("footer.description")}
+                  </p>
+                </div>
+
+                <div className="footer-button-wrap">
+                  <Button className="footer-button" onClick={handleGetStarted}>
+                    <span>{t("footer.whatsapp")}</span>
+                  </Button>
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           <div className="footer-gradient" />
         </div>

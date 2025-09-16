@@ -3,70 +3,11 @@ import { useTranslation } from "react-i18next";
 import { CheckCircle, Camera, Ruler, FileText, Dumbbell, Clock, Utensils, Target, TrendingUp, Shield } from "lucide-react";
 import "./ContactPage.css";
 
-// TypeScript declaration for Marquiz
-declare global {
-  interface Window {
-    Marquiz: {
-      add: (config: [string, any]) => void;
-      init: (config: any) => void;
-    };
-  }
-}
 
 
 export const ContactPage = (): JSX.Element => {
   const { t } = useTranslation();
 
-  // Initialize Marquiz quiz with useEffect
-  useEffect(() => {
-    console.log('ContactPage: Initializing Marquiz...');
-    
-    const initMarquiz = () => {
-      console.log('ContactPage: initMarquiz called, window.Marquiz:', !!window.Marquiz);
-      
-      if (window.Marquiz) {
-        try {
-          console.log('ContactPage: Adding Marquiz widget...');
-          window.Marquiz.add(['Inline', {
-            id: '68c07b95528c4c0019cb5f39',
-            buttonText: '«Старт»',
-            bgColor: '#ff2332',
-            textColor: '#fff',
-            rounded: true,
-            shadow: 'rgba(255, 35, 50, 0.5)',
-            blicked: true,
-            fixed: false,
-            buttonOnMobile: true,
-            disableOnMobile: false,
-            width: '1280',
-            height: '859',
-            fullWidth: false
-          }]);
-          console.log('ContactPage: Marquiz widget added successfully');
-        } catch (error) {
-          console.error('ContactPage: Error initializing Marquiz quiz:', error);
-        }
-      } else {
-        console.log('ContactPage: Marquiz not available, retrying in 100ms...');
-        setTimeout(initMarquiz, 100);
-      }
-    };
-
-    // Try to initialize immediately
-    initMarquiz();
-
-    // Also listen for the marquizLoaded event
-    const handleMarquizLoaded = () => {
-      console.log('ContactPage: marquizLoaded event received');
-      initMarquiz();
-    };
-
-    document.addEventListener('marquizLoaded', handleMarquizLoaded);
-
-    return () => {
-      document.removeEventListener('marquizLoaded', handleMarquizLoaded);
-    };
-  }, []);
 
   return (
     <div className="bg-[#1a1a1a] w-full min-h-screen pt-24">
@@ -81,10 +22,6 @@ export const ContactPage = (): JSX.Element => {
           </p>
         </div>
 
-        {/* Marquiz Quiz */}
-        <div className="text-center mb-16">
-          <div data-marquiz-id="68c07b95528c4c0019cb5f39"></div>
-        </div>
 
         {/* Individual Fitness Plan Information */}
         <div className="max-w-4xl mx-auto mb-20">

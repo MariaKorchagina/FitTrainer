@@ -7,10 +7,14 @@ import { useState, useEffect, useMemo } from "react";
 import "../screens/Website/sections/TrainingProgramsSection/TrainingProgramsSection.css";
 import "./ServicesPage.css";
 
+
+
 export const ServicesPage = (): JSX.Element => {
   const navigate = useNavigate();
   const { t, i18n, ready } = useTranslation();
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
+
+
   const [expandedAdditionalCard, setExpandedAdditionalCard] = useState<number | null>(null);
   const [refreshKey, setRefreshKey] = useState(0);
   // Force refresh when language changes
@@ -24,7 +28,7 @@ export const ServicesPage = (): JSX.Element => {
   }
 
   const handleGetStarted = () => {
-    navigate('/contact');
+    window.open('https://wa.me/972549961795', '_blank');
   };
 
 
@@ -153,6 +157,29 @@ export const ServicesPage = (): JSX.Element => {
           <p className="services-hero-subtitle">
             {t("services.subtitle")}
           </p>
+        </div>
+
+
+        {/* CTA Section */}
+        <div className="text-center bg-[#1f1f1f] rounded-[20px] p-12 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:800ms] mb-16">
+          <h2 className="[font-family:'Anton',Helvetica] font-normal text-white text-3xl md:text-4xl tracking-[-0.40px] leading-[1.2] mb-6">
+            {t("services.ctaTitle")}
+          </h2>
+          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-lg mb-8 max-w-2xl mx-auto">
+            {t("services.ctaDescription")}
+          </p>
+          <Button className="h-[60px] px-8 bg-[#ff2332] hover:bg-[#e01e2b] rounded-xl transition-all duration-300 hover:scale-105" onClick={handleGetStarted}>
+            <span className="[font-family:'Outfit',Helvetica] font-bold text-white text-lg">
+              {t("services.ctaButton")}
+            </span>
+          </Button>
+        </div>
+
+        {/* Programs Section Title */}
+        <div className="mb-12">
+          <h2 className="[font-family:'Anton',Helvetica] font-normal text-white text-3xl md:text-4xl tracking-[-0.40px] leading-[1.2] mb-4 text-center translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]">
+            {t("services.programsTitle")}
+          </h2>
         </div>
 
         {/* Main Services */}
@@ -548,20 +575,6 @@ export const ServicesPage = (): JSX.Element => {
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center bg-[#1f1f1f] rounded-[20px] p-12 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:1600ms]">
-          <h2 className="[font-family:'Anton',Helvetica] font-normal text-white text-3xl md:text-4xl tracking-[-0.40px] leading-[1.2] mb-6">
-            {t("services.ctaTitle")}
-          </h2>
-          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-lg mb-8 max-w-2xl mx-auto">
-            {t("services.ctaDescription")}
-          </p>
-          <Button className="h-[60px] px-8 bg-[#ff2332] hover:bg-[#e01e2b] rounded-xl transition-all duration-300 hover:scale-105" onClick={handleGetStarted}>
-            <span className="[font-family:'Outfit',Helvetica] font-bold text-white text-lg">
-              {t("services.ctaButton")}
-            </span>
-          </Button>
-        </div>
       </div>
     </div>
   );

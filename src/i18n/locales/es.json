@@ -79,7 +79,7 @@
     },
     "postpartumRecovery": {
       "title": "Nuevo Cuerpo Después del Parto: Abdomen se Tensa, Hinchazón Desaparece",
-      "price": "36 €",
+      "price": "62 €",
       "discount": "",
       "description": "Tu cuerpo ha pasado por una carga seria — ahora es importante recuperarse correctamente.",
       "extendedDescription": "Este programa está creado específicamente para mujeres después del parto: ejercicios seguros pero efectivos para el abdomen, pelvis y postura.\n\n💫 Lo que da el programa:\nTensamos el abdomen y trabajamos con diástasis.\n\nFortalecemos los músculos pélvicos y de cadera.\n\nActivamos el flujo linfático — desaparecen la hinchazón y pesadez.\n\nAlineamos la postura, aliviamos la carga de la espalda.\n\nAñadimos prácticas de respiración — energía y anti-estrés.\n\nQué incluye:",
@@ -247,8 +247,9 @@
     "answer4": "Todas las clases se pueden realizar en casa, sin equipo complejo. El curso proporciona una lista y recomendaciones para compra o alternativas caseras gratuitas."
   },
   "services": {
-    "title": "PROGRAMAS DE ENTRENAMIENTO",
+    "title": "¿No sabes por dónde empezar?",
     "subtitle": "Elige el programa perfecto para alcanzar tus objetivos con apoyo personal y orientación.",
+    "programsTitle": "PROGRAMAS DE ENTRENAMIENTO",
     "mostPopular": "Más Popular",
     "startNow": "Comenzar",
     "additionalTitle": "SERVICIOS ADICIONALES",

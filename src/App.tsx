@@ -9,10 +9,13 @@ import { QualificationsSection } from "./screens/Website/sections/Qualifications
 import { TestimonialsSection } from "./screens/Website/sections/TestimonialsSection/TestimonialsSection";
 import { FAQSection } from "./screens/Website/sections/FAQSection/FAQSection";
 
+
 export const App = (): JSX.Element => {
+
   return (
     <Router>
       <div className="bg-[#1a1a1a] w-full min-h-screen overflow-x-hidden">
+        
         <Header />
         
         <main>
