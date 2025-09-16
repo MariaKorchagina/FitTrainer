@@ -272,6 +272,21 @@
     color: white;
     opacity: 1;
   }
+  
+  /* Скрываем текст "Личный тренер Лилия Яцкая" и описание только на очень маленьких экранах */
+  .footer-col:first-child .footer-col-text {
+    display: block;
+  }
+  
+  /* Скрываем все заголовки колонок в мобильной версии */
+  .footer-col-title {
+    display: none;
+  }
+  
+  /* Скрываем кнопку "Начни сейчас" в мобильной версии */
+  .footer-button-wrap {
+    display: none;
+  }
 }
 
 .footer-menu {
@@ -378,6 +393,17 @@
     font-weight: 500 !important;
     text-shadow: none !important;
     filter: none !important;
+  }
+  
+  .footer-socials {
+    justify-content: center;
+  }
+}
+
+/* Скрываем текст "Личный тренер Лилия Яцкая" только на очень маленьких экранах (мобильные телефоны) */
+@media (max-width: 480px) {
+  .footer-col:first-child .footer-col-text {
+    display: none;
   }
 }
 

@@ -14,16 +14,24 @@
     
     <!-- Marquiz script start -->
     <script>
+    console.log('HTML: Starting Marquiz initialization...');
     (function(w, d, s, o){
       var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';
       j.onload = function() {
+        console.log('HTML: Marquiz script loaded successfully');
         if (document.readyState !== 'loading') {
+          console.log('HTML: Document ready, initializing Marquiz...');
           Marquiz.init(o);
         } else {
+          console.log('HTML: Document not ready, waiting for DOMContentLoaded...');
           document.addEventListener("DOMContentLoaded", function() {
+            console.log('HTML: DOMContentLoaded fired, initializing Marquiz...');
             Marquiz.init(o);
           });
         }
+      };
+      j.onerror = function() {
+        console.error('HTML: Failed to load Marquiz script');
       };
       d.head.insertBefore(j, d.head.firstElementChild);
     })(window, document, 'script', {

@@ -35,8 +35,8 @@ export const ContactPage = (): JSX.Element => {
             </p>
 
             {/* What to prepare */}
-            <div className="mb-12 fitness-plan-section">
-              <h3 className="[font-family:'Anton',Helvetica] font-normal text-white text-2xl md:text-3xl tracking-[-0.20px] leading-[1.2] mb-8">
+            <div className="mb-12 fitness-plan-section md:ml-12">
+              <h3 className="[font-family:'Anton',Helvetica] font-normal text-white text-3xl md:text-3xl tracking-[-0.20px] leading-[1.2] mb-8 -mt-8 text-left">
                 Что нужно будет подготовить:
               </h3>
               
@@ -46,10 +46,10 @@ export const ContactPage = (): JSX.Element => {
                     <Camera className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-lg mb-2">
+                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-xl md:text-lg mb-2">
                       Фото для отслеживания прогресса
                     </p>
-                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-base">
+                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-lg md:text-base">
                       Короткое фото спереди и сбоку в шортах и топе.
                     </p>
                   </div>
@@ -60,10 +60,10 @@ export const ContactPage = (): JSX.Element => {
                     <Ruler className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-lg mb-2">
+                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-xl md:text-lg mb-2">
                       Измерения тела:
                     </p>
-                    <ul className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-base space-y-1 ml-4">
+                    <ul className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-lg md:text-base space-y-1 ml-4">
                       <li>• Талия</li>
                       <li>• Бёдра</li>
                       <li>• Каждая нога (левая и правая)</li>
@@ -77,10 +77,10 @@ export const ContactPage = (): JSX.Element => {
                     <FileText className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-lg mb-2">
+                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-xl md:text-lg mb-2">
                       Анкета здоровья
                     </p>
-                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-base">
+                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-lg md:text-base">
                       Я пришлю специальную форму, которую необходимо будет заполнить, подписать и прислать обратно. Это обязательный шаг для вашей безопасности и эффективности тренировок.
                     </p>
                   </div>
@@ -90,7 +90,7 @@ export const ContactPage = (): JSX.Element => {
 
             {/* What's included */}
             <div className="mb-12 fitness-plan-section">
-              <h3 className="[font-family:'Anton',Helvetica] font-normal text-white text-2xl md:text-3xl tracking-[-0.20px] leading-[1.2] mb-8">
+              <h3 className="[font-family:'Anton',Helvetica] font-normal text-white text-3xl md:text-3xl tracking-[-0.20px] leading-[1.2] mb-8 text-left">
                 Ваш индивидуальный план включает:
               </h3>
               
@@ -100,7 +100,7 @@ export const ContactPage = (): JSX.Element => {
                     <Dumbbell className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-lg mb-2">
+                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-xl md:text-lg mb-2">
                       Два онлайн-занятия в неделю по 30 минут с моим контролем.
                     </p>
                   </div>
@@ -111,10 +111,10 @@ export const ContactPage = (): JSX.Element => {
                     <Clock className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-lg mb-2">
+                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-xl md:text-lg mb-2">
                       Две самостоятельные тренировки, которые выполняете в удобное для вас время.
                     </p>
-                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-base mt-2">
+                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-lg md:text-base mt-2">
                       После каждой самостоятельной тренировки вы присылаете короткое видео или фото с выполнением техники, я проверяю и даю рекомендации или корректирую технику.
                     </p>
                   </div>
@@ -125,10 +125,10 @@ export const ContactPage = (): JSX.Element => {
                     <Utensils className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-lg mb-2">
+                    <p className="[font-family:'Outfit',Helvetica] font-medium text-white text-xl md:text-lg mb-2">
                       Ежедневное питание
                     </p>
-                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-base">
+                    <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-lg md:text-base">
                       Вы присылаете мне своё питание каждый день, я корректирую рацион и даю обратную связь для достижения максимальных результатов.
                     </p>
                   </div>

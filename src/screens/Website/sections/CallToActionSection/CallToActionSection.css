@@ -86,6 +86,25 @@
   .cta-container {
     margin-top: -4.5rem;
   }
+
+  .cta-text-section {
+    position: relative;
+    z-index: 10; /* поднимаем над изображением */
+  }
+
+  .cta-title {
+    font-size: 3rem;
+    letter-spacing: -0.40px;
+    text-align: center;
+    margin-top: -130px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
 }
 
 
@@ -121,7 +140,7 @@
   letter-spacing: -0.6px;
   line-height: 1.2;
   margin-bottom: 1rem;
-  text-align: left;
+  text-align: center;
 }
 
 @media (min-width: 768px) {

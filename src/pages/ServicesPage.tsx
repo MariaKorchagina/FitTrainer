@@ -22,6 +22,22 @@ export const ServicesPage = (): JSX.Element => {
   const navigate = useNavigate();
   const { t, i18n, ready } = useTranslation();
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
+  const [selectedCurrency, setSelectedCurrency] = useState<string>('RUB');
+
+  // Currency prices for "Сушка PRO"
+  const sushkaProPrices = {
+    RUB: '8 000 ₽',
+    USD: '88 $',
+    EUR: '82 €',
+    ILS: '300 ₪'
+  };
+
+  const getPriceForService = (service: any) => {
+    if (service.title === t("programs.sushkaPro.title")) {
+      return sushkaProPrices[selectedCurrency as keyof typeof sushkaProPrices];
+    }
+    return service.price;
+  };
 
   // Initialize Marquiz inline quiz
   useEffect(() => {
@@ -33,6 +49,7 @@ export const ServicesPage = (): JSX.Element => {
       if (window.Marquiz && typeof window.Marquiz.add === 'function') {
         try {
           console.log('ServicesPage: Adding Marquiz quiz...');
+          
           window.Marquiz.add(['Inline', {
             id: '68c07b95528c4c0019cb5f39',
             buttonText: '«Старт»',
@@ -91,8 +108,12 @@ export const ServicesPage = (): JSX.Element => {
     return <div>Loading...</div>;
   }
 
-  const handleGetStarted = () => {
-    window.open('https://wa.me/972549961795', '_blank');
+  const handleGetStarted = (serviceTitle?: string) => {
+    if (serviceTitle === t("programs.sushkaPro.title")) {
+      window.open('https://buy.stripe.com/8x23cndvnfH96HM1J48AE00', '_blank');
+    } else {
+      window.open('https://wa.me/972549961795', '_blank');
+    }
   };
 
 
@@ -225,7 +246,9 @@ export const ServicesPage = (): JSX.Element => {
 
         {/* Marquiz Inline Quiz */}
         <div className="text-center mb-16">
-          <div data-marquiz-id="68c07b95528c4c0019cb5f39"></div>
+          <div id="marquiz-inline-quiz">
+            <div data-marquiz-id="68c07b95528c4c0019cb5f39"></div>
+          </div>
         </div>
 
         {/* CTA Section */}
@@ -288,7 +311,23 @@ export const ServicesPage = (): JSX.Element => {
                   </div>
 
                   <div className={`service-price program-price program-price--${service.popular ? 'red' : 'white'}`}>
-                    {service.price.includes("\n") ? (
+                    {service.title === t("programs.sushkaPro.title") ? (
+                      <div className="flex items-center justify-center gap-3">
+                        <div className="text-4xl font-bold">
+                          {getPriceForService(service)}
+                        </div>
+                        <select
+                          value={selectedCurrency}
+                          onChange={(e) => setSelectedCurrency(e.target.value)}
+                          className="bg-transparent border border-gray-600 rounded-lg px-3 py-1 text-sm focus:outline-none focus:border-[#ff2332]"
+                        >
+                          <option value="RUB">₽ Рубли</option>
+                          <option value="USD">$ Доллары</option>
+                          <option value="EUR">€ Евро</option>
+                          <option value="ILS">₪ Шекели</option>
+                        </select>
+                      </div>
+                    ) : service.price.includes("\n") ? (
                       <>
                         <div className="price-main">{service.price.split("\n")[0]}</div>
                         <div className="price-discount">{service.price.split("\n")[1]}</div>
@@ -482,8 +521,10 @@ export const ServicesPage = (): JSX.Element => {
                 </div>
 
                 <div className="service-card-bottom program-card-bottom">
-                  <Button className="service-button program-button" onClick={handleGetStarted}>
-                    <span>{t("services.startNow")}</span>
+                  <Button className="service-button program-button" onClick={() => handleGetStarted(service.title)}>
+                    <span>
+                      {service.title === t("programs.sushkaPro.title") ? "Оплатить" : t("services.startNow")}
+                    </span>
                   </Button>
 
                   <p className="service-details program-details">
