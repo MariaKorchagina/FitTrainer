@@ -52,12 +52,14 @@ export const HeroSection = (): JSX.Element => {
       <div className="hero-content">
         <div className="hero-content-container">
           <div className="hero-text-container">
-            <h1 className="hero-title">
-            {t("hero.title")}
-            </h1>
-            <p className="hero-description">
-              {t("hero.description")}
-            </p>
+            <div className="hero-text-background">
+              <h1 className="hero-title">
+              {t("hero.title")}
+              </h1>
+              <p className="hero-description">
+                {t("hero.description")}
+              </p>
+            </div>
             <button className="hero-button" onClick={handleGetStarted}>
               <span>{t("navigation.contact")}</span>
             </button>
