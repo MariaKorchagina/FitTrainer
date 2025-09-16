@@ -89,7 +89,7 @@ export const ContactPage = (): JSX.Element => {
             </div>
 
             {/* What's included */}
-            <div className="mb-12 fitness-plan-section">
+            <div className="mb-12 fitness-plan-section md:ml-12">
               <h3 className="[font-family:'Anton',Helvetica] font-normal text-white text-3xl md:text-3xl tracking-[-0.20px] leading-[1.2] mb-8 text-left">
                 Ваш индивидуальный план включает:
               </h3>
