@@ -24,6 +24,7 @@ export const ServicesPage = (): JSX.Element => {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
   const [selectedCurrency, setSelectedCurrency] = useState<string>('RUB');
   const [selectedNutritionCurrency, setSelectedNutritionCurrency] = useState<string>('RUB');
+  const [selectedTotalResetCurrency, setSelectedTotalResetCurrency] = useState<string>('RUB');
 
   // Currency prices for "Сушка PRO"
   const sushkaProPrices = {
@@ -41,6 +42,14 @@ export const ServicesPage = (): JSX.Element => {
     ILS: '120 ₪'
   };
 
+  // Currency prices for "Total Reset"
+  const totalResetPrices = {
+    RUB: '12 000 ₽',
+    USD: '92 $',
+    EUR: '85 €',
+    ILS: '320 ₪'
+  };
+
   const getPriceForService = (service: any) => {
     if (service.title === t("programs.sushkaPro.title")) {
       return sushkaProPrices[selectedCurrency as keyof typeof sushkaProPrices];
@@ -50,6 +59,10 @@ export const ServicesPage = (): JSX.Element => {
 
   const getPriceForNutritionAnalysis = () => {
     return nutritionAnalysisPrices[selectedNutritionCurrency as keyof typeof nutritionAnalysisPrices];
+  };
+
+  const getPriceForTotalReset = () => {
+    return totalResetPrices[selectedTotalResetCurrency as keyof typeof totalResetPrices];
   };
 
   // Initialize Marquiz inline quiz
@@ -710,6 +723,22 @@ export const ServicesPage = (): JSX.Element => {
                         <select
                           value={selectedNutritionCurrency}
                           onChange={(e) => setSelectedNutritionCurrency(e.target.value)}
+                          className="bg-transparent border border-gray-600 rounded-lg px-3 py-1 text-sm focus:outline-none focus:border-[#ff2332]"
+                        >
+                          <option value="RUB">₽ Рубли</option>
+                          <option value="USD">$ Доллары</option>
+                          <option value="EUR">€ Евро</option>
+                          <option value="ILS">₪ Шекели</option>
+                        </select>
+                      </div>
+                    ) : service.title === t("services.additional.totalReset.title") ? (
+                      <div className="flex items-center justify-center gap-3">
+                        <div className="text-4xl font-bold">
+                          {getPriceForTotalReset()}
+                        </div>
+                        <select
+                          value={selectedTotalResetCurrency}
+                          onChange={(e) => setSelectedTotalResetCurrency(e.target.value)}
                           className="bg-transparent border border-gray-600 rounded-lg px-3 py-1 text-sm focus:outline-none focus:border-[#ff2332]"
                         >
                           <option value="RUB">₽ Рубли</option>
