@@ -25,6 +25,11 @@ export const ServicesPage = (): JSX.Element => {
   const [selectedCurrency, setSelectedCurrency] = useState<string>('RUB');
   const [selectedNutritionCurrency, setSelectedNutritionCurrency] = useState<string>('RUB');
   const [selectedTotalResetCurrency, setSelectedTotalResetCurrency] = useState<string>('RUB');
+  const [selectedPilatesCurrency, setSelectedPilatesCurrency] = useState<string>('RUB');
+  const [selectedSteelAbsCurrency, setSelectedSteelAbsCurrency] = useState<string>('RUB');
+  const [selectedTrxFitnessCurrency, setSelectedTrxFitnessCurrency] = useState<string>('RUB');
+  const [selectedPostpartumCurrency, setSelectedPostpartumCurrency] = useState<string>('RUB');
+  const [selectedStretchingCurrency, setSelectedStretchingCurrency] = useState<string>('RUB');
 
   // Currency prices for "Сушка PRO"
   const sushkaProPrices = {
@@ -50,9 +55,65 @@ export const ServicesPage = (): JSX.Element => {
     ILS: '320 ₪'
   };
 
+  // Currency prices for "Сильное тело без прыжков. Пилатес"
+  const pilatesPrices = {
+    RUB: '6 000 ₽',
+    USD: '66 $',
+    EUR: '62 €',
+    ILS: '225 ₪'
+  };
+
+  // Currency prices for "Стальной пресс"
+  const steelAbsPrices = {
+    RUB: '6 500 ₽',
+    USD: '72 $',
+    EUR: '67 €',
+    ILS: '245 ₪'
+  };
+
+  // Currency prices for "TRX: фитнес-зал нового поколения"
+  const trxFitnessPrices = {
+    RUB: '7 000 ₽',
+    USD: '77 $',
+    EUR: '72 €',
+    ILS: '265 ₪'
+  };
+
+  // Currency prices for "Новое тело после родов: живот подтянется, отёки уйдут"
+  const postpartumPrices = {
+    RUB: '6 000 ₽',
+    USD: '66 $',
+    EUR: '62 €',
+    ILS: '225 ₪'
+  };
+
+  // Currency prices for "Растяжка и шпагат: прямая спина, гибкость и минус отёки"
+  const stretchingPrices = {
+    RUB: '6 500 ₽',
+    USD: '72 $',
+    EUR: '67 €',
+    ILS: '245 ₪'
+  };
+
+
   const getPriceForService = (service: any) => {
     if (service.title === t("programs.sushkaPro.title")) {
       return sushkaProPrices[selectedCurrency as keyof typeof sushkaProPrices];
+    }
+    if (service.title === t("programs.strengthTone.title")) {
+      return pilatesPrices[selectedPilatesCurrency as keyof typeof pilatesPrices];
+    }
+    if (service.title === t("programs.steelAbs.title")) {
+      return steelAbsPrices[selectedSteelAbsCurrency as keyof typeof steelAbsPrices];
+    }
+    if (service.title === t("programs.trxFitness.title")) {
+      return trxFitnessPrices[selectedTrxFitnessCurrency as keyof typeof trxFitnessPrices];
+    }
+    if (service.title === t("programs.postpartumRecovery.title")) {
+      return postpartumPrices[selectedPostpartumCurrency as keyof typeof postpartumPrices];
+    }
+    if (service.title === t("programs.stretchingSplits.title")) {
+      return stretchingPrices[selectedStretchingCurrency as keyof typeof stretchingPrices];
     }
     return service.price;
   };
@@ -64,6 +125,27 @@ export const ServicesPage = (): JSX.Element => {
   const getPriceForTotalReset = () => {
     return totalResetPrices[selectedTotalResetCurrency as keyof typeof totalResetPrices];
   };
+
+  const getPriceForPilates = () => {
+    return pilatesPrices[selectedPilatesCurrency as keyof typeof pilatesPrices];
+  };
+
+  const getPriceForSteelAbs = () => {
+    return steelAbsPrices[selectedSteelAbsCurrency as keyof typeof steelAbsPrices];
+  };
+
+  const getPriceForTrxFitness = () => {
+    return trxFitnessPrices[selectedTrxFitnessCurrency as keyof typeof trxFitnessPrices];
+  };
+
+  const getPriceForPostpartum = () => {
+    return postpartumPrices[selectedPostpartumCurrency as keyof typeof postpartumPrices];
+  };
+
+  const getPriceForStretching = () => {
+    return stretchingPrices[selectedStretchingCurrency as keyof typeof stretchingPrices];
+  };
+
 
   // Initialize Marquiz inline quiz
   useEffect(() => {
@@ -151,6 +233,20 @@ export const ServicesPage = (): JSX.Element => {
   const handleGetStarted = (serviceTitle?: string) => {
     if (serviceTitle === t("programs.sushkaPro.title")) {
       window.open('https://buy.stripe.com/8x23cndvnfH96HM1J48AE00', '_blank');
+    } else if (serviceTitle === t("programs.strengthTone.title")) {
+      window.open('https://buy.stripe.com/eVq7sDbnf8eH9TYgDY8AE01', '_blank');
+    } else if (serviceTitle === t("programs.steelAbs.title")) {
+      window.open('https://buy.stripe.com/bJe7sD3UNdz1gim9bw8AE02', '_blank');
+    } else if (serviceTitle === t("programs.trxFitness.title")) {
+      window.open('https://buy.stripe.com/dRm00b8b30Mfc2673o8AE03', '_blank');
+    } else if (serviceTitle === t("programs.postpartumRecovery.title")) {
+      window.open('https://buy.stripe.com/eVqbIT9f7dz18PU73o8AE04', '_blank');
+    } else if (serviceTitle === t("programs.stretchingSplits.title")) {
+      window.open('https://buy.stripe.com/dRmdR19f7amP7LQafA8AE05', '_blank');
+    } else if (serviceTitle === t("services.additional.groupTraining.title")) {
+      window.open('https://buy.stripe.com/aFa9AL8b352v5DI4Vg8AE06', '_blank');
+    } else if (serviceTitle === t("services.additional.totalReset.title")) {
+      window.open('https://buy.stripe.com/4gMeV5ezr0Mf8PUevQ8AE07', '_blank');
     } else {
       window.open('https://wa.me/972549961795', '_blank');
     }
@@ -274,40 +370,8 @@ export const ServicesPage = (): JSX.Element => {
   return (
     <div className="services-page-container" key={`${i18n.language}-${refreshKey}`}>
       <div className="services-content-wrapper">
-        {/* Hero Section */}
-        <div className="services-hero-section">
-          <h1 className="services-hero-title">
-            {t("services.title")}
-          </h1>
-          <p className="services-hero-subtitle">
-            {t("services.subtitle")}
-          </p>
-        </div>
-
-        {/* Marquiz Inline Quiz */}
-        <div className="text-center mb-16">
-          <div id="marquiz-inline-quiz">
-            <div data-marquiz-id="68c07b95528c4c0019cb5f39"></div>
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center bg-[#1f1f1f] rounded-[20px] p-12 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:800ms] mb-16">
-          <h2 className="[font-family:'Anton',Helvetica] font-normal text-white text-3xl md:text-4xl tracking-[-0.40px] leading-[1.2] mb-6">
-            {t("services.ctaTitle")}
-          </h2>
-          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-lg mb-8 max-w-2xl mx-auto">
-            {t("services.ctaDescription")}
-          </p>
-          <Button className="h-[60px] px-8 bg-[#ff2332] hover:bg-[#e01e2b] rounded-xl transition-all duration-300 hover:scale-105" onClick={() => handleGetStarted()}>
-            <span className="[font-family:'Outfit',Helvetica] font-bold text-white text-lg">
-              {t("services.ctaButton")}
-            </span>
-          </Button>
-        </div>
-
         {/* Programs Section Title */}
-        <div className="mb-12">
+        <div className="mb-12 -mt-8">
           <h2 className="[font-family:'Anton',Helvetica] font-normal text-white text-3xl md:text-4xl tracking-[-0.40px] leading-[1.2] mb-4 text-center translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]">
             {t("services.programsTitle")}
           </h2>
@@ -359,6 +423,86 @@ export const ServicesPage = (): JSX.Element => {
                         <select
                           value={selectedCurrency}
                           onChange={(e) => setSelectedCurrency(e.target.value)}
+                          className="bg-transparent border border-gray-600 rounded-lg px-3 py-1 text-sm focus:outline-none focus:border-[#ff2332]"
+                        >
+                          <option value="RUB">₽ Рубли</option>
+                          <option value="USD">$ Доллары</option>
+                          <option value="EUR">€ Евро</option>
+                          <option value="ILS">₪ Шекели</option>
+                        </select>
+                      </div>
+                    ) : service.title === t("programs.strengthTone.title") ? (
+                      <div className="flex items-center justify-center gap-3">
+                        <div className="text-4xl font-bold">
+                          {getPriceForService(service)}
+                        </div>
+                        <select
+                          value={selectedPilatesCurrency}
+                          onChange={(e) => setSelectedPilatesCurrency(e.target.value)}
+                          className="bg-transparent border border-gray-600 rounded-lg px-3 py-1 text-sm focus:outline-none focus:border-[#ff2332]"
+                        >
+                          <option value="RUB">₽ Рубли</option>
+                          <option value="USD">$ Доллары</option>
+                          <option value="EUR">€ Евро</option>
+                          <option value="ILS">₪ Шекели</option>
+                        </select>
+                      </div>
+                    ) : service.title === t("programs.steelAbs.title") ? (
+                      <div className="flex items-center justify-center gap-3">
+                        <div className="text-4xl font-bold">
+                          {getPriceForService(service)}
+                        </div>
+                        <select
+                          value={selectedSteelAbsCurrency}
+                          onChange={(e) => setSelectedSteelAbsCurrency(e.target.value)}
+                          className="bg-transparent border border-gray-600 rounded-lg px-3 py-1 text-sm focus:outline-none focus:border-[#ff2332]"
+                        >
+                          <option value="RUB">₽ Рубли</option>
+                          <option value="USD">$ Доллары</option>
+                          <option value="EUR">€ Евро</option>
+                          <option value="ILS">₪ Шекели</option>
+                        </select>
+                      </div>
+                    ) : service.title === t("programs.trxFitness.title") ? (
+                      <div className="flex items-center justify-center gap-3">
+                        <div className="text-4xl font-bold">
+                          {getPriceForService(service)}
+                        </div>
+                        <select
+                          value={selectedTrxFitnessCurrency}
+                          onChange={(e) => setSelectedTrxFitnessCurrency(e.target.value)}
+                          className="bg-transparent border border-gray-600 rounded-lg px-3 py-1 text-sm focus:outline-none focus:border-[#ff2332]"
+                        >
+                          <option value="RUB">₽ Рубли</option>
+                          <option value="USD">$ Доллары</option>
+                          <option value="EUR">€ Евро</option>
+                          <option value="ILS">₪ Шекели</option>
+                        </select>
+                      </div>
+                    ) : service.title === t("programs.postpartumRecovery.title") ? (
+                      <div className="flex items-center justify-center gap-3">
+                        <div className="text-4xl font-bold">
+                          {getPriceForService(service)}
+                        </div>
+                        <select
+                          value={selectedPostpartumCurrency}
+                          onChange={(e) => setSelectedPostpartumCurrency(e.target.value)}
+                          className="bg-transparent border border-gray-600 rounded-lg px-3 py-1 text-sm focus:outline-none focus:border-[#ff2332]"
+                        >
+                          <option value="RUB">₽ Рубли</option>
+                          <option value="USD">$ Доллары</option>
+                          <option value="EUR">€ Евро</option>
+                          <option value="ILS">₪ Шекели</option>
+                        </select>
+                      </div>
+                    ) : service.title === t("programs.stretchingSplits.title") ? (
+                      <div className="flex items-center justify-center gap-3">
+                        <div className="text-4xl font-bold">
+                          {getPriceForService(service)}
+                        </div>
+                        <select
+                          value={selectedStretchingCurrency}
+                          onChange={(e) => setSelectedStretchingCurrency(e.target.value)}
                           className="bg-transparent border border-gray-600 rounded-lg px-3 py-1 text-sm focus:outline-none focus:border-[#ff2332]"
                         >
                           <option value="RUB">₽ Рубли</option>
@@ -563,7 +707,12 @@ export const ServicesPage = (): JSX.Element => {
                 <div className="service-card-bottom program-card-bottom">
                   <Button className="service-button program-button" onClick={() => handleGetStarted(service.title)}>
                     <span>
-                      {service.title === t("programs.sushkaPro.title") ? "Оплатить" : t("services.startNow")}
+                      {service.title === t("programs.sushkaPro.title") || 
+                       service.title === t("programs.strengthTone.title") || 
+                       service.title === t("programs.steelAbs.title") || 
+                       service.title === t("programs.trxFitness.title") || 
+                       service.title === t("programs.postpartumRecovery.title") || 
+                       service.title === t("programs.stretchingSplits.title") ? "Оплатить" : t("services.startNow")}
                     </span>
                   </Button>
 
@@ -610,32 +759,33 @@ export const ServicesPage = (): JSX.Element => {
                       </button>
                     )}
                   </div>
+
                   {service.title === t("services.additional.groupTraining.title") ? (
                     <div className="text-left mb-4">
-                      <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                      <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-1">
                         {t("services.additional.groupTraining.intro")}
                       </p>
-                      <div className="flex items-start gap-3 mb-2">
+                      <div className="flex items-start gap-3 mb-1">
                         <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
                         <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.groupTraining.points.nutritionBreakdown")}</span>
                       </div>
-                      <div className="flex items-start gap-3 mb-2">
+                      <div className="flex items-start gap-3 mb-1">
                         <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
                         <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.groupTraining.points.macroAnalysis")}</span>
                       </div>
-                      <div className="flex items-start gap-3 mb-2">
+                      <div className="flex items-start gap-3 mb-1">
                         <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
                         <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.groupTraining.points.hiddenOvereating")}</span>
                       </div>
-                      <div className="flex items-start gap-3 mb-2">
+                      <div className="flex items-start gap-3 mb-1">
                         <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
                         <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.groupTraining.points.realReasons")}</span>
                       </div>
-                      <div className="flex items-start gap-3 mb-2">
+                      <div className="flex items-start gap-3 mb-1">
                         <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
                         <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.groupTraining.points.practicalAdvice")}</span>
                       </div>
-                      <div className="flex items-start gap-3 mb-2">
+                      <div className="flex items-start gap-3 mb-1">
                         <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
                         <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.groupTraining.points.allFactors")}</span>
                       </div>
@@ -645,7 +795,7 @@ export const ServicesPage = (): JSX.Element => {
                     </div>
                   ) : service.title === t("services.additional.totalReset.title") ? (
                     <div className="text-left mb-4">
-                      <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4">
+                      <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-1">
                         {t("services.additional.totalReset.intro")}
                       </p>
                       
@@ -685,23 +835,23 @@ export const ServicesPage = (): JSX.Element => {
                       <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm mb-4 mt-4">
                         {t("services.additional.totalReset.whatInside")}
                       </p>
-                      <div className="flex items-start gap-3 mb-2">
+                      <div className="flex items-start gap-3 mb-1">
                         <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
                         <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.inside.training")}</span>
                       </div>
-                      <div className="flex items-start gap-3 mb-2">
+                      <div className="flex items-start gap-3 mb-1">
                         <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
                         <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.inside.coaching")}</span>
                       </div>
-                      <div className="flex items-start gap-3 mb-2">
+                      <div className="flex items-start gap-3 mb-1">
                         <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
                         <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.inside.nutrition")}</span>
                       </div>
-                      <div className="flex items-start gap-3 mb-2">
+                      <div className="flex items-start gap-3 mb-1">
                         <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
                         <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.inside.meditation")}</span>
                       </div>
-                      <div className="flex items-start gap-3 mb-2">
+                      <div className="flex items-start gap-3 mb-1">
                         <CheckCircle className="w-4 h-4 text-[#ff2332] flex-shrink-0 mt-0.5" />
                         <span className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-sm">{t("services.additional.totalReset.inside.support")}</span>
                       </div>
@@ -714,6 +864,7 @@ export const ServicesPage = (): JSX.Element => {
                       {service.description}
                     </p>
                   )}
+                  {/* Цена для всех услуг */}
                   <div className="additional-service-price [font-family:'Anton',Helvetica] font-normal text-[#ff2332] text-xl">
                     {service.title === t("services.additional.groupTraining.title") ? (
                       <div className="flex items-center justify-center gap-3">
@@ -751,11 +902,58 @@ export const ServicesPage = (): JSX.Element => {
                       service.price
                     )}
                   </div>
+
+                  {/* Кнопки оплаты для дополнительных услуг */}
+                  {(service.title === t("services.additional.groupTraining.title") || 
+                    service.title === t("services.additional.totalReset.title")) && (
+                    <div className="mt-6 flex justify-center">
+                      <Button 
+                        className="service-button program-button" 
+                        onClick={() => handleGetStarted(service.title)}
+                      >
+                        <span>
+                          Оплатить
+                        </span>
+                      </Button>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             );
           })}
           </div>
+        </div>
+
+        {/* Quiz Introduction Text */}
+        <div className="services-hero-section">
+          <h1 className="services-hero-title">
+            Не знаете с чего начать?
+          </h1>
+          <p className="services-hero-subtitle">
+            Выберите идеальную программу, чтобы достичь своих целей с персональным сопровождением и поддержкой. Пройди квиз ниже, чтобы найти подходящую именно тебе программу!
+          </p>
+        </div>
+
+        {/* Marquiz Inline Quiz */}
+        <div className="text-center mb-16">
+          <div id="marquiz-inline-quiz">
+            <div data-marquiz-id="68c07b95528c4c0019cb5f39"></div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center bg-[#1f1f1f] rounded-[20px] p-12 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:800ms] mb-16">
+          <h2 className="[font-family:'Anton',Helvetica] font-normal text-white text-3xl md:text-4xl tracking-[-0.40px] leading-[1.2] mb-6">
+            {t("services.ctaTitle")}
+          </h2>
+          <p className="[font-family:'Outfit',Helvetica] font-normal text-[#909090] text-lg mb-8 max-w-2xl mx-auto">
+            {t("services.ctaDescription")}
+          </p>
+          <Button className="h-[60px] px-8 bg-[#ff2332] hover:bg-[#e01e2b] rounded-xl transition-all duration-300 hover:scale-105" onClick={() => handleGetStarted()}>
+            <span className="[font-family:'Outfit',Helvetica] font-bold text-white text-lg">
+              {t("services.ctaButton")}
+            </span>
+          </Button>
         </div>
 
       </div>
