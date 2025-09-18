@@ -234,19 +234,19 @@ export const ServicesPage = (): JSX.Element => {
     if (serviceTitle === t("programs.sushkaPro.title")) {
       window.open('https://buy.stripe.com/8x23cndvnfH96HM1J48AE00', '_blank');
     } else if (serviceTitle === t("programs.strengthTone.title")) {
-      window.open('https://buy.stripe.com/eVq7sDbnf8eH9TYgDY8AE01', '_blank');
+      window.open('https://buy.stripe.com/9B6eV5fDv7aD0jodrM8AE08', '_blank');
     } else if (serviceTitle === t("programs.steelAbs.title")) {
       window.open('https://buy.stripe.com/bJe7sD3UNdz1gim9bw8AE02', '_blank');
     } else if (serviceTitle === t("programs.trxFitness.title")) {
       window.open('https://buy.stripe.com/dRm00b8b30Mfc2673o8AE03', '_blank');
     } else if (serviceTitle === t("programs.postpartumRecovery.title")) {
-      window.open('https://buy.stripe.com/eVqbIT9f7dz18PU73o8AE04', '_blank');
+      window.open('https://buy.stripe.com/7sYdR176ZamP7LQ3Rc8AE09', '_blank');
     } else if (serviceTitle === t("programs.stretchingSplits.title")) {
-      window.open('https://buy.stripe.com/dRmdR19f7amP7LQafA8AE05', '_blank');
+      window.open('https://buy.stripe.com/7sYdR176ZamP7LQ3Rc8AE09', '_blank');
     } else if (serviceTitle === t("services.additional.groupTraining.title")) {
-      window.open('https://buy.stripe.com/aFa9AL8b352v5DI4Vg8AE06', '_blank');
+      window.open('https://buy.stripe.com/4gM7sD2QJ9iLc2673o8AE0b', '_blank');
     } else if (serviceTitle === t("services.additional.totalReset.title")) {
-      window.open('https://buy.stripe.com/4gMeV5ezr0Mf8PUevQ8AE07', '_blank');
+      window.open('https://buy.stripe.com/9B6eV5bnfcuXgim2N88AE0c', '_blank');
     } else {
       window.open('https://wa.me/972549961795', '_blank');
     }
