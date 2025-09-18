@@ -23,6 +23,7 @@ export const ServicesPage = (): JSX.Element => {
   const { t, i18n, ready } = useTranslation();
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
   const [selectedCurrency, setSelectedCurrency] = useState<string>('RUB');
+  const [selectedNutritionCurrency, setSelectedNutritionCurrency] = useState<string>('RUB');
 
   // Currency prices for "Сушка PRO"
   const sushkaProPrices = {
@@ -32,11 +33,23 @@ export const ServicesPage = (): JSX.Element => {
     ILS: '300 ₪'
   };
 
+  // Currency prices for "Анализ твоего питания"
+  const nutritionAnalysisPrices = {
+    RUB: '3 000 ₽',
+    USD: '35 $',
+    EUR: '35 €',
+    ILS: '120 ₪'
+  };
+
   const getPriceForService = (service: any) => {
     if (service.title === t("programs.sushkaPro.title")) {
       return sushkaProPrices[selectedCurrency as keyof typeof sushkaProPrices];
     }
     return service.price;
+  };
+
+  const getPriceForNutritionAnalysis = () => {
+    return nutritionAnalysisPrices[selectedNutritionCurrency as keyof typeof nutritionAnalysisPrices];
   };
 
   // Initialize Marquiz inline quiz
@@ -689,7 +702,25 @@ export const ServicesPage = (): JSX.Element => {
                     </p>
                   )}
                   <div className="additional-service-price [font-family:'Anton',Helvetica] font-normal text-[#ff2332] text-xl">
-                    {service.price}
+                    {service.title === t("services.additional.groupTraining.title") ? (
+                      <div className="flex items-center justify-center gap-3">
+                        <div className="text-4xl font-bold">
+                          {getPriceForNutritionAnalysis()}
+                        </div>
+                        <select
+                          value={selectedNutritionCurrency}
+                          onChange={(e) => setSelectedNutritionCurrency(e.target.value)}
+                          className="bg-transparent border border-gray-600 rounded-lg px-3 py-1 text-sm focus:outline-none focus:border-[#ff2332]"
+                        >
+                          <option value="RUB">₽ Рубли</option>
+                          <option value="USD">$ Доллары</option>
+                          <option value="EUR">€ Евро</option>
+                          <option value="ILS">₪ Шекели</option>
+                        </select>
+                      </div>
+                    ) : (
+                      service.price
+                    )}
                   </div>
                 </CardContent>
               </Card>
